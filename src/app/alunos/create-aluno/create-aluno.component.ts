@@ -7,11 +7,10 @@ import { AlunoService } from '../aluno.service';
   templateUrl: './create-aluno.component.html',
   styleUrls: ['./create-aluno.component.css']
 })
+
 export class CreateAlunoComponent implements OnInit {
-  aluno: any;
-  submitted: boolean;
-
-
+  aluno: Aluno = new Aluno();
+  submitted = false;
 
 
   constructor(private alunoService: AlunoService, router: Router) { }
