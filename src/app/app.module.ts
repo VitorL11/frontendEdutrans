@@ -3,11 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InserirComponent } from './alunos/inserir/inserir.component';
-import { RemoveComponent } from './aluno/remove/remove.component';
-import { UpdateComponent } from './alunos/update/update.component';
-import { ListarComponent } from './alunos/listar/listar.component';
-import { DeleteComponent } from './alunos/delete/delete.component';
 import { CreateAlunoComponent } from './alunos/create-aluno/create-aluno.component';
 import { DeleteAlunoComponent } from './alunos/delete-aluno/delete-aluno.component';
 import { ListAlunoComponent } from './alunos/list-aluno/list-aluno.component';
@@ -36,11 +31,6 @@ import { UpdateVeiculoComponent } from './veiculos/update-veiculo/update-veiculo
 @NgModule({
   declarations: [
     AppComponent,
-    InserirComponent,
-    RemoveComponent,
-    UpdateComponent,
-    ListarComponent,
-    DeleteComponent,
     CreateAlunoComponent,
     DeleteAlunoComponent,
     ListAlunoComponent,
