@@ -20,12 +20,12 @@ export class CreateEmpresaComponent implements OnInit {
   }
 
   save() {
-    this.empresaService.createAluno(this.empresa)
+    this.empresaService.createEmpresa(this.empresa)
       .subscribe(
         data => console.log(data),
         error => console.log(error)
       );
-    this.aluno = new Empresa();
+    this.empresa = new Empresa();
     this.gotoList();
   }
 

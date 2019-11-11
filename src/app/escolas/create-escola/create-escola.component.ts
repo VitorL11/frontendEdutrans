@@ -28,7 +28,7 @@ export class CreateEscolaComponent implements OnInit {
         data => console.log(data),
         error => console.log(error)
       );
-    this.aluno = new Empresa();
+    this.escola = new Escola();
     this.gotoList();
   }
 
