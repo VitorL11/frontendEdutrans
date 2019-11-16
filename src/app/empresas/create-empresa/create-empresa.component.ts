@@ -1,5 +1,6 @@
-import { ListEmpresaComponent } from './../list-empresa/list-empresa.component';
 import { Component, OnInit } from '@angular/core';
+import { Empresa } from '../empresa';
+import { EmpresaService } from '../empresa.service';
 
 @Component({
   selector: 'app-create-empresa',
