@@ -1,6 +1,7 @@
-import { ListAlunoComponent } from './../list-aluno/list-aluno.component';
+import { Aluno } from './../aluno';
 import { Component, OnInit } from '@angular/core';
 import { AlunoService } from '../aluno.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-aluno',
@@ -12,13 +13,10 @@ export class CreateAlunoComponent implements OnInit {
   aluno: Aluno = new Aluno();
   submitted = false;
 
-
-  constructor(private alunoService: AlunoService, router: Router) { }
+  constructor(private alunoService: AlunoService, private router: Router) { }
 
   ngOnInit() {
   }
-
-
 
   newAluno(): void {
     this.submitted = false;
