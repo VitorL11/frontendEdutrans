@@ -42,7 +42,7 @@ onSubmit() {
   }
 
 gotoList() {
-    this.router.navigate(['/list-aluno']);
+    this.router.navigate(['/listar-aluno']);
   }
 
 }
