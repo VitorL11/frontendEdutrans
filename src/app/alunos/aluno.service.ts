@@ -7,7 +7,6 @@ import { HttpClient } from '@angular/common/http';
 	providedIn: 'root'
 })
 export class AlunoService {
-<<<<<<< HEAD
 
 
 
@@ -31,16 +30,4 @@ export class AlunoService {
     return this.http.delete(`${this.http}/alunos/del-aluno/${id}`);
   }
 
-
-
-
-=======
-	createAluno(aluno: any) {
-		throw new Error('Method not implemented.');
-	}
-
-	getAlunoList() {}
-
-	constructor() {}
->>>>>>> 84e7a420f8ff739abe998af218999b136cb2946c
 }
