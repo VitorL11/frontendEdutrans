@@ -1,5 +1,5 @@
 import { Aluno } from './../aluno';
-import { Component, OnInit } from '@angular/core';
+
 import {ActivatedRoute, Route, Router} from "@angular/router";
 import {AlunoService} from "../aluno.service";
 
@@ -26,11 +26,13 @@ this.AlunoService.getAluno(this.id)
         console.log(data)
         this.aluno = data;
       }, error => console.log(error));
-  }
 
-updateAluno() {
+
+updateAluno(){
     this.AlunoService.updateAluno(this.id, this.aluno)
-      .subscribe(data => console.log(data), error => console.log(error));
+      .subscribe(data =>
+            console.log(data),
+            error => console.log(error));
     this.aluno = new Aluno();
     this.gotoList();
   }
