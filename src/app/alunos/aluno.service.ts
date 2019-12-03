@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class AlunoService {
-  createAluno(aluno: any) {
-    throw new Error("Method not implemented.");
-  }
+	createAluno(aluno: any) {
+		throw new Error('Method not implemented.');
+	}
 
-  constructor() { }
+	getAlunoList() {}
+
+	constructor() {}
 }

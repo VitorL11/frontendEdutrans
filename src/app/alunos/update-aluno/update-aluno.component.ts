@@ -1,7 +1,7 @@
-import { Aluno } from './../aluno';
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Route, Router} from "@angular/router";
 import {AlunoService} from "../aluno.service";
+import { Aluno } from '../aluno';
 
 @Component({
   selector: 'app-update-aluno',
