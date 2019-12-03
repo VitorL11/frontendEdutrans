@@ -27,6 +27,7 @@ import { CreateVeiculoComponent } from './veiculos/create-veiculo/create-veiculo
 import { DeleteVeiculoComponent } from './veiculos/delete-veiculo/delete-veiculo.component';
 import { ListVeiculoComponent } from './veiculos/list-veiculo/list-veiculo.component';
 import { UpdateVeiculoComponent } from './veiculos/update-veiculo/update-veiculo.component';
+import { ListarComponent } from './alunos/list-aluno/listar/listar.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { UpdateVeiculoComponent } from './veiculos/update-veiculo/update-veiculo
     CreateVeiculoComponent,
     DeleteVeiculoComponent,
     ListVeiculoComponent,
-    UpdateVeiculoComponent
+    UpdateVeiculoComponent,
+    ListarComponent
   ],
   imports: [
     BrowserModule,

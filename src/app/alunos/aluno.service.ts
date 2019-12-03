@@ -4,9 +4,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class AlunoService {
+<<<<<<< HEAD
 
 
 
@@ -33,4 +34,13 @@ export class AlunoService {
 
 
 
+=======
+	createAluno(aluno: any) {
+		throw new Error('Method not implemented.');
+	}
+
+	getAlunoList() {}
+
+	constructor() {}
+>>>>>>> 84e7a420f8ff739abe998af218999b136cb2946c
 }
