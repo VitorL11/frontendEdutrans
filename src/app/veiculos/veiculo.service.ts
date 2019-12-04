@@ -16,15 +16,15 @@ export class VeiculoService {
     return this.http.get(`${this.baseUrl}/veiculos/getVeiculo}/${id}`);
   }
 
-  createEmpresa(veiculo : Veiculo): Observable<any> {
+  createVeiculo(veiculo : Veiculo): Observable<any> {
     return this.http.post(`${this.baseUrl}/veiculos/cad-veiculos`, veiculo)
   }
 
-  getEmpresaList(): Observable<any> {
+  getVeiculoList(): Observable<any> {
     return this.http.get(`${this.http}/veiculos/list-veiculos`);
   }
 
-  deleteEmpresa(id: number): Observable<any>{
+  deleteVeiculo(id: number): Observable<any>{
     return this.http.delete(`${this.http}/veiculos/del-veiculos/${id}`);
   }
 
