@@ -18,6 +18,7 @@ export class UpdateLinhaComponent implements OnInit {
 
   ngOnInit() {
   }
+}
 
 this.linha = new Linha();
 
@@ -28,8 +29,8 @@ this.LinhaService.getLinha(this.id)
         console.log(data)
         this.linha = data;
       }, error => console.log(error));
-  }
 
+/*
 updateLinha() {
     this.LinhaService.updateLinha(this.id, this.linha)
       .subscribe(data => console.log(data), error => console.log(error));
@@ -48,6 +49,6 @@ gotoList() {
   }
 
 }
-
+*/
 
 

@@ -17,6 +17,7 @@ export class UpdateVeiculoComponent implements OnInit {
 
   ngOnInit() {
   }
+}
 
 this.veiculo = new Veiculo();
 
@@ -27,8 +28,8 @@ this.VeiculoService.getVeiculo(this.id)
         console.log(data)
         this.veiculo = data;
       }, error => console.log(error));
-  }
 
+/*
 updateVeiculo() {
     this.VeiculoService.updateVeiculo(this.id, this.veiculo)
       .subscribe(data => console.log(data), error => console.log(error));
@@ -47,5 +48,5 @@ gotoList() {
   }
 
 }
-
+*/
 

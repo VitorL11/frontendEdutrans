@@ -30,4 +30,8 @@ export class LinhaService {
     return this.http.delete(`${this.http}/linhas/del-linhas/${id}`);
   }
 
+  updateLinha(linha : Linha): Observable<any> {
+    return this.http.put(`${this.baseUrl}/linhas/upd-linhas`, linha)
+  }
+
 }

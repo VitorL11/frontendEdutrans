@@ -1,50 +1,46 @@
 import { EmpresaService } from './../empresa.service';
 import { Empresa } from './../empresa';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route, Router} from "@angular/router"
+import { ActivatedRoute, Router} from "@angular/router";
 
 @Component({
-  selector: 'app-update-empresa',
-  templateUrl: './update-empresa.component.html',
-  styleUrls: ['./update-empresa.component.css']
+  selector: 'app-update-employee',
+  templateUrl: './update-employee.component.html',
+  styleUrls: ['./update-employee.component.css']
 })
 
-  export class UpdateEmpresaComponent implements OnInit {
-    id: number;
-    empresa: Empresa;
-    submitted = false;
-    constructor(private route: ActivatedRoute, private router: Router, private empresaservice: EmpresaService) { }
 
-    ngOnInit() {
-    }
+export class UpdateEmpresaComponent implements OnInit {
 
-  this.empresa = new Empresa();
+  id: number;
+  empresa: Empresa;
 
-  this.id = this.route.snapshot.params['id'];
+  constructor(private route: ActivatedRoute,private router: Router, private empresaservice: EmpresaService) { }
 
-  this.EmpresaService.getEmpresa(this.id)
-        .subscribe(data => {
-          console.log(data)
-          this.empresa = data;
-        }, error => console.log(error));
-    }
+  ngOnInit() {
+    this.empresa = new Empresa();
 
-  updateEmpresa() {
-      this.EmpresaService.updateEmpresa(this.id, this.empresa)
-        .subscribe(data => console.log(data), error => console.log(error));
-      this.empresa = new Empresa();
-      this.gotoList();
-    }
+    this.id = this.route.snapshot.params['id'];
 
-  onSubmit() {
-      this.updateEmpresa();
-      this.submitted = true;
-      this.gotoList();
-    }
-
-  gotoList() {
-      this.router.navigate(['/listar-empresa']);
-    }
-
+    this.empresaservice.getEmpresa(this.id)
+      .subscribe(data => {
+        console.log(data)
+        this.empresa = data;
+      }, error => console.log(error));
   }
 
+  updateEmpresa() {
+    this.empresaservice.updateEmpresa(this.empresa)
+    .subscribe(data => console.log(data), error => console.log(error));
+    this.empresa = new Empresa();
+    this.gotoList();
+  }
+
+  onSubmit() {
+    this.updateEmpresa();
+  }
+
+  gotoList() {
+    this.router.navigate(['/listar-empresas']);
+  }
+}

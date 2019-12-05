@@ -18,6 +18,7 @@ export class UpdateMotoristaComponent implements OnInit {
 
   ngOnInit() {
   }
+}
 
 this.motorista = new Motorista();
 
@@ -28,8 +29,8 @@ this.MotoristaService.getMotorista(this.id)
         console.log(data)
         this.motorista = data;
       }, error => console.log(error));
-  }
 
+/*
 updateMotorista() {
     this.MotoristaService.updateMotorista(this.id, this.motorista)
       .subscribe(data => console.log(data), error => console.log(error));
@@ -48,5 +49,5 @@ gotoList() {
   }
 
 }
-
+*/
 

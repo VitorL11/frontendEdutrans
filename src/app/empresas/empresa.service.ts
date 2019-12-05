@@ -9,7 +9,6 @@ import { HttpClient } from '@angular/common/http';
 export class EmpresaService {
 
 
-
   private baseUrl = "http://localhost:8080";
 
   constructor(private http : HttpClient) { }
@@ -28,6 +27,10 @@ export class EmpresaService {
 
   deleteEmpresa(id: number): Observable<any>{
     return this.http.delete(`${this.http}/empresas/del-empresas/${id}`);
+  }
+
+  updateEmpresa(empresa: Empresa): Observable<any> {
+    return this.http.put(`${this.baseUrl}/empresas/upd-empresas`, empresa)
   }
 
 }

@@ -8,6 +8,8 @@ import { Escola } from '../escola';
   templateUrl: './update-escola.component.html',
   styleUrls: ['./update-escola.component.css']
 
+})
+
 export class UpdateEscolaComponent implements OnInit {
   id: number;
   escola: Escola;
@@ -16,6 +18,9 @@ export class UpdateEscolaComponent implements OnInit {
 
   ngOnInit() {
   }
+
+}
+
 
 this.escola = new Escola();
 
@@ -26,8 +31,8 @@ this.EscolaService.getEscola(this.id)
         console.log(data)
         this.escola = data;
       }, error => console.log(error));
-  }
 
+/*
 updateAluno() {
     this.EscolaService.updateEscola(this.id, this.escola)
       .subscribe(data => console.log(data), error => console.log(error));
@@ -47,3 +52,4 @@ gotoList() {
 
 }
 
+*/
