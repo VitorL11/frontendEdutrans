@@ -13,25 +13,23 @@ export class UpdateVeiculoComponent implements OnInit {
   id: number;
   veiculo: Veiculo;
   submitted = false;
+
   constructor(private route: ActivatedRoute, private router: Router, private veiculoservice: VeiculoService) { }
 
   ngOnInit() {
-  }
-}
-
-this.veiculo = new Veiculo();
+    this.veiculo = new Veiculo();
 
 this.id = this.route.snapshot.params['id'];
 
-this.VeiculoService.getVeiculo(this.id)
+this.veiculoservice.getVeiculo(this.id)
       .subscribe(data => {
         console.log(data)
         this.veiculo = data;
       }, error => console.log(error));
+  }
 
-/*
 updateVeiculo() {
-    this.VeiculoService.updateVeiculo(this.id, this.veiculo)
+    this.veiculoservice.updateVeiculo(this.veiculo)
       .subscribe(data => console.log(data), error => console.log(error));
     this.veiculo = new Veiculo();
     this.gotoList();
@@ -48,5 +46,4 @@ gotoList() {
   }
 
 }
-*/
 

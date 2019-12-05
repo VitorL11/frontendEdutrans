@@ -1,6 +1,6 @@
 import { EscolaService } from './../escola.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route, Router} from "@angular/router"
+import { ActivatedRoute, Router} from "@angular/router"
 import { Escola } from '../escola';
 
 @Component({
@@ -17,24 +17,21 @@ export class UpdateEscolaComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, private escolaservice: EscolaService) { }
 
   ngOnInit() {
-  }
-
-}
-
 
 this.escola = new Escola();
 
 this.id = this.route.snapshot.params['id'];
 
-this.EscolaService.getEscola(this.id)
+this.escolaservice.getEscola(this.id)
       .subscribe(data => {
         console.log(data)
         this.escola = data;
       }, error => console.log(error));
+  }
 
-/*
-updateAluno() {
-    this.EscolaService.updateEscola(this.id, this.escola)
+
+updateEscola() {
+    this.escolaservice.updateEscola(this.escola)
       .subscribe(data => console.log(data), error => console.log(error));
     this.escola = new Escola();
     this.gotoList();
@@ -51,5 +48,3 @@ gotoList() {
   }
 
 }
-
-*/

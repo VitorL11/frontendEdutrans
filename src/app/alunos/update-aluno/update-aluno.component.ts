@@ -1,6 +1,6 @@
 import { Aluno } from './../aluno';
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Route, Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {AlunoService} from "../aluno.service";
 
 
@@ -18,23 +18,20 @@ export class UpdateAlunoComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, alunoservice: AlunoService) { }
 
   ngOnInit() {
-  }
-
-}
-
-this.aluno = new Aluno();
+    this.aluno = new Aluno();
 
 this.id = this.route.snapshot.params['id'];
 
-this.AlunoService.getAluno(this.id)
+this.alunoservice.getAluno(this.id)
       .subscribe(data => {
         console.log(data),
         this.aluno = data;
       }, error => console.log(error));
+  }
 
 
-/* updateAluno(){
-    this.AlunoService.updateAluno(this.id, this.aluno)
+ updateAluno(){
+    this.alunoservice.updateAluno(this.id, this.aluno)
       .subscribe(data =>
             console.log(data),
             error => console.log(error));
@@ -51,6 +48,5 @@ onSubmit() {
 gotoList() {
     this.router.navigate(['/listar-aluno']);
   }
-*/
-
+}
 

@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class VeiculoService {
 
+
   private baseUrl = "http://localhost:8080";
 
   constructor(private http : HttpClient) { }
@@ -24,8 +25,12 @@ export class VeiculoService {
     return this.http.get(`${this.http}/veiculos/list-veiculos`);
   }
 
-  deleteVeiculo(id: number): Observable<any>{
+  deleteVeiculo(id: number): Observable<any> {
     return this.http.delete(`${this.http}/veiculos/del-veiculos/${id}`);
+  }
+
+  updateVeiculo(veiculo: Veiculo): Observable<any> {
+    return this.http.put(`${this.baseUrl}/veiculos/upd-veiculos`, veiculo)
   }
 
 }

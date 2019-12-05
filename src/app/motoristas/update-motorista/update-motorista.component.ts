@@ -17,23 +17,20 @@ export class UpdateMotoristaComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, private motoristaservice: MotoristaService) { }
 
   ngOnInit() {
-  }
-}
-
-this.motorista = new Motorista();
+    this.motorista = new Motorista();
 
 this.id = this.route.snapshot.params['id'];
 
-this.MotoristaService.getMotorista(this.id)
+this.motoristaservice.getMotorista(this.id)
       .subscribe(data => {
         console.log(data)
         this.motorista = data;
       }, error => console.log(error));
+  }
 
-/*
 updateMotorista() {
-    this.MotoristaService.updateMotorista(this.id, this.motorista)
-      .subscribe(data => console.log(data), error => console.log(error));
+    this.motoristaservice.updateMotorista(this.motorista)
+    .subscribe(data => console.log(data), error => console.log(error));
     this.motorista = new Motorista();
     this.gotoList();
   }
@@ -49,5 +46,4 @@ gotoList() {
   }
 
 }
-*/
 

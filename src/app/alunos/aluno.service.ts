@@ -30,4 +30,8 @@ export class AlunoService {
     return this.http.delete(`${this.http}/alunos/del-aluno/${id}`);
   }
 
+  updateAluno(aluno: Aluno): Observable<any> {
+    return this.http.put(`${this.baseUrl}/alunos/upd-alunos`, aluno)
+  }
+
 }

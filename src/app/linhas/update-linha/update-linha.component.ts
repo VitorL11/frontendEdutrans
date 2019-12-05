@@ -17,22 +17,19 @@ export class UpdateLinhaComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, private linhaservice: LinhaService) { }
 
   ngOnInit() {
-  }
-}
-
-this.linha = new Linha();
+    this.linha = new Linha();
 
 this.id = this.route.snapshot.params['id'];
 
-this.LinhaService.getLinha(this.id)
+this.linhaservice.getLinha(this.id)
       .subscribe(data => {
         console.log(data)
         this.linha = data;
       }, error => console.log(error));
+  }
 
-/*
 updateLinha() {
-    this.LinhaService.updateLinha(this.id, this.linha)
+    this.linhaservice.updateLinha(this.linha)
       .subscribe(data => console.log(data), error => console.log(error));
     this.linha = new Linha();
     this.gotoList();
@@ -49,6 +46,5 @@ gotoList() {
   }
 
 }
-*/
 
 

@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
 	providedIn: 'root'
 })
+
 export class MotoristaService {
 
   private baseUrl = "http://localhost:8080";
@@ -26,6 +27,10 @@ export class MotoristaService {
 
   deleteMotorista(id: number): Observable<any>{
     return this.http.delete(`${this.http}/motoristas/del-motoristas/${id}`);
+  }
+
+  updateMotorista(motorista: Motorista): Observable<any> {
+    return this.http.put(`${this.baseUrl}/motoristas/upd-motoristas`, motorista)
   }
 
 }

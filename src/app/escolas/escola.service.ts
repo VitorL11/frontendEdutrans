@@ -29,4 +29,8 @@ export class EscolaService {
     return this.http.delete(`${this.http}/escolas/del-escolas/${id}`);
   }
 
+  updateEscola(escola: Escola): Observable<any> {
+    return this.http.put(`${this.baseUrl}/escolas/upd-escolas`, escola)
+  }
+
 }
