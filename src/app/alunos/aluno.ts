@@ -9,4 +9,5 @@ export class Aluno {
   periodo: string;
   serie: string;
   linha: string;
+  nome: string;
 }

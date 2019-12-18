@@ -15,7 +15,7 @@ export class UpdateAlunoComponent implements OnInit {
   aluno: Aluno;
   submitted = false;
 
-  constructor(private route: ActivatedRoute, private router: Router, alunoservice: AlunoService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private alunoservice: AlunoService) { }
 
   ngOnInit() {
     this.aluno = new Aluno();
@@ -31,7 +31,7 @@ this.alunoservice.getAluno(this.id)
 
 
  updateAluno(){
-    this.alunoservice.updateAluno(this.id, this.aluno)
+    this.alunoservice.updateAluno(this.aluno)
       .subscribe(data =>
             console.log(data),
             error => console.log(error));

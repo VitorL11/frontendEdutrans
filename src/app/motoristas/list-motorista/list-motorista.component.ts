@@ -1,5 +1,4 @@
-import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MotoristaService } from './../motorista.service';
 import { Motorista } from './../motorista';
 import { Component, OnInit } from '@angular/core';
@@ -11,40 +10,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListMotoristaComponent implements OnInit {
 
-  // Aqui é necessário ter realmente um Observable do Object
-  motoristas: Observable<Motorista[]>;
 
-  // Construtor no padrão FIFA de qualidade
-  constructor(private motoristaservice: MotoristaService, private router: Router) {
+  motoristas: Motorista;
+
+
+  constructor(private Route: ActivatedRoute, private router: Router,
+              private motoristaservice: MotoristaService, ) {
 
   }
 
-  //Aqui já vai precisar ter inicializando o método reloadData, pra poder pegar toda a lista do seu objeto que está salva no banco de dados
+
   ngOnInit() {
-    this.reloadData();
+    this.motoristas = new Motorista();
+
+    this.motoristas.id = this.Route.snapshot.params['id'];
+    this.motoristaservice.getMotorista(this.motoristas.id)
+    .subscribe(data=> {
+      console.log(data)
+      this.motoristas = data;
+    }, error=> console.log(error));
 
 }
 
-// Esse método vai carregar tudo que vc precisa do bacnco de dados, usando da comunicação do Service do seu objeto
-   reloadData() {
-    this.motoristas = this.MotoristaService.getMotoristaList();
+  list(){
+    this.router.navigate(['motoristas'])
   }
 
-  deleteMotorista(id: number) {
-    this.motoristaservice.deleteMotorista(id)
-      .subscribe(
-        data => {
-          console.log(data);
-          this.reloadData();
-        },
-        error => console.log(error));
-  }
-
-  updateMotorista(id: number) {
-    this.router.navigate(['update-motorista', id]);
-    this.reloadData();
-  }
 }
+
+
+
+
+
 
 
 

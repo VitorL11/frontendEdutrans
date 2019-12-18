@@ -4,9 +4,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router} from "@angular/router";
 
 @Component({
-  selector: 'app-update-employee',
-  templateUrl: './update-employee.component.html',
-  styleUrls: ['./update-employee.component.css']
+  selector: 'app-update-empresa',
+  templateUrl: './update-empresa.component.html',
+  styleUrls: ['./update-empresa.component.css']
 })
 
 

@@ -3,5 +3,4 @@ export class Escola {
   endereco: string;
   id: number;
   nome: string;
-  id: number;
 }
