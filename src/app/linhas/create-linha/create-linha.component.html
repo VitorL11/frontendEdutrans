@@ -10,29 +10,28 @@
 <div class="topo">
 
     <div class="container">
-        <h2><img src="../logo.png"/> Secretaria Municipal de Educação e Cultura</h2>
+        <h2><img src="../imagens/logo.png"/> Secretaria Municipal de Educação e Cultura</h2>
     </div>
 </div>
-
 <div class="container">
     <div class="row">
         <div class="col-md-3">
             <ul class="nav nav-pills flex-column">
 
                 <li class="nav-item">
-                    <a class="nav-link " id="md" href="#">Movimento Diário</a>
+                    <a class="nav-link " id="md" href="../md/index.html">Movimento Diário</a>
                 </li>
 
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navDrop"> Cadastros </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="../alunos/index.html"> Alunos </a>
-                        <a class="dropdown-item" href="../empresas/index.html"> Empresas </a>
-                        <a class="dropdown-item" href="../escolas/index.html"> Escolas </a>
-                        <a class="dropdown-item" href="index.html"> Linhas </a>
-                        <a class="dropdown-item" href="../motoristas/index.html"> Motoristas </a>
-                        <a class="dropdown-item" href="../veiculos/index.html"> Veículos </a>
+                        <a class="dropdown-item" href="#"> Alunos </a>
+                        <a class="dropdown-item" href="#"> Empresas </a>
+                        <a class="dropdown-item" href="#"> Escolas </a>
+                        <a class="dropdown-item" href="#"> Linhas </a>
+                        <a class="dropdown-item" href="#"> Motoristas </a>
+                        <a class="dropdown-item" href="#"> Veículos </a>
                     </div>
                 </li>
 
@@ -41,15 +40,15 @@
                 </li>
 
             </ul>
-
         </div>
 
-        <div class="col-md-9">
-            <h4>Cadastro de Linhas</h4>
-            <form action="#" class="col-md-9">
+      <div class="col-md-9">
 
+            <h4>Cadastro de Linhas</h4>
+            <div [hidden]="submitted" style="width: 400px;">
+            <form (ngSubmit)="onSubmit()">
                 <div class="form-group">
-                    <label for="idNomeLinha">Nome da Linha:</label>
+                    <label for="Nome">Nome da Linha:</label>
                     <input type="text" name="txtNomeLinha"
                            class="form-control" id="idNomeLinha"
                            required/>
@@ -58,12 +57,19 @@
                 <button type="submit" class="btn btn-success">
                     Salvar
                 </button>
-
             </form>
         </div>
 
+        <div [hidden]="!submitted">
+          <h4>Cadastro salvo com sucesso !</h4>
+        </div>
+
+      </div>
     </div>
+
 </div>
+
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

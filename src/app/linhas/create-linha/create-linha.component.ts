@@ -1,3 +1,4 @@
+import { ListLinhaComponent } from './../list-linha/list-linha.component';
 import { Linha } from './../linha';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -38,12 +39,11 @@ export class CreateLinhaComponent implements OnInit {
     onSubmit() {
       this.submitted = true;
       this.save();
-      this.gotoList();
     }
 
     gotoList() {
 
-      this.router.navigate(['/lista-linhas']);
+      this.router.navigate(['/ListLinhaComponent']);
     }
 
   }
