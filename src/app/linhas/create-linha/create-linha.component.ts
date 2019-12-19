@@ -33,7 +33,7 @@ export class CreateLinhaComponent implements OnInit {
       this.linha = new Linha();
 
 
-      this.gotoList();
+      //this.gotoList();
     }
 
     onSubmit() {
@@ -41,9 +41,9 @@ export class CreateLinhaComponent implements OnInit {
       this.save();
     }
 
-    gotoList() {
+   gotoList() {
 
-      this.router.navigate(['/ListLinhaComponent']);
+    //  this.router.navigate(['/']);
     }
 
   }

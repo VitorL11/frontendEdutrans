@@ -19,7 +19,8 @@ export class LinhaService {
   }
 
   createLinha(linha : Linha): Observable<any> {
-    return this.http.post(`${this.baseUrl}/linhas/cad-linhas`, linha)
+    console.log(linha.Nome);
+    return this.http.post(`${this.baseUrl}/linhas/cad-linhas`, linha);
   }
 
   getLinhaList(): Observable<any> {
@@ -31,7 +32,7 @@ export class LinhaService {
   }
 
   updateLinha(linha : Linha): Observable<any> {
-    return this.http.put(`${this.baseUrl}/linhas/upd-linhas`, linha)
+    return this.http.put(`${this.baseUrl}/linhas/upd-linhas`, linha);
   }
 
 }
