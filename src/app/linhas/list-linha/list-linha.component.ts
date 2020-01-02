@@ -1,40 +1,45 @@
-import { Observable } from 'rxjs';
-import { Router, ActivatedRoute } from '@angular/router';
-import { LinhaService } from './../linha.service';
-import { Linha } from './../linha';
-import { Component, OnInit } from '@angular/core';
+import { Observable } from "rxjs";
+import { Router, ActivatedRoute } from "@angular/router";
+import { LinhaService } from "./../linha.service";
+import { Linha } from "./../linha";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-list-linha',
-  templateUrl: './list-linha.component.html',
-  styleUrls: ['./list-linha.component.css']
+  selector: "app-list-linha",
+  templateUrl: "./list-linha.component.html",
+  styleUrls: ["./list-linha.component.css"]
 })
 export class ListLinhaComponent implements OnInit {
-
-
-  linhas:Linha;
-
-  constructor(private Route: ActivatedRoute, private router: Router,
-              private linhaservice: LinhaService) {
-
-  }
+  linha: Linha;
+  linhas: Observable<Linha[]>;
+  constructor(
+    private Route: ActivatedRoute,
+    private router: Router,
+    private linhaservice: LinhaService
+  ) {}
 
   ngOnInit() {
-    this.linhas = new Linha();
+    this.reloadData();
+  }
+  reloadData() {
+    this.linhas = this.linhaservice.getLinhaList();
+  }
 
-    this.linhas.id = this.Route.snapshot.params['id'];
-    this.linhaservice.getLinha(this.linhas.id)
-    .subscribe(data=> {
-      console.log(data)
-      this.linhas = data;
-    }, error=> console.log(error));
+  list() {
+    this.router.navigate(["linhas"]);
+  }
 
+  deleteLinha(id: number) {
+    this.linhaservice.deleteLinha(id).subscribe(
+      data => {
+        console.log(data);
+        this.reloadData();
+      },
+      error => console.log(error)
+    );
+  }
+
+  detalheLinha(id: number) {
+    this.router.navigate(["details", id]);
+  }
 }
-
-list(){
-  this.router.navigate(['linhas'])
-}
-
-}
-
-
