@@ -27,12 +27,12 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navDrop"> Cadastros </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="../alunos/index.html"> Alunos </a>
-                        <a class="dropdown-item" href="../empresas/index.html"> Empresas </a>
-                        <a class="dropdown-item" href="../escolas/index.html"> Escolas </a>
-                        <a class="dropdown-item" href="index.html"> Linhas </a>
-                        <a class="dropdown-item" href="../motoristas/index.html"> Motoristas </a>
-                        <a class="dropdown-item" href="../veiculos/index.html"> Veículos </a>
+                        <a class="dropdown-item" href="#"> Alunos </a>
+                        <a class="dropdown-item" href="#"> Empresas </a>
+                        <a class="dropdown-item" href="#"> Escolas </a>
+                        <a class="dropdown-item" href="#"> Linhas </a>
+                        <a class="dropdown-item" href="#"> Motoristas </a>
+                        <a class="dropdown-item" href="#"> Veículos </a>
                     </div>
                 </li>
 
@@ -45,15 +45,17 @@
         </div>
 
         <div class="col-md-9">
-            <h4>Cadastro de Linhas</h4>
+          <h4>Cadastro de Linhas</h4>
+          <div *ngIf="Linha">
             <form action="#" class="col-md-9">
 
                 <div class="form-group">
-                    <label for="idNomeLinha">Nome da Linha:</label>
+                    <label for="idNomeLinha">Nome da Linha:</label> {{Linha.Nome}}
                 </div>
+          </div>
 
-                <button type="submit" class="btn btn-success">
-                    Salvar
+                <button (click)="list()" class="btn btn-primary">
+                    Voltar
                 </button>
 
             </form>
