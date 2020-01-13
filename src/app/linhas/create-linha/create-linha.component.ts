@@ -1,8 +1,7 @@
-import { ListLinhaComponent } from './../list-linha/list-linha.component';
-import { Linha } from './../linha';
-import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
 import { LinhaService } from '../linha.service';
+import { Linha } from './../linha';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-linha',
@@ -14,7 +13,8 @@ export class CreateLinhaComponent implements OnInit {
     linha: Linha = new Linha();
     submitted = false;
 
-    constructor(private linhaservice: LinhaService, private router: Router) { }
+    constructor(private linhaservice: LinhaService,
+      private router: Router) { }
 
     ngOnInit() {
     }
@@ -31,9 +31,7 @@ export class CreateLinhaComponent implements OnInit {
           error => console.log(error)
         );
       this.linha = new Linha();
-
-
-      //this.gotoList();
+      this.gotoList();
     }
 
     onSubmit() {
@@ -42,8 +40,7 @@ export class CreateLinhaComponent implements OnInit {
     }
 
    gotoList() {
-
-    //  this.router.navigate(['/']);
+    this.router.navigate(['/linhas']);
     }
 
   }

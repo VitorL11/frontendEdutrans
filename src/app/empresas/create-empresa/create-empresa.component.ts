@@ -1,6 +1,6 @@
 import { EmpresaService } from './../empresa.service';
-import { Component, OnInit } from '@angular/core';
 import { Empresa } from '../empresa';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,11 +10,11 @@ import { Router } from '@angular/router';
 })
 export class CreateEmpresaComponent implements OnInit {
 
-
   empresa: Empresa = new Empresa();
   submitted = false;
 
-  constructor(private empresaservice: EmpresaService, private router: Router) { }
+  constructor(private empresaservice: EmpresaService,
+    private router: Router) { }
 
   ngOnInit() {
   }
@@ -32,20 +32,16 @@ export class CreateEmpresaComponent implements OnInit {
         error => console.log(error)
       );
     this.empresa = new Empresa();
-
     this.gotoList();
   }
-
 
   onSubmit() {
     this.submitted = true;
     this.save();
-    this.gotoList();
   }
 
   gotoList() {
-
-    this.router.navigate(['/lista-empresas']);
+    this.router.navigate(['/empresas']);
   }
 
 }

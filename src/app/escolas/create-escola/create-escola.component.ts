@@ -1,5 +1,5 @@
-import {Escola} from './../escola'
 import { EscolaService } from './../escola.service';
+import {Escola} from './../escola';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -13,17 +13,16 @@ export class CreateEscolaComponent implements OnInit {
   escola: Escola = new Escola();
   submitted = false;
 
-  constructor(private escolaservice: EscolaService, private router: Router) { }
+  constructor(private escolaservice: EscolaService,
+    private router: Router) { }
 
   ngOnInit() {
   }
-
 
   newEscola(): void {
     this.submitted = false;
     this.escola = new Escola();
   }
-
 
   save() {
     this.escolaservice.createEscola(this.escola)
@@ -32,20 +31,16 @@ export class CreateEscolaComponent implements OnInit {
         error => console.log(error)
       );
     this.escola = new Escola();
-
-
     this.gotoList();
   }
 
   onSubmit() {
     this.submitted = true;
     this.save();
-    this.gotoList();
   }
 
   gotoList() {
-
-    this.router.navigate(['/lista-escolas']);
+    this.router.navigate(['/escolas']);
   }
 
 }

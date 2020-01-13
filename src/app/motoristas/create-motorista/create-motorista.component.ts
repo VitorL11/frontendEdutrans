@@ -1,7 +1,7 @@
-import { Motorista } from './../motorista';
-import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
 import { MotoristaService } from '../motorista.service';
+import { Motorista } from './../motorista';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-motorista',
@@ -13,7 +13,8 @@ export class CreateMotoristaComponent implements OnInit {
   motorista: Motorista = new Motorista();
   submitted = false;
 
-  constructor(private motoristaservice: MotoristaService, private router: Router) { }
+  constructor(private motoristaservice: MotoristaService,
+    private router: Router) { }
 
   ngOnInit() {
   }
@@ -31,20 +32,16 @@ export class CreateMotoristaComponent implements OnInit {
         error => console.log(error)
       );
     this.motorista = new Motorista();
-
     this.gotoList();
   }
-
 
   onSubmit() {
     this.submitted = true;
     this.save();
-    this.gotoList();
   }
 
   gotoList() {
-
-    this.router.navigate(['/lista-motoristas']);
+    this.router.navigate(['/motoristas']);
   }
 
 }

@@ -1,8 +1,6 @@
 import { AlunoService } from '../aluno.service';
 import { Aluno } from './../aluno';
 import { Component, OnInit } from '@angular/core';
-
-
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,7 +14,8 @@ export class CreateAlunoComponent implements OnInit {
   aluno: Aluno = new Aluno();
   submitted = false;
 
-  constructor(private alunoService: AlunoService, private router: Router) { }
+  constructor(private alunoService: AlunoService,
+    private router: Router) { }
 
   ngOnInit() {
   }
@@ -28,21 +27,21 @@ export class CreateAlunoComponent implements OnInit {
 
   save() {
     this.alunoService.createAluno(this.aluno)
-      .subscribe(data => console.log(data), error => console.log(error));
+      .subscribe(
+        data => console.log(data),
+        error => console.log(error)
+        );
     this.aluno = new Aluno();
     this.gotoList();
   }
 
-
   onSubmit() {
     this.submitted = true;
     this.save();
-    this.gotoList();
   }
 
   gotoList() {
-
-    this.router.navigate(['/lista-alunos']);
+    this.router.navigate(['/alunos']);
   }
 
 }

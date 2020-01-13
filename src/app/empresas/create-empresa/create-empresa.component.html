@@ -42,7 +42,7 @@
             </ul>
         </div>
 
-        <div class="col-md-9">
+<!-->       <div class="col-md-9">
             <h4>Cadastro de Empresas</h4>
             <form action="#" class="col-md-9">
                 <div class="form-group">
@@ -101,6 +101,67 @@
         </div>
 
     </div>
+</div> -->
+
+<h3>Cadastro de Empresas</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Razão Social:</label>
+      <input type="text" class="form-control"
+      id="razaosocial" required [(ngModel)]="empresa.razaosocial"
+      name="txtRazaoSocial">
+    </div>
+
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input type="text" class="form-control"
+      id="nome" required [(ngModel)]="empresa.nome"
+      name="txtNome">
+    </div>
+
+    <div class="form-group">
+      <label for="cnpj">CNPJ:</label>
+      <input type="text" class="form-control"
+      id="cnpj" required [(ngModel)]="empresa.cnpj"
+      name="txtCnpj">
+    </div>
+
+    <div class="form-group">
+      <label for="nomegerente">Nome do Gerente:</label>
+      <input type="text" class="form-control"
+      id="gerente" required [(ngModel)]="empresa.gerente"
+      name="txtnomegerente">
+    </div>
+
+    <div class="form-group">
+      <label for="proprietario">Proprietário:</label>
+      <input type="text" class="form-control"
+      id="cnpj" required [(ngModel)]="empresa.proprietario"
+      name="txtProprietario">
+    </div>
+
+    <div class="form-group">
+      <label for="telefone">Telefone:</label>
+      <input type="text" class="form-control"
+      id="telefone" required [(ngModel)]="empresa.telefone"
+      name="txtTelefone">
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input type="text" class="form-control"
+      id="email" required [(ngModel)]="empresa.email"
+      name="txtEmail">
+    </div>
+
+    <button type="submit" class="btn btn-success">Salvar</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>Dados salvos com sucesso!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

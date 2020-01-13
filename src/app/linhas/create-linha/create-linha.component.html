@@ -42,7 +42,7 @@
             </ul>
         </div>
 
-      <div class="col-md-9">
+ <!--     <div class="col-md-9">
 
             <h4>Cadastro de Linhas</h4>
             <div [hidden]="submitted" style="width: 400px;">
@@ -67,7 +67,22 @@
       </div>
     </div>
 
-</div>
+</div> -->
+
+<h3>Cadastro de Linhas</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Nome:</label>
+      <input type="text" class="form-control"
+      id="nome" required [(ngModel)]="linha.nome"
+      name="txtNome">
+    </div>
+
+    <div [hidden]="!submitted">
+      <h4>Dados salvos com sucesso!</h4>
+      <!-- <button class="btn btn-success" (click)="newLinha()">Add</button> -->
+    </div>
 
 
 

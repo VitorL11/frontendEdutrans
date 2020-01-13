@@ -1,7 +1,7 @@
-import { Router } from '@angular/router';
 import { VeiculoService } from './../veiculo.service';
 import { Veiculo } from './../veiculo'
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-veiculo',
@@ -10,11 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateVeiculoComponent implements OnInit {
 
-
     veiculo: Veiculo = new Veiculo();
     submitted = false;
 
-    constructor(private veiculoservice: VeiculoService, private router: Router) { }
+    constructor(private veiculoservice: VeiculoService,
+      private router: Router) { }
 
     ngOnInit() {
     }
@@ -31,19 +31,16 @@ export class CreateVeiculoComponent implements OnInit {
           error => console.log(error)
         );
       this.veiculo = new Veiculo();
-
       this.gotoList();
     }
 
     onSubmit() {
       this.submitted = true;
       this.save();
-      this.gotoList();
     }
 
     gotoList() {
-
-      this.router.navigate(['/lista-veiculos']);
+      this.router.navigate(['/veiculos']);
     }
 
   }
