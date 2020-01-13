@@ -42,7 +42,7 @@
             </ul>
         </div>
 
-        <div class="col-md-9">
+       <!-- <div class="col-md-9">
             <h4>Cadastro de Veículos</h4>
             <form action="#" class="col-md-9">
 
@@ -102,6 +102,67 @@
         </div>
 
     </div>
+</div> -->
+
+<h3>Create Employee</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="placa">Placa</label>
+      <input type="text" class="form-control"
+      id="placa" required [(ngModel)]="veiculo.placa"
+      name="txtPlaca">
+    </div>
+
+    <div class="form-group">
+      <label for="exercicio">Exercício:</label>
+      <input type="text" class="form-control"
+      id="exercicio" required [(ngModel)]="veiculo.exercicio"
+      name="txtExercicio">
+    </div>
+
+    <div class="form-group">
+      <label for="proprietario">Proprietário:</label>
+      <input type="text" class="form-control"
+      id="proprietario" required [(ngModel)]="veiculo.proprietario"
+      name="txtProprietario">
+    </div>
+
+    <div class="form-group">
+      <label for="tipo">Tipo:</label>
+      <input type="text" class="form-control"
+      id="tipo" required [(ngModel)]="veiculo.tipo"
+      name="txtTipo">
+    </div>
+
+    <div class="form-group">
+      <label for="modelo">Modelo:</label>
+      <input type="text" class="form-control"
+      id="modelo" required [(ngModel)]="veiculo.modelo"
+      name="txtModelo">
+    </div>
+
+    <div class="form-group">
+      <label for="ano">Ano:</label>
+      <input type="text" class="form-control"
+      id="ano" required [(ngModel)]="veiculo.ano"
+      name="txtAno">
+    </div>
+
+    <div class="form-group">
+      <label for="capacidade">Capacidade:</label>
+      <input type="text" class="form-control"
+      id="capacidade" required [(ngModel)]="veiculo.capacidade"
+      name="txtCapacidade">
+    </div>
+
+    <button type="submit" class="btn btn-success">Enviar</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>Dados salvos com sucesso!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
