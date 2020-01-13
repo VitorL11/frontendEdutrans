@@ -4,11 +4,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
+  // tslint:disable-next-line: indent
 	providedIn: 'root'
 })
 export class EmpresaService {
-
-
   private baseUrl = "http://localhost:8080";
 
   constructor(private http : HttpClient) { }
@@ -18,7 +17,8 @@ export class EmpresaService {
   }
 
   createEmpresa(empresa : Empresa): Observable<any> {
-    return this.http.post(`${this.baseUrl}/empresas/cad-empresas`, empresa)
+    console.log(empresa.nomeDono);
+    return this.http.post(`${this.baseUrl}/empresas/cad-empresas`, empresa);
   }
 
   getEmpresaList(): Observable<any> {
@@ -26,7 +26,9 @@ export class EmpresaService {
   }
 
   deleteEmpresa(id: number): Observable<any>{
-    return this.http.delete(`${this.http}/empresas/del-empresas/${id}`);
+    return this.http.delete(`${this.http}/empresas/del-empresas/${id}`,{
+      responseType: "text"
+    });
   }
 
   updateEmpresa(empresa: Empresa): Observable<any> {

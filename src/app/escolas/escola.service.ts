@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
+  // tslint:disable-next-line: indent
 	providedIn: 'root'
 })
 
@@ -18,15 +19,18 @@ export class EscolaService {
   }
 
   createEscola(escola : Escola): Observable<any> {
+    console.log(escola.nome);
     return this.http.post(`${this.baseUrl}/escolas/cad-escolas`, escola)
   }
 
   getEscolaList(): Observable<any> {
-    return this.http.get(`${this.http}/escolas/list-escolas`);
+    return this.http.get(`${this.baseUrl}/escolas/list-escolas/`);
   }
 
   deleteEscola(id: number): Observable<any>{
-    return this.http.delete(`${this.http}/escolas/del-escolas/${id}`);
+    return this.http.delete(`${this.http}/escolas/del-escolas/${id}`,{
+    responseType: "text"
+    });
   }
 
   updateEscola(escola: Escola): Observable<any> {

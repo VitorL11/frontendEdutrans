@@ -18,15 +18,18 @@ export class MotoristaService {
   }
 
   createMotorista(motorista : Motorista): Observable<any> {
+    console.log(motorista.nome);
     return this.http.post(`${this.baseUrl}/motoristas/cad-motoristas`, motorista)
   }
 
   getMotoristaList(): Observable<any> {
-    return this.http.get(`${this.http}/motoristas/list-motoristas`);
+    return this.http.get(`${this.baseUrl}/motoristas/list-motoristas/`);
   }
 
   deleteMotorista(id: number): Observable<any>{
-    return this.http.delete(`${this.http}/motoristas/del-motoristas/${id}`);
+    return this.http.delete(`${this.http}/motoristas/del-motoristas/${id}`,{
+      responseType: "text"
+    });
   }
 
   updateMotorista(motorista: Motorista): Observable<any> {

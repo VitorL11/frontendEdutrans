@@ -9,14 +9,14 @@ import { Component, OnInit } from "@angular/core";
   templateUrl: "./list-linha.component.html",
   styleUrls: ["./list-linha.component.css"]
 })
+
 export class ListLinhaComponent implements OnInit {
   linha: Linha;
   linhas: Observable<Linha[]>;
-  constructor(
-    private Route: ActivatedRoute,
+
+  constructor(private Route: ActivatedRoute,
     private router: Router,
-    private linhaservice: LinhaService
-  ) {}
+    private linhaservice: LinhaService) {}
 
   ngOnInit() {
     this.reloadData();
@@ -24,7 +24,6 @@ export class ListLinhaComponent implements OnInit {
   reloadData() {
     this.linhas = this.linhaservice.getLinhaList();
   }
-
   list() {
     this.router.navigate(["linhas"]);
   }

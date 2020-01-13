@@ -32,9 +32,7 @@ this.alunoservice.getAluno(this.id)
 
  updateAluno(){
     this.alunoservice.updateAluno(this.aluno)
-      .subscribe(data =>
-            console.log(data),
-            error => console.log(error));
+      .subscribe(data => console.log(data), error => console.log(error));
     this.aluno = new Aluno();
     this.gotoList();
       }

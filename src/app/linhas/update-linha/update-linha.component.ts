@@ -14,6 +14,7 @@ export class UpdateLinhaComponent implements OnInit {
   id: number;
   linha: Linha;
   submitted = false;
+
   constructor(private route: ActivatedRoute, private router: Router, private linhaservice: LinhaService) { }
 
   ngOnInit() {
@@ -44,7 +45,6 @@ onSubmit() {
 gotoList() {
     this.router.navigate(['/listar-linha']);
   }
-
 }
 
 

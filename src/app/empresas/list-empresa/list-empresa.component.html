@@ -13,7 +13,8 @@
         <h2><img src="../logo.png"/> Secretaria Municipal de Educação e Cultura</h2>
     </div>
 </div>
-<div class="container">
+
+<!--<div class="container">
     <div class="row">
         <div class="col-md-3">
             <ul class="nav nav-pills flex-column">
@@ -80,6 +81,34 @@
         </div>
 
     </div>
+</div> -->
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Lista de Empresas</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>Telefone</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let empresa of empresas | async">
+          <td>{{empresa.id}}</td>
+          <td>{{empresa.nome}}</td>
+          <td>{{empresa.telefone}}</td>
+          <td><button (click)="deleteEmpresa(empresa.id)" class="btn btn-danger">Deletar</button>
+              <button (click)="detalheEmpresa(empresa.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

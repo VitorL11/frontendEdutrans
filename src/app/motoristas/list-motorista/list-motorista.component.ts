@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MotoristaService } from './../motorista.service';
 import { Motorista } from './../motorista';
@@ -8,36 +9,40 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './list-motorista.component.html',
   styleUrls: ['./list-motorista.component.css']
 })
+
 export class ListMotoristaComponent implements OnInit {
+  motorista: Motorista;
+  motoristas: Observable<Motorista[]>;
 
 
-  motoristas: Motorista;
-
-
-  constructor(private Route: ActivatedRoute, private router: Router,
-              private motoristaservice: MotoristaService, ) {
-
-  }
+  constructor(private Route: ActivatedRoute,
+    private router: Router,
+    private motoristaservice: MotoristaService) {}
 
 
   ngOnInit() {
-    this.motoristas = new Motorista();
-
-    this.motoristas.id = this.Route.snapshot.params['id'];
-    this.motoristaservice.getMotorista(this.motoristas.id)
-    .subscribe(data=> {
-      console.log(data)
-      this.motoristas = data;
-    }, error=> console.log(error));
-
-}
-
+    this.reloadData();
+  }
+  reloadData(){
+    this.motoristas = this.motoristaservice.getMotoristaList();
+  }
   list(){
-    this.router.navigate(['motoristas'])
+    this.router.navigate(['motoristas']);
+  }
+  deleteMotorista(id: number) {
+    this.motoristaservice.deleteMotorista(id).subscribe(
+      data => {
+        console.log(data);
+        this.reloadData();
+      },
+      error => console.log(error)
+    );
   }
 
+  detalheMotorista(id: number) {
+    this.router.navigate(["details", id]);
+  }
 }
-
 
 
 

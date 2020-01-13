@@ -14,6 +14,7 @@ export class UpdateEmpresaComponent implements OnInit {
 
   id: number;
   empresa: Empresa;
+  submitted = false;
 
   constructor(private route: ActivatedRoute,private router: Router, private empresaservice: EmpresaService) { }
 
@@ -38,6 +39,8 @@ export class UpdateEmpresaComponent implements OnInit {
 
   onSubmit() {
     this.updateEmpresa();
+    this.submitted = true;
+    this.gotoList();
   }
 
   gotoList() {

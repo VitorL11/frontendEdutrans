@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-
 </head>
 
 <body>
@@ -15,7 +13,8 @@
         <h2><img src="../logo.png"/> Secretaria Municipal de Educação e Cultura </h2>
     </div>
 </div>
-<div class="container">
+
+<!--<div class="container">
     <div class="row">
         <div class="col-md-3">
             <ul class="nav nav-pills flex-column">
@@ -23,7 +22,6 @@
                 <li class="nav-item">
                     <a class="nav-link " id="md" href="#">Movimento Diário</a>
                 </li>
-
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navDrop"> Cadastros </a>
@@ -90,6 +88,36 @@
         </div>
 
     </div>
+</div> -->
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Lista de Alunos</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>Escola</th>
+          <th>Turno</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let aluno of alunos | async">
+          <td>{{aluno.id}}</td>
+          <td>{{aluno.nome}}</td>
+          <td>{{aluno.escola}}</td>
+          <td>{{aluno.turno}}</td>
+          <td><button (click)="deleteAluno(aluno.id)" class="btn btn-danger">Deletar</button>
+              <button (click)="detalheAluno(aluno.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

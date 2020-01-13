@@ -8,8 +8,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AlunoService {
 
-
-
   private baseUrl = "http://localhost:8080";
 
   constructor(private http : HttpClient) { }
@@ -19,6 +17,7 @@ export class AlunoService {
   }
 
   createAluno(aluno : Aluno): Observable<any> {
+    console.log(aluno.nome);
     return this.http.post(`${this.baseUrl}/alunos/cad-aluno`, aluno)
   }
 
@@ -27,7 +26,9 @@ export class AlunoService {
   }
 
   deleteAluno(id: number): Observable<any>{
-    return this.http.delete(`${this.http}/alunos/del-aluno/${id}`);
+    return this.http.delete(`${this.baseUrl}/alunos/del-aluno/${id}`, {
+      responseType: "text"
+    });
   }
 
   updateAluno(aluno: Aluno): Observable<any> {

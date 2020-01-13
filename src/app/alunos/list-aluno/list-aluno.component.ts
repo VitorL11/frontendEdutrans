@@ -1,26 +1,31 @@
-import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
-import { Aluno } from "./../aluno";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 import { AlunoService } from '../aluno.service';
+import { Aluno } from "./../aluno";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-list-aluno",
   templateUrl: "list-aluno.component.html",
   styleUrls: ["list-aluno.component.css"]
 })
-export class ListAlunoComponent implements OnInit {
 
+export class ListAlunoComponent implements OnInit {
+  aluno: Aluno;
   alunos: Observable<Aluno[]>;
 
-  constructor(private alunoservice: AlunoService, private router: Router) {}
+  constructor(private Route: ActivatedRoute,
+    private alunoservice: AlunoService,
+    private router: Router) {}
 
   ngOnInit() {
     this.reloadData();
-}
-
+  }
   reloadData() {
     this.alunos = this.alunoservice.getAlunoList();
+  }
+  list() {
+    this.router.navigate(["alunos"]);
   }
 
   deleteAluno(id: number) {
@@ -33,9 +38,8 @@ export class ListAlunoComponent implements OnInit {
     );
   }
 
-  updateAluno(id: number) {
-    this.router.navigate(["update-aluno", id]);
-    this.reloadData();
+  detalheAluno(id: number) {
+    this.router.navigate (["details", id]);
   }
 }
 
