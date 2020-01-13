@@ -3,7 +3,6 @@ import { LinhaService } from './../linha.service';
 import { Linha } from './../linha';
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
   selector: 'app-update-linha',
   templateUrl: './update-linha.component.html',
@@ -15,7 +14,9 @@ export class UpdateLinhaComponent implements OnInit {
   linha: Linha;
   submitted = false;
 
-  constructor(private route: ActivatedRoute, private router: Router, private linhaservice: LinhaService) { }
+  constructor(private route: ActivatedRoute,
+    private router: Router,
+    private linhaservice: LinhaService) { }
 
   ngOnInit() {
     this.linha = new Linha();
@@ -23,7 +24,7 @@ export class UpdateLinhaComponent implements OnInit {
 this.id = this.route.snapshot.params['id'];
 
 this.linhaservice.getLinha(this.id)
-      .subscribe(data => {
+    .subscribe(data => {
         console.log(data)
         this.linha = data;
       }, error => console.log(error));

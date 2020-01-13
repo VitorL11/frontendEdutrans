@@ -1,7 +1,7 @@
+import { ActivatedRoute, Router} from "@angular/router";
 import { EmpresaService } from './../empresa.service';
 import { Empresa } from './../empresa';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-update-empresa',
@@ -9,14 +9,14 @@ import { ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./update-empresa.component.css']
 })
 
-
 export class UpdateEmpresaComponent implements OnInit {
-
   id: number;
   empresa: Empresa;
   submitted = false;
 
-  constructor(private route: ActivatedRoute,private router: Router, private empresaservice: EmpresaService) { }
+  constructor(private route: ActivatedRoute,
+    private router: Router,
+    private empresaservice: EmpresaService) { }
 
   ngOnInit() {
     this.empresa = new Empresa();

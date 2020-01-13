@@ -1,7 +1,7 @@
+import { ActivatedRoute, Route, Router} from '@angular/router';
 import { MotoristaService } from './../motorista.service';
 import { Motorista } from './../motorista';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route, Router} from '@angular/router'
 
 @Component({
   selector: 'app-update-motorista',

@@ -8,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './update-veiculo.component.html',
   styleUrls: ['./update-veiculo.component.css']
 })
-export class UpdateVeiculoComponent implements OnInit {
 
+export class UpdateVeiculoComponent implements OnInit {
   id: number;
   veiculo: Veiculo;
   submitted = false;
 
-  constructor(private route: ActivatedRoute, private router: Router, private veiculoservice: VeiculoService) { }
+  constructor(private route: ActivatedRoute,
+    private router: Router,
+    private veiculoservice: VeiculoService) { }
 
   ngOnInit() {
     this.veiculo = new Veiculo();

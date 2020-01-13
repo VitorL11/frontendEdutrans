@@ -1,23 +1,24 @@
+import { ActivatedRoute, Router} from "@angular/router";
 import { EscolaService } from './../escola.service';
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router} from "@angular/router"
 import { Escola } from '../escola';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-update-escola',
   templateUrl: './update-escola.component.html',
   styleUrls: ['./update-escola.component.css']
-
 })
 
 export class UpdateEscolaComponent implements OnInit {
   id: number;
   escola: Escola;
   submitted = false;
-  constructor(private route: ActivatedRoute, private router: Router, private escolaservice: EscolaService) { }
+
+  constructor(private route: ActivatedRoute,
+    private router: Router,
+    private escolaservice: EscolaService) { }
 
   ngOnInit() {
-
 this.escola = new Escola();
 
 this.id = this.route.snapshot.params['id'];
@@ -28,7 +29,6 @@ this.escolaservice.getEscola(this.id)
         this.escola = data;
       }, error => console.log(error));
   }
-
 
 updateEscola() {
     this.escolaservice.updateEscola(this.escola)
