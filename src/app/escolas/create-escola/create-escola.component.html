@@ -42,53 +42,11 @@
             </ul>
         </div>
 
-      <!--  <div class="col-md-9">
-            <h4>Cadastro de Escolas</h4>
-            <form action="#" class="col-md-9">
-
-                <div class="form-group">
-                    <label for="idNome">Nome:</label>
-                    <input type="text" name="txtNome"
-                           class="form-control" id="idNome"
-                           required/>
-                </div>
-
-                <div class="form-group">
-                    <label for="idTelefone">Telefone:</label>
-                    <input type="email" name="txtTelefone"
-                           class="form-control" id="idTelefone"
-                           required/>
-                </div>
-
-                <div class="form-group">
-                    <label for="idEmail">E-mail:</label>
-                    <input type="text" name="txtEmail"
-                           class="form-control" id="idEmail"
-                           required/>
-                </div>
-
-                <div class="form-group">
-                    <label for="idEndereco">Endereço:</label>
-                    <input type="text" name="txtEndereco"
-                           class="form-control" id="idEndereco"
-                           required/>
-                </div>
-
-
-
-                <button type="submit" class="btn btn-success">
-                    Salvar
-                </button>
-            </form>
-        </div>
-
-    </div>
-</div> -->
-
-<h3>Cadastro de Escolas</h3>
+<div class="col-md-9">
+<h4>Cadastro de Escolas</h4>
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
-    <div class="form-group"></div>
+    <div class="form-group">
       <label for="nome">Nome:</label>
       <input type="text" class="form-control"
       id="nome" required [(ngModel)]="escola.nome"
@@ -116,8 +74,9 @@
       name="txtEndereco">
     </div>
 
-    <button type="submit" class="btn btn-success">Submit</button>
+    <button type="submit" class="btn btn-success">Salvar</button>
   </form>
+</div>
 </div>
 
 <div [hidden]="!submitted">
@@ -128,6 +87,5 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-</body>
-</html>
+
 
