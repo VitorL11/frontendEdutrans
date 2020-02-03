@@ -44,7 +44,7 @@ onSubmit() {
   }
 
 gotoList() {
-    this.router.navigate(['/listar-linha']);
+    this.router.navigate(['/update']);
   }
 }
 

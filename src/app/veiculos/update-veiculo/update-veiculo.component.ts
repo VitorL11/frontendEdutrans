@@ -44,7 +44,7 @@ onSubmit() {
   }
 
 gotoList() {
-    this.router.navigate(['/listar-veiculo']);
+    this.router.navigate(['/update']);
   }
 
 }

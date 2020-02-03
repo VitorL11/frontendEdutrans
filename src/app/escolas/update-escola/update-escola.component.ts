@@ -44,7 +44,7 @@ onSubmit() {
   }
 
 gotoList() {
-    this.router.navigate(['/listar-escola']);
+    this.router.navigate(['/update']);
   }
 
 }

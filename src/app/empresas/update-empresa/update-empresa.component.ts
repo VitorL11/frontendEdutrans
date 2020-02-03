@@ -44,6 +44,6 @@ export class UpdateEmpresaComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/listar-empresas']);
+    this.router.navigate(['/update']);
   }
 }

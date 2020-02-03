@@ -42,7 +42,7 @@ onSubmit() {
   }
 
 gotoList() {
-    this.router.navigate(['/listar-motorista']);
+    this.router.navigate(['/update']);
   }
 
 }

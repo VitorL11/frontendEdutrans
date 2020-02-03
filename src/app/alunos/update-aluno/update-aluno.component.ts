@@ -46,7 +46,7 @@ onSubmit() {
   }
 
 gotoList() {
-    this.router.navigate(['/listar-aluno']);
+    this.router.navigate(['/update']);
   }
 }
 
