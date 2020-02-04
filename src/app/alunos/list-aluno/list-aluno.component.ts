@@ -39,7 +39,7 @@ export class ListAlunoComponent implements OnInit {
   }
 
   detalheAluno(id: number) {
-    this.router.navigate (["details", id]);
+    this.router.navigate (["detailsAluno", id]);
   }
 }
 

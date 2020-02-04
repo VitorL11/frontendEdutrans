@@ -1,111 +1,98 @@
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
-
-<body>
-
-<div class="topo">
-
-    <div class="container">
-        <h2><img src="../../logo.png"/> Secretaria Municipal de Educação e Cultura</h2>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-3">
-            <ul class="nav nav-pills flex-column">
-
-                <li class="nav-item">
-                    <a class="nav-link " id="md" href="#">Movimento Diário</a>
-                </li>
-
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navDrop"> Cadastros </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#"> Alunos </a>
-                        <a class="dropdown-item" href="#"> Empresas </a>
-                        <a class="dropdown-item" href="#"> Escolas </a>
-                        <a class="dropdown-item" href="#"> Linhas </a>
-                        <a class="dropdown-item" href="#"> Motoristas </a>
-                        <a class="dropdown-item" href="#"> Veículos </a>
-                    </div>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" id="relatorios" href="#">Relatórios</a>
-                </li>
-
-            </ul>
-        </div>
-
 <div class="col-md-9">
-<h4>Cadastro de Veículos</h4>
+  <h4>Cadastro de Veículos</h4>
 
-<div [hidden]="submitted" style="width: 400px;">
-<form (ngSubmit)="onSubmit()">
+  <div [hidden]="submitted" style="width: 400px;">
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="placa">Placa</label>
+        <input
+          type="text"
+          class="form-control"
+          id="placa"
+          required
+          [(ngModel)]="veiculo.placa"
+          name="txtPlaca"
+        />
+      </div>
 
-    <div class="form-group">
-      <label for="placa">Placa</label>
-      <input type="text" class="form-control"
-      id="placa" required [(ngModel)]="veiculo.placa"
-      name="txtPlaca">
-    </div>
+      <div class="form-group">
+        <label for="exercicio">Exercício:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exercicio"
+          required
+          [(ngModel)]="veiculo.exercicio"
+          name="txtExercicio"
+        />
+      </div>
 
-    <div class="form-group">
-      <label for="exercicio">Exercício:</label>
-      <input type="text" class="form-control"
-      id="exercicio" required [(ngModel)]="veiculo.exercicio"
-      name="txtExercicio">
-    </div>
+      <div class="form-group">
+        <label for="proprietario">Proprietário:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="proprietario"
+          required
+          [(ngModel)]="veiculo.proprietario"
+          name="txtProprietario"
+        />
+      </div>
 
-    <div class="form-group">
-      <label for="proprietario">Proprietário:</label>
-      <input type="text" class="form-control"
-      id="proprietario" required [(ngModel)]="veiculo.proprietario"
-      name="txtProprietario">
-    </div>
+      <div class="form-group">
+        <label for="tipo">Tipo:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="tipo"
+          required
+          [(ngModel)]="veiculo.tipo"
+          name="txtTipo"
+        />
+      </div>
 
-    <div class="form-group">
-      <label for="tipo">Tipo:</label>
-      <input type="text" class="form-control"
-      id="tipo" required [(ngModel)]="veiculo.tipo"
-      name="txtTipo">
-    </div>
+      <div class="form-group">
+        <label for="modelo">Modelo:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="modelo"
+          required
+          [(ngModel)]="veiculo.modelo"
+          name="txtModelo"
+        />
+      </div>
 
-    <div class="form-group">
-      <label for="modelo">Modelo:</label>
-      <input type="text" class="form-control"
-      id="modelo" required [(ngModel)]="veiculo.modelo"
-      name="txtModelo">
-    </div>
+      <div class="form-group">
+        <label for="ano">Ano:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="ano"
+          required
+          [(ngModel)]="veiculo.ano"
+          name="txtAno"
+        />
+      </div>
 
-    <div class="form-group">
-      <label for="ano">Ano:</label>
-      <input type="text" class="form-control"
-      id="ano" required [(ngModel)]="veiculo.ano"
-      name="txtAno">
-    </div>
+      <div class="form-group">
+        <label for="capacidade">Capacidade:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="capacidade"
+          required
+          [(ngModel)]="veiculo.capacidade"
+          name="txtCapacidade"
+        />
+      </div>
 
-    <div class="form-group">
-      <label for="capacidade">Capacidade:</label>
-      <input type="text" class="form-control"
-      id="capacidade" required [(ngModel)]="veiculo.capacidade"
-      name="txtCapacidade">
-    </div>
+      <button type="submit" class="btn btn-success">Enviar</button>
+    </form>
+  </div>
 
-    <button type="submit" class="btn btn-success">Enviar</button>
-</form>
+  <div [hidden]="!submitted">
+    <h4>Dados salvos com sucesso!</h4>
+    <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+  </div>
 </div>
-
-<div [hidden]="!submitted">
-  <h4>Dados salvos com sucesso!</h4>
-  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
-</div>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-

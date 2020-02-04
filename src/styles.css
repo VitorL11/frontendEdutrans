@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+
+.topo{
+  background: #0060a2;
+
+}
+
+.topo h2  {
+color: #fff;
+padding: 15px 0;
+}
+
+.table{
+margin-top: 46px;
+}
+
+.nav-link{
+background: #ae070f;
+color: #ffffff;
+}
+
+.nav-link:hover{
+background: #dc0711;
+color: #ffffff;
+}
+
+.nav-pills .nav-link.active{
+background: #ae070f;
+color: #ffffff;
+}
+
+#dropdown {
+width: 250px;
+}

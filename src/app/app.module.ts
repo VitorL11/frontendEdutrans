@@ -24,7 +24,6 @@ import { CreateMotoristaComponent } from './motoristas/create-motorista/create-m
 import { ListMotoristaComponent } from './motoristas/list-motorista/list-motorista.component';
 import { UpdateMotoristaComponent } from './motoristas/update-motorista/update-motorista.component';
 
-
 import { CreateVeiculoComponent } from './veiculos/create-veiculo/create-veiculo.component';
 import { ListVeiculoComponent } from './veiculos/list-veiculo/list-veiculo.component';
 import { UpdateVeiculoComponent } from './veiculos/update-veiculo/update-veiculo.component';
@@ -60,6 +59,7 @@ import { HttpClientModule } from '@angular/common/http';
     CreateVeiculoComponent,
     ListVeiculoComponent,
     UpdateVeiculoComponent,
+
   ],
 
   imports: [
@@ -70,7 +70,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
 
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 
 export class AppModule { }

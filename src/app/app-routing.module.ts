@@ -28,7 +28,6 @@ import { UpdateVeiculoComponent } from './veiculos/update-veiculo/update-veiculo
 
 const routes: Routes = [
   //{path: '', redirectTo: 'aluno', pathMatch: 'full' },
-
   {path: 'alunos', component: CreateAlunoComponent},
   {path: 'details/:id', component: ListAlunoComponent},
   {path: 'update/:id', component: UpdateAlunoComponent},
