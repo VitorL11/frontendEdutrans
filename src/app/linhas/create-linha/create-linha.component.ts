@@ -17,6 +17,10 @@ export class CreateLinhaComponent implements OnInit {
       private router: Router) { }
 
     ngOnInit() {
+    /*  this.linhaservice.getLinha().subscribe(dados => {
+        this.linha = dados;
+        console.log(dados);
+      });*/
     }
 
     newLinha(): void {
@@ -40,7 +44,7 @@ export class CreateLinhaComponent implements OnInit {
     }
 
    gotoList() {
-    this.router.navigate(['/linhas']);
+    this.router.navigate(['/detailsLinha/:id']);
     }
 
   }

@@ -10,14 +10,14 @@ import { HttpClient } from '@angular/common/http';
 export class EmpresaService {
   private baseUrl = "http://localhost:8080";
 
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getEmpresa(id : number): Observable<any> {
     return this.http.get(`${this.baseUrl}/empresas/getEmpresa}/${id}`);
   }
 
   createEmpresa(empresa : Empresa): Observable<any> {
-    console.log(empresa.nomeDono);
+    console.log(empresa.nome_dono);
     return this.http.post(`${this.baseUrl}/empresas/cad-empresas`, empresa);
   }
 

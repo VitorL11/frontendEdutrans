@@ -1,6 +1,6 @@
 import { Observable } from "rxjs";
 import { Router, ActivatedRoute } from "@angular/router";
-import { AlunoService } from '../aluno.service';
+import { AlunoService } from "../aluno.service";
 import { Aluno } from "./../aluno";
 import { Component, OnInit } from "@angular/core";
 
@@ -9,14 +9,15 @@ import { Component, OnInit } from "@angular/core";
   templateUrl: "list-aluno.component.html",
   styleUrls: ["list-aluno.component.css"]
 })
-
 export class ListAlunoComponent implements OnInit {
   aluno: Aluno;
   alunos: Observable<Aluno[]>;
 
-  constructor(private Route: ActivatedRoute,
+  constructor(
+    private Route: ActivatedRoute,
     private alunoservice: AlunoService,
-    private router: Router) {}
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.reloadData();
@@ -39,7 +40,10 @@ export class ListAlunoComponent implements OnInit {
   }
 
   detalheAluno(id: number) {
-    this.router.navigate (["details", id]);
+    this.router.navigate(["details", id]);
+  }
+
+  updateAluno(id: number) {
+    this.router.navigate(["update", id]);
   }
 }
-

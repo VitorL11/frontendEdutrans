@@ -1,5 +1,5 @@
 export class Veiculo {
-  ano: any;
+  ano: number;
   capacidade: string;
   exercicio: string;
   id: number;

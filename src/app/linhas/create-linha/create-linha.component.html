@@ -1,24 +1,23 @@
-  <div class="col-md-9">
-  <h4>Cadastro de Linhas</h4>
+<h4>Cadastro de Linhas</h4>
 
-  <div [hidden]="submitted" style="width: 400px;">
+<div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
-
     <div class="form-group">
       <label for="nome">Nome da Linha:</label>
-      <input type="text" class="form-control"
-      id="idNomeLinha" required [(ngModel)]="linha.nome"
-      name="txtNome">
+      <input
+        type="text"
+        class="form-control"
+        id="idNomeLinha"
+        required
+        [(ngModel)]="linha.nome"
+        name="txtNome"
+      />
     </div>
 
     <button type="submit" class="btn btn-success">Salvar</button>
   </form>
-  </div>
+</div>
 
-  <div [hidden]="!submitted">
-    <h4>Dados salvos com sucesso!</h4>
-    <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
-  </div>
-
-
-
+<div [hidden]="!submitted" class="alert alert-success" role="alert">
+  Dados salvos com sucesso!
+</div>

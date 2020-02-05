@@ -26,7 +26,7 @@ export class ListEscolaComponent implements OnInit {
     this.escolas = this.escolaservice.getEscolaList();
 }
   list(){
-    this.router.navigate(['escolas']);
+    this.router.navigate(["escolas"]);
 }
 
 deleteEscola(id: number) {
@@ -42,6 +42,11 @@ deleteEscola(id: number) {
 detalheEscola(id: number) {
   this.router.navigate(["details", id]);
 }
+
+updateEscola(id: number) {
+  this.router.navigate(["details", id]);
 }
+}
+
 
 

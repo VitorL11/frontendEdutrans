@@ -1,10 +1,10 @@
 export class Empresa {
-  cnpj:number;
+  cnpj: any;
+  id: number;
+  telefone: any;
   email: string;
   endereco: string;
-  id: number;
-  nomeDono: string;
-  nomeGerente: string;
-  razaoSocial: string;
-  telefone: number;
+  nome_dono: string;
+  nome_gerente: string;
+  razao_social: string;
 }

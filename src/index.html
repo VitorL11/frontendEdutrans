@@ -13,7 +13,7 @@
     <div class="topo">
 
       <div class="container">
-          <h2><img src="../src/app/logo.png"/> Secretaria Municipal de Educação e Cultura</h2>
+          <h2><img src="../src/logo.jpg"> Secretaria Municipal de Educação e Cultura</h2>
       </div>
   </div>
 
@@ -30,12 +30,12 @@
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navDrop"> Cadastros </a>
                       <div class="dropdown-menu">
-                          <a class="dropdown-item" href="../src/app/alunos/create-aluno/create-aluno.component.html"> Alunos </a>
-                          <a class="dropdown-item" href="../../empresas/list-empresa/list-empresa.component.html"> Empresas </a>
-                          <a class="dropdown-item" href="../../escolas/list-escola/list-escola.component.html"> Escolas </a>
-                          <a class="dropdown-item" href="../list-linha/list-linha.component.html"> Linhas </a>
-                          <a class="dropdown-item" href="../../motoristas/list-motorista/list-motorista.component.html"> Motoristas </a>
-                          <a class="dropdown-item" href="../../veiculos/list-veiculo/list-veiculo.component.html"> Veículos </a>
+                          <a class="dropdown-item" href="detailsAluno/:id"> Alunos </a>
+                          <a class="dropdown-item" href="detailsEmpresa/:id"> Empresas </a>
+                          <a class="dropdown-item" href="detailsEscola/:id"> Escolas </a>
+                          <a class="dropdown-item" href="detailsLinha/:id"> Linhas </a>
+                          <a class="dropdown-item" href="detailsMotorista/:id"> Motoristas </a>
+                          <a class="dropdown-item" href="detailsVeiculo/:id"> Veículos </a>
                       </div>
                   </li>
 
@@ -45,9 +45,16 @@
 
               </ul>
           </div>
+
+
       <div>
         <app-root></app-root>
       </div>
+
+
+      </div>
+  </div>
+
 
   </body>
 

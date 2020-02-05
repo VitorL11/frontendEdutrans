@@ -1,16 +1,14 @@
-<div class="topo">
-
-    <div class="container">
-        <h2><img src="../logo.png"/> Secretaria Municipal de Educação e Cultura</h2>
-    </div>
-</div>
+<a href="linhas" class="btn btn-success float-right">
+  <i class="fas fa-plus"></i>
+  Adicionar
+</a>
 
 <div class="panel panel-primary">
   <div class="panel-heading">
     <h2>Lista de linhas</h2>
   </div>
   <div class="panel-body">
-    <table class="table table-striped">
+    <table class="table table-hover">
       <thead>
         <tr>
           <th>Id</th>
@@ -22,12 +20,21 @@
         <tr *ngFor="let linha of linhas | async">
           <td>{{linha.id}}</td>
           <td>{{linha.nome}}</td>
-          <td><button (click)="deleteLinha(linha.id)" class="btn btn-danger">Deletar</button>
-              <button (click)="detalheLinha(linha.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
+          <td>
+            <button
+              (click)="updateLinha(linha.id)"
+              class="btn btn-warning"
+              style="margin-right: 10px"
+            >
+              Editar
+            </button>
+
+            <button (click)="deleteLinha(linha.id)" class="btn btn-danger">
+              Deletar
+            </button>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
-

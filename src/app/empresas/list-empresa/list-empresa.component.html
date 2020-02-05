@@ -1,9 +1,14 @@
+<a href="empresas" class="btn btn-success float-right">
+  <i class="fas fa-plus"></i>
+  Adicionar
+</a>
+
 <div class="panel panel-primary">
   <div class="panel-heading">
     <h2>Lista de Empresas</h2>
   </div>
   <div class="panel-body">
-    <table class="table table-striped">
+    <table class="table table-hover">
       <thead>
         <tr>
           <th>Id</th>
@@ -18,16 +23,18 @@
           <td>{{empresa.nome}}</td>
           <td>{{empresa.telefone}}</td>
           <td>
+            <button
+              (click)="updateEmpresa(empresa.id)"
+              class="btn btn-warning"
+              style="margin-right: 10px"
+            >
+              Editar
+            </button>
+
             <button (click)="deleteEmpresa(empresa.id)" class="btn btn-danger">
               Deletar
             </button>
-            <button
-              (click)="detalheEmpresa(empresa.id)"
-              class="btn btn-info"
-              style="margin-left: 10px"
-            >
-              Detalhes
-            </button>
+
           </td>
         </tr>
       </tbody>

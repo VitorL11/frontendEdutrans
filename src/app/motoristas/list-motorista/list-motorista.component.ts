@@ -40,7 +40,7 @@ export class ListMotoristaComponent implements OnInit {
   }
 
   detalheMotorista(id: number) {
-    this.router.navigate(["details", id]);
+    this.router.navigate(["detailsMotorista", id]);
   }
 }
 

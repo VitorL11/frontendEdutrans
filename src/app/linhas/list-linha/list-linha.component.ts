@@ -43,6 +43,6 @@ export class ListLinhaComponent implements OnInit {
   }
 
   updateLinha(id: number) {
-    this.router.navigate(["details", id]);
+    this.router.navigate(["update", id]);
   }
 }

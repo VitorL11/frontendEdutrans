@@ -1,96 +1,91 @@
-<div class="col-md-9">
-  <h4>Cadastro de Empresas</h4>
+<h4>Cadastro de Empresas</h4>
 
-  <div [hidden]="submitted" style="width: 400px;">
-    <form (ngSubmit)="onSubmit()">
-      <form action="#" class="col-md-9">
-        <div class="form-group">
-          <label for="RazaoSocial">Razão Social:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="idRazaoSocial"
-            required
-            [(ngModel)]="empresa.rsocial"
-            name="txtRazaoSocial"
-          />
-        </div>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="RazaoSocial">Razão Social:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="idRazaoSocial"
+        required
+        [(ngModel)]="empresa.razao_social"
+        name="txtRazaoSocial"
+      />
+    </div>
 
-        <div class="form-group">
-          <label for="cnpj">CNPJ:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="idNome"
-            required
-            [(ngModel)]="empresa.cnpj"
-            name="txtcnpj"
-          />
-        </div>
+    <div class="form-group">
+      <label for="cnpj">CNPJ:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="idCnpj"
+        required
+        [(ngModel)]="empresa.cnpj"
+        name="txtcnpj"
+      />
+    </div>
 
-        <div class="form-group">
-          <label for="endereco">Endereço:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="idCpf"
-            required
-            [(ngModel)]="empresa.cnpj"
-            name="txtendereco"
-          />
-        </div>
+    <div class="form-group">
+      <label for="endereco">Endereço:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="idEndreco"
+        required
+        [(ngModel)]="empresa.endereco"
+        name="txtendereco"
+      />
+    </div>
 
-        <div class="form-group">
-          <label for="Rg">Gerente:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="idRg"
-            [(ngModel)]="empresa.gerente"
-            name="txtRg"
-          />
-        </div>
+    <div class="form-group">
+      <label for="nomegerente">Gerente:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="idGerente"
+        [(ngModel)]="empresa.nome_gerente"
+        name="txtRg"
+      />
+    </div>
 
-        <div class="form-group">
-          <label for="Telefone">Telefone:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="idTelefone"
-            [(ngModel)]="empresa.telefone"
-            name="txtTelefone"
-          />
-        </div>
+    <div class="form-group">
+      <label for="telefone">Telefone:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="idTelefone"
+        [(ngModel)]="empresa.telefone"
+        name="txtTelefone"
+      />
+    </div>
 
-        <div class="form-group">
-          <label for="dono">Dono:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="idDono"
-            [(ngModel)]="empresa.dono"
-            name="txtDono"
-          />
-        </div>
+    <div class="form-group">
+      <label for="nomedono">Dono:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="idDono"
+        [(ngModel)]="empresa.nome_dono"
+        name="txtDono"
+      />
+    </div>
 
-        <div class="form-group">
-          <label for="email">E-mail:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="idDataNasc"
-            [(ngModel)]="empresa.email"
-            name="txtEmail"
-          />
-        </div>
+    <div class="form-group">
+      <label for="email">E-mail:</label>
+      <input
+        type="email"
+        class="form-control"
+        id="idEmail"
+        [(ngModel)]="empresa.email"
+        name="txtEmail"
+      />
+    </div>
 
-        <button type="submit" class="btn btn-success">Salvar</button>
-      </form>
+    <button type="submit" class="btn btn-success">Salvar</button>
+  </form>
+</div>
 
-      <div [hidden]="!submitted">
-        <h4>Dados salvos com sucesso!</h4>
-        <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
-      </div>
-    </form>
-  </div>
+<div [hidden]="!submitted" class="alert alert-success" role="alert">
+  Dados salvos com sucesso!
 </div>

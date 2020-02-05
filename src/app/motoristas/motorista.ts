@@ -1,14 +1,16 @@
 export class Motorista {
-  categCnh: string;
-  cpf: number;
-  dataNasc: any;
-  email: string;
   id: number;
-  nome: string;
+  cpf: number;
+  renach: number;
   regCnh: number;
-  rg: number;
   telefone: number;
+  rg: number;
+  email: string;
+  nome: string;
+  categCnh: string;
   ufCnh: string;
+  dataNasc: any;
   valCnh: any;
   valRenach: any;
+
 }
