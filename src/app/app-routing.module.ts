@@ -29,27 +29,28 @@ import { UpdateVeiculoComponent } from './veiculos/update-veiculo/update-veiculo
 const routes: Routes = [
   //{path: '', redirectTo: 'aluno', pathMatch: 'full' },
   {path: 'alunos', component: CreateAlunoComponent},
-  {path: 'detailsAluno/:id', component: ListAlunoComponent},
+  {path: 'listAluno/:id', component: ListAlunoComponent},
   {path: 'updateAluno/:id', component: UpdateAlunoComponent},
 
   {path: 'empresas', component: CreateEmpresaComponent},
-  {path: 'detailsEmpresa/:id', component: ListEmpresaComponent},
+  {path: 'listEmpresa/:id', component: ListEmpresaComponent},
   {path: 'updateEmpresa/:id', component: UpdateEmpresaComponent},
 
   {path: 'escolas', component: CreateEscolaComponent},
-  {path: 'detailsEscola/:id', component: ListEscolaComponent},
+  {path: 'listEscola/:id', component: ListEscolaComponent},
   {path: 'updateEscola/:id', component: UpdateEscolaComponent},
 
+
   {path: 'linhas', component: CreateLinhaComponent},
-  {path: 'detailsLinha/:id', component: ListLinhaComponent},
+  {path: 'listLinha/:id', component: ListLinhaComponent},
   {path: 'updateLinha/:id', component: UpdateLinhaComponent},
 
   {path: 'motoristas', component: CreateMotoristaComponent},
-  {path: 'detailsMotorista/:id', component: ListMotoristaComponent},
+  {path: 'listMotorista/:id', component: ListMotoristaComponent},
   {path: 'updateMotorista/:id', component: UpdateMotoristaComponent},
 
   {path: 'veiculos', component: CreateVeiculoComponent},
-  {path: 'detailsVeiculo/:id', component: ListVeiculoComponent},
+  {path: 'listVeiculo/:id', component: ListVeiculoComponent},
   {path: 'updateVeiculo/:id', component: UpdateVeiculoComponent},
 
 ];

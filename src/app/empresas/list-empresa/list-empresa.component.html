@@ -12,30 +12,39 @@
       <thead>
         <tr>
           <th>Id</th>
-          <th>Nome</th>
+          <th>Razão Social</th>
           <th>Telefone</th>
           <th>Endereço</th>
-          <th>Ação</th>
+          <th>Opções</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let empresa of empresas | async">
           <td>{{empresa.id}}</td>
-          <td>{{empresa.nome_dono}}</td>
+          <td>{{empresa.razao_social}}</td>
           <td>{{empresa.telefone}}</td>
           <td>{{empresa.endereco}}</td>
           <td>
             <button
-              (click)="updateEmpresa(empresa.id)"
-              class="btn btn-warning"
-              style="margin-right: 10px"
-            >
-              Editar
-            </button>
+            (click)="detalheAluno(aluno.id)"
+            class="btn btn-primary"
+            style="margin-right: 10px"
+          >
+            Visualizar
+          </button>
 
-            <button (click)="deleteEmpresa(empresa.id)" class="btn btn-danger">
-              Deletar
-            </button>
+          <button
+            (click)="detalheEmpresa(empresa.id)"
+            class="btn btn-warning"
+            style="margin-right: 10px"
+          >
+            Editar
+          </button>
+
+          <button (click)="deleteEmpresa(empresa.id)"
+          class="btn btn-danger">
+            Deletar
+          </button>
 
           </td>
         </tr>

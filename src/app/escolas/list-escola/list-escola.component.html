@@ -15,7 +15,7 @@
           <th>Nome</th>
           <th>Telefone</th>
           <th>Endereço</th>
-          <th>Ação</th>
+          <th>Opções</th>
         </tr>
       </thead>
       <tbody>
@@ -25,6 +25,14 @@
           <td>{{escola.telefone}}</td>
           <td>{{escola.endereco}}</td>
           <td>
+            <button
+              (click)="detalheEscola(escola.id)"
+              class="btn btn-primary"
+              style="margin-right: 10px"
+            >
+              Visualizar
+            </button>
+
             <button
               (click)="detalheEscola(escola.id)"
               class="btn btn-warning"

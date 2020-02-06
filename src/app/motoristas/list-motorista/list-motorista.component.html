@@ -10,7 +10,7 @@
           <th>Nome</th>
           <th>CPF</th>
           <th>Telefone</th>
-          <th>Ação</th>
+          <th>Opções</th>
         </tr>
       </thead>
       <tbody>
@@ -21,18 +21,25 @@
           <td>{{motorista.telefone}}</td>
           <td>
             <button
-              (click)="deleteMotorista(motorista.id)"
-              class="btn btn-danger"
-            >
-              Deletar
-            </button>
-            <button
-              (click)="detalheMotorista(motorista.id)"
-              class="btn btn-info"
-              style="margin-left: 10px"
-            >
-              Detalhes
-            </button>
+            (click)="detalheMotorista(motorista.id)"
+            class="btn btn-primary"
+            style="margin-right: 10px"
+          >
+            Visualizar
+          </button>
+
+          <button
+            (click)="detalheMotorista(motorista.id)"
+            class="btn btn-warning"
+            style="margin-right: 10px"
+          >
+            Editar
+          </button>
+
+          <button (click)="deleteMotorista(motorista.id)"
+          class="btn btn-danger">
+            Deletar
+          </button>
           </td>
         </tr>
       </tbody>

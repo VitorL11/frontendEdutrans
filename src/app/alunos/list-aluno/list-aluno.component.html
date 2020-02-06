@@ -15,7 +15,7 @@
           <th>Nome</th>
           <th>Escola</th>
           <th>Turno</th>
-          <th>Ação</th>
+          <th>Opções</th>
         </tr>
       </thead>
       <tbody>
@@ -25,15 +25,25 @@
           <td>{{aluno.escola}}</td>
           <td>{{aluno.turno}}</td>
           <td>
-            <button (click)="deleteAluno(aluno.id)" class="btn btn-danger">
-              Deletar
-            </button>
             <button
               (click)="detalheAluno(aluno.id)"
-              class="btn btn-info"
-              style="margin-left: 10px"
+              class="btn btn-primary"
+              style="margin-right: 10px"
             >
-              Detalhes
+              Visualizar
+            </button>
+
+            <button
+              (click)="detalheAluno(aluno.id)"
+              class="btn btn-warning"
+              style="margin-right: 10px"
+            >
+              Editar
+            </button>
+
+            <button (click)="deleteAluno(aluno.id)"
+            class="btn btn-danger">
+              Deletar
             </button>
           </td>
         </tr>

@@ -14,7 +14,9 @@
           <th>Id</th>
           <th>Capacidade</th>
           <th>Tipo</th>
-          <th>Ação</th>
+          <th>Ano</th>
+          <th>Modelo</th>
+          <th>Opções</th>
         </tr>
       </thead>
       <tbody>
@@ -22,17 +24,29 @@
           <td>{{veiculo.id}}</td>
           <td>{{veiculo.capacidade}}</td>
           <td>{{veiculo.tipo}}</td>
+          <td>{{veiculo.ano}}</td>
+          <td>{{veiculo.modelo}}</td>
           <td>
             <button
-              (click)="detalheVeiculo(veiculo.id)"
-              class="btn btn-warning"
-              style="margin-right: 10px"
-            >
-              Editar
-            </button>
-            <button (click)="deleteVeiculo(veiculo.id)" class="btn btn-danger">
-              Deletar
-            </button>
+            (click)="detalheVeiculo(veiculo.id)"
+            class="btn btn-primary"
+            style="margin-right: 10px"
+          >
+            Visualizar
+          </button>
+
+          <button
+            (click)="detalheVeiculo(veiculo.id)"
+            class="btn btn-warning"
+            style="margin-right: 10px"
+          >
+            Editar
+          </button>
+
+          <button (click)="deleteVeiculo(veiculo.id)"
+          class="btn btn-danger">
+            Deletar
+          </button>
           </td>
         </tr>
       </tbody>

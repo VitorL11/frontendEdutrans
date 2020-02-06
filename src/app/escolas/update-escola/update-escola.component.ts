@@ -39,12 +39,12 @@ updateEscola() {
 
 onSubmit() {
     this.updateEscola();
-    this.submitted = true;
-    this.gotoList();
+    //this.submitted = true;
+    //this.gotoList();
   }
 
 gotoList() {
-    this.router.navigate(['/update']);
+    this.router.navigate(['/detailsEscola/:id']);
   }
 
 }

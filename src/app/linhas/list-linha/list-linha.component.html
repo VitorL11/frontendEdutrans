@@ -13,7 +13,7 @@
         <tr>
           <th>Id</th>
           <th>Nome</th>
-          <th>Ação</th>
+          <th>Opções</th>
         </tr>
       </thead>
       <tbody>
@@ -22,16 +22,25 @@
           <td>{{linha.nome}}</td>
           <td>
             <button
-              (click)="updateLinha(linha.id)"
-              class="btn btn-warning"
-              style="margin-right: 10px"
-            >
-              Editar
-            </button>
+            (click)="detalheLinha(linha.id)"
+            class="btn btn-primary"
+            style="margin-right: 10px"
+          >
+            Visualizar
+          </button>
 
-            <button (click)="deleteLinha(linha.id)" class="btn btn-danger">
-              Deletar
-            </button>
+          <button
+            (click)="detalheLinha(linha.id)"
+            class="btn btn-warning"
+            style="margin-right: 10px"
+          >
+            Editar
+          </button>
+
+          <button (click)="deleteLinha(linha.id)"
+          class="btn btn-danger">
+            Deletar
+          </button>
           </td>
         </tr>
       </tbody>

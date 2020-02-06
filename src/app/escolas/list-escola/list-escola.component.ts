@@ -40,11 +40,11 @@ deleteEscola(id: number) {
 }
 
 detalheEscola(id: number) {
-  this.router.navigate(["details", id]);
+  this.router.navigate(["detailsEscola/:id", id]);
 }
 
 updateEscola(id: number) {
-  this.router.navigate(["details", id]);
+  this.router.navigate(["updateEscola/:id", id]);
 }
 }
 
