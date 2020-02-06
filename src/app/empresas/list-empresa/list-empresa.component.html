@@ -14,14 +14,16 @@
           <th>Id</th>
           <th>Nome</th>
           <th>Telefone</th>
+          <th>Endereço</th>
           <th>Ação</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let empresa of empresas | async">
           <td>{{empresa.id}}</td>
-          <td>{{empresa.nome}}</td>
+          <td>{{empresa.nome_dono}}</td>
           <td>{{empresa.telefone}}</td>
+          <td>{{empresa.endereco}}</td>
           <td>
             <button
               (click)="updateEmpresa(empresa.id)"

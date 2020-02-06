@@ -18,27 +18,32 @@ export class ListEmpresaComponent implements OnInit {
     private router: Router,
     private empresaservice: EmpresaService) {}
 
-  ngOnInit() {
-    this.reloadData();
-  }
-  reloadData() {
-    this.empresas = this.empresaservice.getEmpresaList();
-  }
-  list(){
-    this.router.navigate(["empresas"]);
-  }
-  deleteEmpresa(id: number) {
-    this.empresaservice.deleteEmpresa(id).subscribe(
-      data => {
-        console.log(data);
-        this.reloadData();
-      },
-      error => console.log(error)
-    );
+    ngOnInit() {
+      this.reloadData();
+    }
+    reloadData() {
+      this.empresas = this.empresaservice.getEmpresaList();
+    }
+    list() {
+      this.router.navigate(["empresas"]);
+    }
+
+    deleteEmpresa(id: number) {
+      this.empresaservice.deleteEmpresa(id).subscribe(
+        data => {
+          console.log(data);
+          this.reloadData();
+        },
+        error => console.log(error)
+      );
+    }
+    detalheEmpresa(id: number) {
+      this.router.navigate(["details", id]);
+    }
+
+    updateEmpresa(id: number) {
+      this.router.navigate(["empresas", id]);
+    }
   }
 
-  detalheEmpresa(id: number) {
-    this.router.navigate(["details", id]);
-  }
-}
 

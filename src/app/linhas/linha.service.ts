@@ -13,7 +13,7 @@ export class LinhaService {
   constructor(private http: HttpClient) { }
 
   getLinha(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/linhas/getLinha}/${id}`);
+    return this.http.get(`${this.baseUrl}/linhas/getLinha/${id}`);
   }
 
   createLinha(linha: Linha): Observable<any> {
@@ -35,3 +35,4 @@ export class LinhaService {
     return this.http.put(`${this.baseUrl}/linhas/upd-linhas`, linha);
   }
 }
+

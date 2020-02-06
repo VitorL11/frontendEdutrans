@@ -42,5 +42,9 @@ export class ListVeiculoComponent implements OnInit {
 detalheVeiculo(id: number) {
   this.router.navigate(["details", id]);
   }
+
+updateVeiculo(id: number) {
+  this.router.navigate(["update", id]);
+  }
 }
 

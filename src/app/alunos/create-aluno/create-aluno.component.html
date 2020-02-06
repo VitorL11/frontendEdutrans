@@ -4,9 +4,15 @@
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="Linha">Linha:</label>
-      <!--<select class="form-control" id="idLinha" formControlName="linha">
-        <option *ngFor="let nome of linha"> {{linha.nome}} </option>
-      </select>-->
+      <select
+        name="campoLinha"
+        class="form-control"
+        id="idLinha"
+        required
+        [(ngModel)]="aluno.linha"
+      >
+        <option value="">Selecione...</option>
+      </select>
     </div>
 
     <div class="form-group">
