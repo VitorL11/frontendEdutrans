@@ -13,7 +13,7 @@ export class EmpresaService {
   constructor(private http: HttpClient) { }
 
   getEmpresa(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/empresas/getEmpresa}/${id}`);
+    return this.http.get(`${this.baseUrl}/empresas/getEmpresa/${id}`);
   }
 
   createEmpresa(empresa: Empresa): Observable<any> {
@@ -26,7 +26,7 @@ export class EmpresaService {
   }
 
   deleteEmpresa(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/linhas/del-linhas/${id}`, {
+    return this.http.delete(`${this.baseUrl}/empresas/del-empresas/${id}`, {
       responseType: "text"
     });
   }
@@ -35,4 +35,3 @@ export class EmpresaService {
     return this.http.put(`${this.baseUrl}/empresas/upd-empresas`, empresa);
   }
 }
-

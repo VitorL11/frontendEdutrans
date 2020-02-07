@@ -1,5 +1,5 @@
 export class Empresa {
-  id: number;
+  idEmpresa: number;
   cnpj: any;
   telefone: any;
   email: string;

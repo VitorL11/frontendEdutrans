@@ -16,6 +16,7 @@ import { UpdateEscolaComponent } from './escolas/update-escola/update-escola.com
 import { CreateLinhaComponent } from './linhas/create-linha/create-linha.component';
 import { ListLinhaComponent } from './linhas/list-linha/list-linha.component';
 import { UpdateLinhaComponent } from './linhas/update-linha/update-linha.component';
+import { DetailsLinhaComponent } from './linhas/details-linha/details-linha.component';
 
 import { CreateMotoristaComponent } from './motoristas/create-motorista/create-motorista.component';
 import { ListMotoristaComponent } from './motoristas/list-motorista/list-motorista.component';
@@ -24,6 +25,7 @@ import { UpdateMotoristaComponent } from './motoristas/update-motorista/update-m
 import { CreateVeiculoComponent } from './veiculos/create-veiculo/create-veiculo.component';
 import { ListVeiculoComponent } from './veiculos/list-veiculo/list-veiculo.component';
 import { UpdateVeiculoComponent } from './veiculos/update-veiculo/update-veiculo.component';
+import { from } from 'rxjs';
 
 
 const routes: Routes = [
@@ -44,6 +46,7 @@ const routes: Routes = [
   {path: 'linhas', component: CreateLinhaComponent},
   {path: 'listLinha/:id', component: ListLinhaComponent},
   {path: 'updateLinha/:id', component: UpdateLinhaComponent},
+  {path: 'detailsLinha', component: DetailsLinhaComponent},
 
   {path: 'motoristas', component: CreateMotoristaComponent},
   {path: 'listMotorista/:id', component: ListMotoristaComponent},

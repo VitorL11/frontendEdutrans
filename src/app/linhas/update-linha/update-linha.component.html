@@ -1,14 +1,15 @@
-<div class="col-md-9">
-  <h4>Linhas</h4>
-  <form action="#" class="col-md-9">
+<h4>Linhas</h4>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="idNomeLinha">Nome da Linha:</label>
+      <label for="name">Nome:</label>
       <input
         type="text"
-        name="txtNomeLinha"
         class="form-control"
-        id="idNomeLinha"
+        id="idLinha"
         required
+        [(ngModel)]="linha.nome"
+        name="nomelinha"
       />
     </div>
 

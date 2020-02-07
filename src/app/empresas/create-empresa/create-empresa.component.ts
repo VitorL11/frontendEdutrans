@@ -41,7 +41,7 @@ export class CreateEmpresaComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/detailsEmpresa/:id']);
+    this.router.navigate(['/listEmpresa/:id']);
   }
 
 }

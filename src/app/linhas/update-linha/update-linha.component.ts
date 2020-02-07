@@ -18,34 +18,32 @@ export class UpdateLinhaComponent implements OnInit {
     private router: Router,
     private linhaservice: LinhaService) { }
 
-  ngOnInit() {
-    this.linha = new Linha();
+ngOnInit() {
+  this.linha = new Linha();
 
-this.id = this.route.snapshot.params['id'];
+  this.id = this.route.snapshot.params['id'];
 
-this.linhaservice.getLinha(this.id)
+  this.linhaservice.getLinha(this.id)
     .subscribe(data => {
-        console.log(data)
-        this.linha = data;
-      }, error => console.log(error));
-  }
+      console.log(data)
+      this.linha = data;
+    }, error => console.log(error));
+}
 
 updateLinha() {
-    this.linhaservice.updateLinha(this.linha)
-      .subscribe(data => console.log(data), error => console.log(error));
-    this.linha = new Linha();
-    this.gotoList();
-  }
+  this.linhaservice.updateLinha(this.linha)
+    .subscribe(data => console.log(data), error => console.log(error));
+  this.linha = new Linha();
+  this.gotoList();
+}
 
 onSubmit() {
-    this.updateLinha();
-    this.submitted = true;
-    this.gotoList();
-  }
+  this.updateLinha();
+}
 
 gotoList() {
-    this.router.navigate(['/update']);
-  }
+  this.router.navigate(['/listLinha/:id']);
+}
 }
 
 

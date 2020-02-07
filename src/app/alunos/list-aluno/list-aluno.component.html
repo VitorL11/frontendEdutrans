@@ -1,4 +1,6 @@
-<a href="alunos" class="btn btn-success float-right">
+<a [routerLink]="['/alunos']"
+  routerLinkActive="router-link-active"
+  class="btn btn-success float-right">
   <i class="fas fa-plus"></i>
   Adicionar
 </a>
@@ -41,8 +43,7 @@
               Editar
             </button>
 
-            <button (click)="deleteAluno(aluno.id)"
-            class="btn btn-danger">
+            <button (click)="deleteAluno(aluno.id)" class="btn btn-danger">
               Deletar
             </button>
           </td>

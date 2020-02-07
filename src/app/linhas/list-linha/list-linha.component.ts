@@ -39,10 +39,10 @@ export class ListLinhaComponent implements OnInit {
   }
 
   detalheLinha(id: number) {
-    this.router.navigate(["details", id]);
+    this.router.navigate(["detailsLinha", id]);
   }
 
   updateLinha(id: number) {
-    this.router.navigate(["update", id]);
+    this.router.navigate(["updateLinha/:id", id]);
   }
 }

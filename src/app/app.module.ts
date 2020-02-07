@@ -29,6 +29,7 @@ import { ListVeiculoComponent } from './veiculos/list-veiculo/list-veiculo.compo
 import { UpdateVeiculoComponent } from './veiculos/update-veiculo/update-veiculo.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { DetailsLinhaComponent } from './linhas/details-linha/details-linha.component';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { HttpClientModule } from '@angular/common/http';
     CreateVeiculoComponent,
     ListVeiculoComponent,
     UpdateVeiculoComponent,
+    DetailsLinhaComponent,
 
   ],
 

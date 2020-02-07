@@ -44,7 +44,7 @@ detalheVeiculo(id: number) {
   }
 
 updateVeiculo(id: number) {
-  this.router.navigate(["update", id]);
+  this.router.navigate(["updateVeiculo/:id", id]);
   }
 }
 

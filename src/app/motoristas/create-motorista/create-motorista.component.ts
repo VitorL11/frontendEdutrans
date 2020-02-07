@@ -41,7 +41,7 @@ export class CreateMotoristaComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/motoristas']);
+    this.router.navigate(['/listMotorista/:id']);
   }
 
 }

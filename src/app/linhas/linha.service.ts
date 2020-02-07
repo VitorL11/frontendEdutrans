@@ -10,10 +10,10 @@ import { HttpClient } from "@angular/common/http";
 export class LinhaService {
   private baseUrl = "http://localhost:8080";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getLinha(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/linhas/getLinha/${id}`);
+    return this.http.get(`${this.baseUrl}/linhas/details-linha${id}`);
   }
 
   createLinha(linha: Linha): Observable<any> {
@@ -35,4 +35,3 @@ export class LinhaService {
     return this.http.put(`${this.baseUrl}/linhas/upd-linhas`, linha);
   }
 }
-
