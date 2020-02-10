@@ -31,30 +31,30 @@ import { from } from 'rxjs';
 const routes: Routes = [
   //{path: '', redirectTo: 'aluno', pathMatch: 'full' },
   {path: 'alunos', component: CreateAlunoComponent},
-  {path: 'listAluno/:id', component: ListAlunoComponent},
+  {path: 'listAluno', component: ListAlunoComponent},
   {path: 'updateAluno/:id', component: UpdateAlunoComponent},
 
   {path: 'empresas', component: CreateEmpresaComponent},
-  {path: 'listEmpresa/:id', component: ListEmpresaComponent},
+  {path: 'listEmpresa', component: ListEmpresaComponent},
   {path: 'updateEmpresa/:id', component: UpdateEmpresaComponent},
 
   {path: 'escolas', component: CreateEscolaComponent},
   {path: 'listEscola/:id', component: ListEscolaComponent},
-  {path: 'updateEscola/:id', component: UpdateEscolaComponent},
+  {path: 'updateEscola', component: UpdateEscolaComponent},
 
 
   {path: 'linhas', component: CreateLinhaComponent},
-  {path: 'listLinha/:id', component: ListLinhaComponent},
+  {path: 'listLinha', component: ListLinhaComponent},
   {path: 'updateLinha/:id', component: UpdateLinhaComponent},
-  {path: 'detailsLinha', component: DetailsLinhaComponent},
+  {path: 'detailsLinha/:id', component: DetailsLinhaComponent},
 
   {path: 'motoristas', component: CreateMotoristaComponent},
   {path: 'listMotorista/:id', component: ListMotoristaComponent},
-  {path: 'updateMotorista/:id', component: UpdateMotoristaComponent},
+  {path: 'updateMotorista', component: UpdateMotoristaComponent},
 
   {path: 'veiculos', component: CreateVeiculoComponent},
   {path: 'listVeiculo/:id', component: ListVeiculoComponent},
-  {path: 'updateVeiculo/:id', component: UpdateVeiculoComponent},
+  {path: 'updateVeiculo', component: UpdateVeiculoComponent},
 
 ];
 

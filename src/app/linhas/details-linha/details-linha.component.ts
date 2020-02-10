@@ -21,19 +21,20 @@ export class DetailsLinhaComponent implements OnInit {
   ngOnInit() {
     this.linha = new Linha();
 
-    this.id = this.route.snapshot.params["id"];
-
+    this.id = this.route.snapshot.params['id'];
+    //console.log(this.id);
     this.linhaservice.getLinha(this.id).subscribe(
       data => {
-        console.log(data);
+        console.log(data)
         this.linha = data;
       },
       error => console.log(error)
     );
+      console.log(this.linha.nome)
+    this.linha.nome = 'yteste';
   }
 
   list() {
-    this.router.navigate(["listLinhas/:id"]);
+    this.router.navigate(["listLinha/:id"]);
   }
 }
-

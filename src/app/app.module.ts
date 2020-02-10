@@ -31,6 +31,11 @@ import { UpdateVeiculoComponent } from './veiculos/update-veiculo/update-veiculo
 import { HttpClientModule } from '@angular/common/http';
 import { DetailsLinhaComponent } from './linhas/details-linha/details-linha.component';
 import { from } from 'rxjs';
+import { DetailsAlunoComponent } from './alunos/details-aluno/details-aluno.component';
+import { DetailsEmpresaComponent } from './empresas/details-empresa/details-empresa.component';
+import { DetailsEscolaComponent } from './escolas/details-escola/details-escola.component';
+import { DetailsMotoristaComponent } from './motoristas/details-motorista/details-motorista.component';
+import { DetailsVeiculoComponent } from './veiculos/details-veiculo/details-veiculo.component';
 
 
 @NgModule({
@@ -62,6 +67,11 @@ import { from } from 'rxjs';
     ListVeiculoComponent,
     UpdateVeiculoComponent,
     DetailsLinhaComponent,
+    DetailsAlunoComponent,
+    DetailsEmpresaComponent,
+    DetailsEscolaComponent,
+    DetailsMotoristaComponent,
+    DetailsVeiculoComponent,
 
   ],
 

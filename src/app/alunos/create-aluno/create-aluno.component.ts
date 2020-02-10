@@ -41,7 +41,7 @@ export class CreateAlunoComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/listAluno/:id']);
+    this.router.navigate(['/listAluno']);
   }
 
 }

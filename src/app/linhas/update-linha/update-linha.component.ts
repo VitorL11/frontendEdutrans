@@ -11,12 +11,11 @@ import { Component, OnInit } from "@angular/core";
 export class UpdateLinhaComponent implements OnInit {
   id: number;
   linha: Linha;
-  submitted = false;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private LinhaService: LinhaService
+    private linhaService: LinhaService
   ) {}
 
   ngOnInit() {
@@ -24,7 +23,7 @@ export class UpdateLinhaComponent implements OnInit {
 
     this.id = this.route.snapshot.params["id"];
 
-    this.LinhaService.getLinha(this.id).subscribe(
+    this.linhaService.getLinha(this.id).subscribe(
       data => {
         console.log(data);
         this.linha = data;
@@ -34,7 +33,7 @@ export class UpdateLinhaComponent implements OnInit {
   }
 
   updateLinha() {
-    this.LinhaService.updateLinha(this.id, this.linha).subscribe(
+    this.linhaService.updateLinha(this.id, this.linha).subscribe(
       data => console.log(data),
       error => console.log(error)
     );
@@ -44,8 +43,6 @@ export class UpdateLinhaComponent implements OnInit {
 
   onSubmit() {
     this.updateLinha();
-    this.submitted = true;
-    this.gotoList();
   }
 
   gotoList() {

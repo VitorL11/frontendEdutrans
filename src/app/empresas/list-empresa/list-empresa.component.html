@@ -26,26 +26,28 @@
           <td>{{empresa.endereco}}</td>
           <td>
             <button
-            (click)="detalheAluno(aluno.id)"
-            class="btn btn-primary"
-            style="margin-right: 10px"
-          >
-            Visualizar
-          </button>
+              [routerLink]="['/routePath']"
+              routerLinkActive="router-link-active"
+              (click)="detalheAluno(aluno.id)"
+              class="btn btn-primary"
+              style="margin-right: 10px"
+            >
+              Visualizar
+            </button>
 
-          <button
-            (click)="detalheEmpresa(empresa.id)"
-            class="btn btn-warning"
-            style="margin-right: 10px"
-          >
-            Editar
-          </button>
+            <button
+              [routerLink]="['/updateEmpresa']"
+              routerLinkActive="router-link-active"
+              (click)="updateEmpresa(empresa.id)"
+              class="btn btn-warning"
+              style="margin-right: 10px"
+            >
+              Editar
+            </button>
 
-          <button (click)="deleteEmpresa(empresa.id)"
-          class="btn btn-danger">
-            Deletar
-          </button>
-
+            <button (click)="deleteEmpresa(empresa.id)" class="btn btn-danger">
+              Deletar
+            </button>
           </td>
         </tr>
       </tbody>

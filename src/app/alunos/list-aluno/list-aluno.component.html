@@ -1,6 +1,8 @@
-<a [routerLink]="['/alunos']"
+<a
+  [routerLink]="['/alunos']"
   routerLinkActive="router-link-active"
-  class="btn btn-success float-right">
+  class="btn btn-success float-right"
+>
   <i class="fas fa-plus"></i>
   Adicionar
 </a>
@@ -36,7 +38,7 @@
             </button>
 
             <button
-              (click)="detalheAluno(aluno.id)"
+              (click)="updateAluno(aluno.id)"
               class="btn btn-warning"
               style="margin-right: 10px"
             >

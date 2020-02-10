@@ -40,10 +40,10 @@ export class ListEmpresaComponent implements OnInit {
   }
 
   detalheEmpresa(id: number) {
-    this.router.navigate(["detailsEmpresa/:id", id]);
+    this.router.navigate(['detailsEmpresa', id]);
   }
 
   updateEmpresa(id: number) {
-    this.router.navigate(["updateEmpresa/:id", id]);
+    this.router.navigate(['updateEmpresa', id]);
   }
 }

@@ -11,9 +11,15 @@
         required
         [(ngModel)]="aluno.nome"
       >
+        <!--
         <option *ngFor="let linha of linhas" [value]="linha.value">
           {{linha.nome}}
-        </option>
+        </option> -->
+
+        <option value="">Selecione</option>
+        <option [ngValue]="linha" *ngFor="let linha of linhas"
+          >{{ linha.nome }}</option
+        >
       </select>
     </div>
 
@@ -86,7 +92,14 @@
         required
         [(ngModel)]="aluno.escola"
       >
-        <option value="">Selecione...</option>
+      <!--
+        <option *ngFor="let linha of linhas" [value]="linha.value">
+          {{linha.nome}}
+        </option> -->
+      <option value="">Selecione</option>
+      <option [ngValue]="escola" *ngFor="let escola of escolas"
+        >{{ escola.nome }}</option
+      >
       </select>
     </div>
 
