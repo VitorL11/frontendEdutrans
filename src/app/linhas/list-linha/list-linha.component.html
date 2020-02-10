@@ -25,16 +25,13 @@
           <td>
 
             <button
-              [routerLink]="['/detailsLinha']" routerLinkActive="router-link-active"
               (click)="detalheLinha(linha.id)"
               class="btn btn-primary"
               style="margin-right: 10px">
               Visualizar
             </button>
 
-            <button
-              [routerLink]="['/updateLinha/:id']"
-              routerLinkActive="router-link-active"
+            <button [routerLink]="['/updateLinha/:id']" routerLinkActive="router-link-active"
               (click)="updateLinha(linha.id)"
               class="btn btn-warning"
               style="margin-right: 10px">

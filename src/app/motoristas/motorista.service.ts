@@ -13,27 +13,26 @@ export class MotoristaService {
 
   constructor(private http : HttpClient) { }
 
-  getMotorista(id : number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/motoristas/getMotorista}/${id}`);
+  getMotorista(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/motoristas/details-motorista/${id}`);
   }
 
-  createMotorista(motorista : Motorista): Observable<any> {
+  createMotorista(motorista: Motorista): Observable<any> {
     console.log(motorista.nome);
-    return this.http.post(`${this.baseUrl}/motoristas/cad-motoristas`, motorista)
+    return this.http.post(`${this.baseUrl}/motoristas/cad-motoristas`, motorista);
   }
 
   getMotoristaList(): Observable<any> {
     return this.http.get(`${this.baseUrl}/motoristas/list-motoristas/`);
   }
 
-  deleteMotorista(id: number): Observable<any>{
-    return this.http.delete(`${this.http}/motoristas/del-motoristas/${id}`,{
+  deleteMotorista(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/motoristas/del-motoristas/${id}`, {
       responseType: "text"
     });
   }
 
-  updateMotorista(motorista: Motorista): Observable<any> {
-    return this.http.put(`${this.baseUrl}/motoristas/upd-motoristas`, motorista)
+  updateMotorista(id: number, value: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/motoristas/upd-motoristas/${id}`, value);
   }
-
 }

@@ -12,8 +12,9 @@ export class LinhaService {
 
   constructor(private http: HttpClient) {}
 
+
   getLinha(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/linhas/details-linha${id}`);
+    return this.http.get(`${this.baseUrl}/linhas/details-linha/${id}`);
   }
 
   createLinha(linha: Linha): Observable<any> {
@@ -31,7 +32,7 @@ export class LinhaService {
     });
   }
 
-  updateLinha(linha: Linha): Observable<any> {
-    return this.http.put(`${this.baseUrl}/linhas/upd-linhas`, linha);
+  updateLinha(id: number, value: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/linhas/upd-linhas/${id}`, value);
   }
 }

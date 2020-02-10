@@ -18,7 +18,7 @@ import { UpdateEscolaComponent } from './escolas/update-escola/update-escola.com
 
 import { CreateLinhaComponent } from './linhas/create-linha/create-linha.component';
 import { ListLinhaComponent } from './linhas/list-linha/list-linha.component';
-import { UpdateLinhaComponent } from './linhas/update-linha/update-linha.component';
+import { UpdateLinhaComponent} from './linhas/update-linha/update-linha.component';
 
 import { CreateMotoristaComponent } from './motoristas/create-motorista/create-motorista.component';
 import { ListMotoristaComponent } from './motoristas/list-motorista/list-motorista.component';
@@ -30,6 +30,7 @@ import { UpdateVeiculoComponent } from './veiculos/update-veiculo/update-veiculo
 
 import { HttpClientModule } from '@angular/common/http';
 import { DetailsLinhaComponent } from './linhas/details-linha/details-linha.component';
+import { from } from 'rxjs';
 
 
 @NgModule({
@@ -69,6 +70,7 @@ import { DetailsLinhaComponent } from './linhas/details-linha/details-linha.comp
     FormsModule,
     BrowserModule,
     AppRoutingModule
+
   ],
 
   providers: [],

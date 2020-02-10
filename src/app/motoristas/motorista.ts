@@ -2,15 +2,15 @@ export class Motorista {
   id: number;
   cpf: number;
   renach: number;
-  regCnh: number;
+  reg_cnh: number;
   telefone: number;
   rg: number;
-  email: string;
-  nome: string;
-  categCnh: string;
-  ufCnh: string;
-  dataNasc: any;
-  valCnh: any;
-  valRenach: any;
+  email: String;
+  nome: String;
+  categ_cnh: String;
+  UF_cnh: any;
+  dataNasc: String;
+  val_cnh: String;
+  val_renach: String;
 
 }

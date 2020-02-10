@@ -12,27 +12,27 @@ export class AlunoService {
 
   constructor(private http : HttpClient) { }
 
-  getAluno(id : number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/alunos/getAluno}/${id}`);
+  getAluno(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/alunos/details-aluno/${id}`);
   }
 
-  createAluno(aluno : Aluno): Observable<any> {
+  createAluno(aluno: Aluno): Observable<any> {
     console.log(aluno.nome);
-    return this.http.post(`${this.baseUrl}/alunos/cad-aluno`, aluno)
+    return this.http.post(`${this.baseUrl}/alunos/cad-alunos`, aluno);
   }
 
   getAlunoList(): Observable<any> {
-    return this.http.get(`${this.http}/alunos/list-aluno`);
+    return this.http.get(`${this.baseUrl}/alunos/list-alunos/`);
   }
 
-  deleteAluno(id: number): Observable<any>{
-    return this.http.delete(`${this.baseUrl}/alunos/del-aluno/${id}`, {
+  deleteAluno(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/alunos/del-alunos/${id}`, {
       responseType: "text"
     });
   }
 
-  updateAluno(aluno: Aluno): Observable<any> {
-    return this.http.put(`${this.baseUrl}/alunos/upd-alunos`, aluno)
+  updateAluno(id: number, value: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/alunos/upd-alunos/${id}`, value);
   }
-
 }
+

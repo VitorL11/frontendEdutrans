@@ -16,7 +16,7 @@ export class UpdateAlunoComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private router: Router,
-    private alunoservice: AlunoService) {}
+    private AlunoService: AlunoService) {}
 
 
   ngOnInit() {
@@ -24,7 +24,7 @@ export class UpdateAlunoComponent implements OnInit {
 
 this.id = this.route.snapshot.params['id'];
 
-this.alunoservice.getAluno(this.id)
+this.AlunoService.getAluno(this.id)
       .subscribe(data => {
         console.log(data),
         this.aluno = data;
@@ -33,7 +33,7 @@ this.alunoservice.getAluno(this.id)
 
 
  updateAluno(){
-    this.alunoservice.updateAluno(this.aluno)
+    this.AlunoService.updateAluno(this.id, this.aluno)
       .subscribe(data => console.log(data), error => console.log(error));
     this.aluno = new Aluno();
     this.gotoList();
@@ -46,7 +46,7 @@ onSubmit() {
   }
 
 gotoList() {
-    this.router.navigate(['/update']);
+    this.router.navigate(['/listAlunos/:id']);
   }
 }
 

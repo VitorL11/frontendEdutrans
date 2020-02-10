@@ -36,3 +36,4 @@ export class DetailsLinhaComponent implements OnInit {
     this.router.navigate(["listLinhas/:id"]);
   }
 }
+
