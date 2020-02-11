@@ -31,6 +31,7 @@ import { ListVeiculoComponent } from './veiculos/list-veiculo/list-veiculo.compo
 import { UpdateVeiculoComponent } from './veiculos/update-veiculo/update-veiculo.component';
 import { DetailsVeiculoComponent } from './veiculos/details-veiculo/details-veiculo.component';
 
+import { BuscarComponent } from './MotVei/buscar/buscar.component';
 
 
 const routes: Routes = [
@@ -64,6 +65,8 @@ const routes: Routes = [
   {path: 'listVeiculo', component: ListVeiculoComponent},
   {path: 'updateVeiculo/:id', component: UpdateVeiculoComponent},
   {path: 'detailsVeiculo/:id', component: DetailsVeiculoComponent},
+
+  {path: 'buscar', component: BuscarComponent},
 
 ];
 

@@ -1,7 +1,7 @@
 export class Aluno {
   id: number;
   cpf: number;
-  dataNasc: any;
+  data_nasc: any;
   email: string;
   rg: number;
   telefone: number;

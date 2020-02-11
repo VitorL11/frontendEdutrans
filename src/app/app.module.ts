@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -36,6 +36,14 @@ import { DetailsEmpresaComponent } from './empresas/details-empresa/details-empr
 import { DetailsEscolaComponent } from './escolas/details-escola/details-escola.component';
 import { DetailsMotoristaComponent } from './motoristas/details-motorista/details-motorista.component';
 import { DetailsVeiculoComponent } from './veiculos/details-veiculo/details-veiculo.component';
+import { BuscarComponent } from './MotVei/buscar/buscar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+// Angular Materials
+
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -45,33 +53,35 @@ import { DetailsVeiculoComponent } from './veiculos/details-veiculo/details-veic
     CreateAlunoComponent,
     ListAlunoComponent,
     UpdateAlunoComponent,
+    DetailsAlunoComponent,
 
     CreateEmpresaComponent,
     ListEmpresaComponent,
     UpdateEmpresaComponent,
-
+    DetailsEmpresaComponent,
 
     CreateEscolaComponent,
     ListEscolaComponent,
     UpdateEscolaComponent,
+    DetailsEscolaComponent,
 
     CreateLinhaComponent,
     ListLinhaComponent,
     UpdateLinhaComponent,
+    DetailsLinhaComponent,
 
     CreateMotoristaComponent,
     ListMotoristaComponent,
     UpdateMotoristaComponent,
+    DetailsMotoristaComponent,
 
     CreateVeiculoComponent,
     ListVeiculoComponent,
     UpdateVeiculoComponent,
-    DetailsLinhaComponent,
-    DetailsAlunoComponent,
-    DetailsEmpresaComponent,
-    DetailsEscolaComponent,
-    DetailsMotoristaComponent,
     DetailsVeiculoComponent,
+
+
+    BuscarComponent,
 
   ],
 
@@ -79,7 +89,12 @@ import { DetailsVeiculoComponent } from './veiculos/details-veiculo/details-veic
     HttpClientModule,
     FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    FormsModule
 
   ],
 
