@@ -48,6 +48,6 @@ export class UpdateAlunoComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(["/listAlunos/:id"]);
+    this.router.navigate(["/listAluno"]);
   }
 }

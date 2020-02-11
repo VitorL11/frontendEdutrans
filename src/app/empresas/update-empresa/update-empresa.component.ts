@@ -34,7 +34,7 @@ export class UpdateEmpresaComponent implements OnInit {
   }
 
   updateEmpresa() {
-    this.empresaservice.updateEmpresa(this.empresa).subscribe(
+    this.empresaservice.updateEmpresa(this.id, this.empresa).subscribe(
       data => console.log(data),
       error => console.log(error)
     );
@@ -49,6 +49,6 @@ export class UpdateEmpresaComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(["/updateEmpresa"]);
+    this.router.navigate(["/listEmpresa"]);
   }
 }

@@ -1,1 +1,51 @@
-<p>details-motorista works!</p>
+<h4>Motoristas</h4>
+
+<div *ngIf="empresas">
+
+  <div>
+    <label><b>CPF: </b></label>{{motorista.cpf}}
+  </div>
+  <div>
+    <label><b>RG: </b></label>{{motorista.rg}}
+  </div>
+  <div>
+    <label><b>E-mail: </b></label> {{motorista.email}}
+  </div>
+  <div>
+    <label><b>Telefone: </b></label> {{motorista.telefone}}
+  </div>
+  <div>
+    <label><b>Data de Nascimento: </b></label> {{motorista.dataNasc}}
+  </div>
+  <div>
+    <label><b>CNH: </b></label> {{motorista.reg_cnh}}
+  </div>
+  <div>
+    <label><b>Categoria CNH: </b></label> {{motorista.categ_cnh}}
+  </div>
+  <div>
+    <label><b>UF CNH: </b></label> {{motorista.UF_cnh}}
+  </div>
+  <div>
+    <label><b>Validade CNH: </b></label> {{motorista.val_cnh}}
+  </div>
+  <div>
+    <label><b>Renach: </b></label> {{motorista.renach}}
+  </div>
+  <div>
+    <label><b>Validade Renach: </b></label> {{motorista.val_renach}}
+  </div>
+
+</div>
+
+
+<br />
+<br />
+
+<button
+  [routerLink]="['/listMotorista']"
+  routerLinkActive="router-link-active"
+  class="btn btn-primary"
+>
+  Voltar</button
+><br />

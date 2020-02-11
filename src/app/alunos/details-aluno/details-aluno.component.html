@@ -1,1 +1,41 @@
-<p>details-aluno works!</p>
+<h4>Alunos</h4>
+
+<hr />
+
+<div *ngIf="linhas">
+  <div>
+    <label><b>Nome: </b></label> {{aluno.nome}}
+  </div>
+  <div>
+    <label><b>CPF: </b></label> {{aluno.cpf}}
+  </div>
+  <div>
+    <label><b>RG: </b></label> {{aluno.rg}}
+  </div>
+  <div>
+    <label><b>Telefone: </b></label> {{aluno.telefone}}
+  </div>
+  <div>
+    <label><b>Data de Nascimento: </b></label> {{aluno.dataNasc}}
+  </div>
+  <div>
+    <label><b>Escola: </b></label> {{aluno.escola}}
+  </div>
+  <div>
+    <label><b>Série: </b></label> {{aluno.serie}}
+  </div>
+  <div>
+    <label><b>Período: </b></label> {{aluno.periodo}}
+  </div>
+</div>
+
+<br />
+<br />
+
+<button
+  [routerLink]="['/listAluno']"
+  routerLinkActive="router-link-active"
+  class="btn btn-primary"
+>
+  Voltar</button
+><br />

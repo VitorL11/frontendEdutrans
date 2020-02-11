@@ -42,7 +42,7 @@ export class CreateLinhaComponent implements OnInit {
       }
 
       gotoList() {
-        this.router.navigate(['/listLinha/:id']);
+        this.router.navigate(['/listLinha']);
       }
 
     }

@@ -14,7 +14,7 @@ export class VeiculoService {
   constructor(private http : HttpClient) { }
 
   getVeiculo(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/veiculos/getVeiculo/${id}`);
+    return this.http.get(`${this.baseUrl}/veiculos/details-veiculo/${id}`);
   }
 
   createVeiculo(veiculo: Veiculo): Observable<any> {
@@ -32,7 +32,8 @@ export class VeiculoService {
     });
   }
 
-  updateVeiculo(veiculo: Veiculo): Observable<any> {
-    return this.http.put(`${this.baseUrl}/veiculos/upd-veiculos`, veiculo);
+  updateVeiculo(id: number, value: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/veiculos/upd-veiculos/${id}`, value);
   }
 }
+

@@ -31,7 +31,7 @@ this.escolaservice.getEscola(this.id)
   }
 
 updateEscola() {
-    this.escolaservice.updateEscola(this.escola)
+    this.escolaservice.updateEscola(this.id, this.escola)
       .subscribe(data => console.log(data), error => console.log(error));
     this.escola = new Escola();
     this.gotoList();
@@ -44,7 +44,7 @@ onSubmit() {
   }
 
 gotoList() {
-    this.router.navigate(['/detailsEscola/:id']);
+    this.router.navigate(['/listEscola']);
   }
 
 }

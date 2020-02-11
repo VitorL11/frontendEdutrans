@@ -26,7 +26,7 @@ export class ListAlunoComponent implements OnInit {
     this.alunos = this.alunoservice.getAlunoList();
   }
   list() {
-    this.router.navigate(["alunos"]);
+    this.router.navigate(['listAlunos']);
   }
 
   deleteAluno(id: number) {

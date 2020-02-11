@@ -1,1 +1,29 @@
-<p>details-escola works!</p>
+<h4>Escolas</h4>
+
+<hr />
+
+<div *ngIf="escolas">
+  <div>
+    <label><b>Nome: </b></label> {{escola.nome}}
+  </div>
+  <div>
+    <label><b>Telefone: </b></label> {{escola.telefone}}
+  </div>
+  <div>
+    <label><b>E-mail: </b></label> {{escola.email}}
+  </div>
+  <div>
+    <label><b>Endereço: </b></label> {{escola.endereco}}
+  </div>
+</div>
+
+<br />
+<br />
+
+<button
+  [routerLink]="['/listEmpresa']"
+  routerLinkActive="router-link-active"
+  class="btn btn-primary"
+>
+  Voltar</button
+><br />

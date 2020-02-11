@@ -1,1 +1,36 @@
-<p>details-veiculo works!</p>
+<h4>Veículos</h4>
+
+<div *ngIf="empresas"></div>
+  <div>
+    <label><b>Placa: </b></label> {{veiculo.placa}}
+  </div>
+  <div>
+    <label><b>Exercício: </b></label> {{veiculo.exercicio}}
+  </div>
+  <div>
+    <label><b>Proprietário: </b></label> {{veiculo.proprietario}}
+  </div>
+  <div>
+    <label><b>Tipo: </b></label> {{veiculo.tipo}}
+  </div>
+  <div>
+    <label><b>Modelo: </b></label> {{veiculo.modelo}}
+  </div>
+  <div>
+    <label><b>Ano: </b></label> {{veiculo.ano}}
+  </div>
+  <div>
+    <label><b>Capacidade: </b></label> {{veiculo.capacidade}}
+  </div>
+
+
+<br />
+<br />
+
+<button
+  [routerLink]="['/listVeiculo']"
+  routerLinkActive="router-link-active"
+  class="btn btn-primary"
+>
+  Voltar</button
+><br />

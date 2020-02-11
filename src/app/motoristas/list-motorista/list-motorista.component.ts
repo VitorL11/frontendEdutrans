@@ -1,33 +1,32 @@
-import { Observable } from 'rxjs';
-import { Router, ActivatedRoute } from '@angular/router';
-import { MotoristaService } from './../motorista.service';
-import { Motorista } from './../motorista';
-import { Component, OnInit } from '@angular/core';
+import { Observable } from "rxjs";
+import { Router, ActivatedRoute } from "@angular/router";
+import { MotoristaService } from "./../motorista.service";
+import { Motorista } from "./../motorista";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-list-motorista',
-  templateUrl: './list-motorista.component.html',
-  styleUrls: ['./list-motorista.component.css']
+  selector: "app-list-motorista",
+  templateUrl: "./list-motorista.component.html",
+  styleUrls: ["./list-motorista.component.css"]
 })
-
 export class ListMotoristaComponent implements OnInit {
   motorista: Motorista;
   motoristas: Observable<Motorista[]>;
 
-
-  constructor(private Route: ActivatedRoute,
+  constructor(
+    private Route: ActivatedRoute,
     private router: Router,
-    private motoristaservice: MotoristaService) {}
-
+    private motoristaservice: MotoristaService
+  ) {}
 
   ngOnInit() {
     this.reloadData();
   }
-  reloadData(){
+  reloadData() {
     this.motoristas = this.motoristaservice.getMotoristaList();
   }
-  list(){
-    this.router.navigate(['motoristas']);
+  list() {
+    this.router.navigate(["motoristas"]);
   }
   deleteMotorista(id: number) {
     this.motoristaservice.deleteMotorista(id).subscribe(
@@ -40,13 +39,10 @@ export class ListMotoristaComponent implements OnInit {
   }
 
   detalheMotorista(id: number) {
-    this.router.navigate(["detailsMotorista", id]);
+    this.router.navigate(['detailsMotorista', id]);
+  }
+
+  updateMotorista(id: number) {
+    this.router.navigate(['updateMotorista', id]);
   }
 }
-
-
-
-
-
-
-

@@ -1,127 +1,137 @@
-<a href="alunos" class="btn btn-success float-right">
-  <i class="fas fa-plus"></i>
-  Adicionar
-</a>
+<h4>Atualizar Cadastro de Motoristas</h4>
+<form action="#" class="col-md-9">
+  <div class="form-group">
+    <label for="idNome">Nome:</label>
+    <input
+      type="text"
+      name="txtNome"
+      class="form-control"
+      id="idNome"
+      required
+      [(ngModel)]="motorista.nome"
+    />
+  </div>
 
-<div class="col-md-9">
-  <h4>Motoristas</h4>
-  <form action="#" class="col-md-9">
-    <div class="form-group">
-      <label for="idNome">Nome:</label>
-      <input
-        type="text"
-        name="txtNome"
-        class="form-control"
-        id="idNome"
-        required
-      />
-    </div>
+  <div class="form-group">
+    <label for="idCpf">CPF:</label>
+    <input type="text"
+    name="txtCpf"
+    class="form-control"
+    id="idCpf"
+    required
+    [(ngModel)]="motorista.cpf"/>
+  </div>
 
-    <div class="form-group">
-      <label for="idCpf">CPF:</label>
-      <input type="text" name="txtCpf" class="form-control" id="idCpf" />
-    </div>
+  <div class="form-group">
+    <label for="idRg">RG:</label>
+    <input type="text"
+    name="txtRg"
+    class="form-control"
+    id="idRg"
+    required
+    [(ngModel)]="motorista.rg"/>
+  </div>
 
-    <div class="form-group">
-      <label for="idRg">RG:</label>
-      <input type="text" name="txtRg" class="form-control" id="idRg" required />
-    </div>
+  <div class="form-group">
+    <label for="idEmail">E-mail:</label>
+    <input
+      type="text"
+      name="txtEmail"
+      class="form-control"
+      id="idEmail"
+      required
+      [(ngModel)]="motorista.email"
+    />
+  </div>
 
-    <div class="form-group">
-      <label for="idEmail">E-mail:</label>
-      <input
-        type="text"
-        name="txtEmail"
-        class="form-control"
-        id="idEmail"
-        required
-      />
-    </div>
+  <div class="form-group">
+    <label for="idTelefone">Telefone:</label>
+    <input
+      type="tel"
+      name="txtTelefone"
+      class="form-control"
+      id="idTelefone"
+      required
+      [(ngModel)]="motorista.telefone"
+    />
+  </div>
 
-    <div class="form-group">
-      <label for="idTelefone">Telefone:</label>
-      <input
-        type="tel"
-        name="txtTelefone"
-        class="form-control"
-        id="idTelefone"
-        required
-      />
-    </div>
+  <div class="form-group">
+    <label for="idDataNasc">Data de Nascimento:</label>
+    <input
+      type="date"
+      name="txtDataNasc"
+      class="form-control"
+      id="idDataNasc"
+      required
+      [(ngModel)]="motorista.dataNasc"
+    />
+  </div>
 
-    <div class="form-group">
-      <label for="idDataNasc">Data de Nascimento:</label>
-      <input
-        type="date"
-        name="txtDataNasc"
-        class="form-control"
-        id="idDataNasc"
-        required
-      />
-    </div>
+  <div class="form-group">
+    <label for="idCnh">CNH:</label>
+    <input type="text"
+    name="txtCnh"
+    class="form-control"
+    id="idCnh"
+    required
+    [(ngModel)]="motorista.reg_cnh" />
+  </div>
 
-    <div class="form-group">
-      <label for="idCnh">CNH:</label>
-      <input
-        type="text"
-        name="txtCnh"
-        class="form-control"
-        id="idCnh"
-        required
-      />
-    </div>
+  <div class="form-group">
+    <label for="idCategCnh">Categoria CNH:</label>
+    <input
+      type="text"
+      name="txtCategCnh"
+      class="form-control"
+      id="idCategCnh"
+      required
+      [(ngModel)]="motorista.categ_cnh"
+    />
+  </div>
 
-    <div class="form-group">
-      <label for="idCategCnh">Categoria CNH:</label>
-      <input
-        type="text"
-        name="txtCategCnh"
-        class="form-control"
-        id="idCategCnh"
-        required
-      />
-    </div>
+  <div class="form-group">
+    <label for="idUf">UF CNH:</label>
+    <input type="text" name="txtUf" class="form-control" id="idUf" required />
+  </div>
 
-    <div class="form-group">
-      <label for="idUf">UF CNH:</label>
-      <input type="text" name="txtUf" class="form-control" id="idUf" required />
-    </div>
+  <div class="form-group">
+    <label for="idValCnh">Validade CNH:</label>
+    <input
+      type="date"
+      name="txtValCnh"
+      class="form-control"
+      id="idValCnh"
+      required
+      [(ngModel)]="motorista.val_cnh"
+    />
+  </div>
 
-    <div class="form-group">
-      <label for="idValCnh">Validade CNH:</label>
-      <input
-        type="date"
-        name="txtValCnh"
-        class="form-control"
-        id="idValCnh"
-        required
-      />
-    </div>
+  <div class="form-group">
+    <label for="idRenach">Renach:</label>
+    <input
+      type="text"
+      name="txtRenach"
+      class="form-control"
+      id="idRenach"
+      required
+      [(ngModel)]="motorista.renach"
+    />
+  </div>
 
-    <div class="form-group">
-      <label for="idRenach">Renach:</label>
-      <input
-        type="text"
-        name="txtRenach"
-        class="form-control"
-        id="idRenach"
-        required
-      />
-    </div>
+  <div class="form-group">
+    <label for="idValRenach">Validade Renach:</label>
+    <input
+      type="date"
+      name="txtValRenach"
+      class="form-control"
+      id="idValRenach"
+      required
+      [(ngModel)]="motorista.val_renach"
+    />
+  </div>
 
-    <div class="form-group">
-      <label for="idValRenach">Validade Renach:</label>
-      <input
-        type="date"
-        name="txtValRenach"
-        class="form-control"
-        id="idValRenach"
-        required
-      />
-    </div>
-
-    <button type="submit" class="btn btn-success">
-      Salvar
-    </button>
-  </form>
-</div>
+  <button type="submit" class="btn btn-success">
+    Atualizar Dados
+  </button>
+</form>

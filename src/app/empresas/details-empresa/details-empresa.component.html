@@ -1,1 +1,38 @@
-<p>details-empresa works!</p>
+<h4>Empresas</h4>
+
+<hr />
+
+<div *ngIf="empresas">
+  <div>
+    <label><b>Razão Social: </b></label> {{empresa.rezao_social}}
+  </div>
+  <div>
+    <label><b>CNPJ: </b></label> {{empresa.cnpj}}
+  </div>
+  <div>
+    <label><b>Endereço: </b></label> {{empresa.endereco}}
+  </div>
+  <div>
+    <label><b>Gerente: </b></label> {{empresa.gerente}}
+  </div>
+  <div>
+    <label><b>Telefone: </b></label> {{empresa.telefone}}
+  </div>
+  <div>
+    <label><b>Escola: </b></label> {{empresa.nome_dono}}
+  </div>
+  <div>
+    <label><b>Série: </b></label> {{empresa.email}}
+  </div>
+</div>
+
+<br />
+<br />
+
+<button
+  [routerLink]="['/listEmpresa']"
+  routerLinkActive="router-link-active"
+  class="btn btn-primary"
+>
+  Voltar</button
+><br />

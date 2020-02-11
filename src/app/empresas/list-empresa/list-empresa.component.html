@@ -26,9 +26,7 @@
           <td>{{empresa.endereco}}</td>
           <td>
             <button
-              [routerLink]="['/routePath']"
-              routerLinkActive="router-link-active"
-              (click)="detalheAluno(aluno.id)"
+              (click)="detalheEmpresa(empresa.id)"
               class="btn btn-primary"
               style="margin-right: 10px"
             >
@@ -36,8 +34,6 @@
             </button>
 
             <button
-              [routerLink]="['/updateEmpresa']"
-              routerLinkActive="router-link-active"
               (click)="updateEmpresa(empresa.id)"
               class="btn btn-warning"
               style="margin-right: 10px"

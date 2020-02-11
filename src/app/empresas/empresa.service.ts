@@ -13,7 +13,7 @@ export class EmpresaService {
   constructor(private http: HttpClient) { }
 
   getEmpresa(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/empresas/de/${id}`);
+    return this.http.get(`${this.baseUrl}/empresas/details-empresas/${id}`);
   }
 
   createEmpresa(empresa: Empresa): Observable<any> {
@@ -31,7 +31,7 @@ export class EmpresaService {
     });
   }
 
-  updateEmpresa(empresa: Empresa): Observable<any> {
-    return this.http.put(`${this.baseUrl}/empresas/upd-empresas`, empresa);
+  updateEmpresa(id: number, value: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/empresas/upd-empresas/${id}`, value);
   }
 }

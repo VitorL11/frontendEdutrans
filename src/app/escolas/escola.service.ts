@@ -15,7 +15,7 @@ export class EscolaService {
   constructor(private http : HttpClient) { }
 
   getEscola(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/escolas/getEscola/${id}`);
+    return this.http.get(`${this.baseUrl}/escolas/details-escola/${id}`);
   }
 
   createEscola(escola: Escola): Observable<any> {
@@ -33,7 +33,7 @@ export class EscolaService {
     });
   }
 
-  updateEscola(escola: Escola): Observable<any> {
-    return this.http.put(`${this.baseUrl}/escolas/upd-escolas`, escola);
+  updateEscola(id: number, value: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/escolas/upd-escolas/${id}`, value);
   }
 }

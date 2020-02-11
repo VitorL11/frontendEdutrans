@@ -40,11 +40,11 @@ export class ListVeiculoComponent implements OnInit {
 }
 
 detalheVeiculo(id: number) {
-  this.router.navigate(["details", id]);
+  this.router.navigate(["detailsVeiculo", id]);
   }
 
 updateVeiculo(id: number) {
-  this.router.navigate(["updateVeiculo/:id", id]);
+  this.router.navigate(["updateVeiculo", id]);
   }
 }
 

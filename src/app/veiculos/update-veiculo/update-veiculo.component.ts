@@ -31,20 +31,22 @@ this.veiculoservice.getVeiculo(this.id)
   }
 
 updateVeiculo() {
-    this.veiculoservice.updateVeiculo(this.veiculo)
-      .subscribe(data => console.log(data), error => console.log(error));
+    this.veiculoservice.updateVeiculo(this.id, this.veiculo).subscribe(
+      data => console.log(data),
+      error => console.log(error)
+    );
     this.veiculo = new Veiculo();
     this.gotoList();
   }
 
 onSubmit() {
     this.updateVeiculo();
-    this.submitted = true;
-    this.gotoList();
+    //this.submitted = true;
+    //this.gotoList();
   }
 
 gotoList() {
-    this.router.navigate(['/update']);
+    this.router.navigate(['/listVeiculo']);
   }
 
 }
