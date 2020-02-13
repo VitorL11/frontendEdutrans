@@ -22,6 +22,7 @@ export class ListMotoristaComponent implements OnInit {
   ngOnInit() {
     this.reloadData();
   }
+
   reloadData() {
     this.motoristas = this.motoristaservice.getMotoristaList();
   }

@@ -40,7 +40,7 @@ export class CreateEscolaComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/listEscola/:id']);
+    this.router.navigate(['/listEscola']);
   }
 
 }

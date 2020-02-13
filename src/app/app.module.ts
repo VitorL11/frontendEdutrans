@@ -36,7 +36,6 @@ import { DetailsEmpresaComponent } from './empresas/details-empresa/details-empr
 import { DetailsEscolaComponent } from './escolas/details-escola/details-escola.component';
 import { DetailsMotoristaComponent } from './motoristas/details-motorista/details-motorista.component';
 import { DetailsVeiculoComponent } from './veiculos/details-veiculo/details-veiculo.component';
-import { BuscarComponent } from './MotVei/buscar/buscar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -44,6 +43,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { SearchComponent } from './search/search.component';
+import { SearchPipe } from './pipes/search.pipe';
 
 
 @NgModule({
@@ -81,7 +82,8 @@ import {MatInputModule} from '@angular/material/input';
     DetailsVeiculoComponent,
 
 
-    BuscarComponent,
+    SearchComponent,
+    SearchPipe,
 
   ],
 

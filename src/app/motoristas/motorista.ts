@@ -1,6 +1,6 @@
 export class Motorista {
   id: number;
-  cpf: number;
+  cpf: String;
   renach: number;
   reg_cnh: number;
   telefone: number;

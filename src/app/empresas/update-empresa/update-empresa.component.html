@@ -15,7 +15,12 @@
 
     <div class="form-group">
       <label for="cnpj">CNPJ:</label>
-      <input type="text" class="form-control" id="idNome" name="txtcnpj" />
+      <input type="text"
+      class="form-control"
+      id="idcnpj"
+      name="txtcnpj"
+      required
+        [(ngModel)]="empresa.cnpj"/>
     </div>
 
     <div class="form-group">
@@ -33,7 +38,12 @@
 
     <div class="form-group">
       <label for="Rg">Gerente:</label>
-      <input type="text" class="form-control" id="idRg" name="txtRg" />
+      <input type="text"
+       class="form-control"
+       id="idGerente"
+       name="txtGerente"
+       required
+        [(ngModel)]="empresa.nome_gerente"/>
     </div>
 
     <div class="form-group">

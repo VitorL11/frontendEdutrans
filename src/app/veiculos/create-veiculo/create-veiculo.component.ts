@@ -40,7 +40,7 @@ export class CreateVeiculoComponent implements OnInit {
     }
 
     gotoList() {
-      this.router.navigate(['/listVeiculo/:id']);
+      this.router.navigate(['/listVeiculo']);
     }
 
   }

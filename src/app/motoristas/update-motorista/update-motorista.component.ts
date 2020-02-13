@@ -11,7 +11,7 @@ import { Component, OnInit } from "@angular/core";
 export class UpdateMotoristaComponent implements OnInit {
   id: number;
   motorista: Motorista;
-  submitted = false;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -43,11 +43,9 @@ export class UpdateMotoristaComponent implements OnInit {
 
   onSubmit() {
     this.updateMotorista();
-    this.submitted = true;
-    this.gotoList();
   }
 
   gotoList() {
-    this.router.navigate(["/listMotorista/:id"]);
+    this.router.navigate(["/listMotorista"]);
   }
 }
