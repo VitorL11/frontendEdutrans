@@ -46,6 +46,9 @@ import {MatInputModule} from '@angular/material/input';
 import { ListVeiComponent } from './list-vei/list-vei.component';
 import { SearchVeiComponent } from './search-vei/search-vei.component';
 import { SearchveiPipe } from './pipes/searchvei.pipe';
+import { SearchMotComponent } from './search-mot/search-mot.component';
+import { ListMotComponent } from './list-mot/list-mot.component';
+import { SearchmotPipe } from './pipes/searchmot.pipe';
 
 
 
@@ -86,6 +89,9 @@ import { SearchveiPipe } from './pipes/searchvei.pipe';
     ListVeiComponent,
     SearchVeiComponent,
     SearchveiPipe,
+    SearchMotComponent,
+    ListMotComponent,
+    SearchmotPipe,
 
   ],
 

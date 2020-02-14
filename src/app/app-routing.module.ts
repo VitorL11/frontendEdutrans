@@ -36,6 +36,8 @@ import { DetailsVeiculoComponent } from './veiculos/details-veiculo/details-veic
 
 import { SearchVeiComponent } from './search-vei/search-vei.component';
 import { ListVeiComponent } from './list-vei/list-vei.component';
+import { SearchMotComponent } from './search-mot/search-mot.component';
+import { ListMotComponent } from './list-mot/list-mot.component';
 
 
 const routes: Routes = [
@@ -71,7 +73,9 @@ const routes: Routes = [
   {path: 'detailsVeiculo/:id', component: DetailsVeiculoComponent},
 
   {path: 'listvei', component: ListVeiComponent},
-  {path: 'searchvei', component: SearchVeiComponent}
+  {path: 'searchmot', component: SearchMotComponent},
+  {path: 'searchvei', component: SearchVeiComponent},
+  {path: 'listmot', component: ListMotComponent},
 
 ];
 
