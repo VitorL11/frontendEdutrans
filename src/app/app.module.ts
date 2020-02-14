@@ -43,8 +43,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { SearchComponent } from './search/search.component';
+import { SearchComponent } from './search-mot/search.component';
 import { SearchPipe } from './pipes/search.pipe';
+import { SearchVeiComponent } from './search-vei/search-vei.component';
+import { SearchveiPipe } from './pipes/searchvei.pipe';
+import { ListVeiComponent } from './list-vei/list-vei.component';
+import { ListMotComponent } from './list-mot/list-mot.component';
+
 
 
 @NgModule({
@@ -84,6 +89,10 @@ import { SearchPipe } from './pipes/search.pipe';
 
     SearchComponent,
     SearchPipe,
+    SearchVeiComponent,
+    SearchveiPipe,
+    ListVeiComponent,
+    ListMotComponent,
 
   ],
 

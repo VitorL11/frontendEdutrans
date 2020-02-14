@@ -1,4 +1,5 @@
 
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -34,8 +35,8 @@ import { DetailsVeiculoComponent } from './veiculos/details-veiculo/details-veic
 
 //Testes
 
-import { SearchComponent } from './search/search.component';
-
+import { SearchVeiComponent } from './search-vei/search-vei.component';
+import { SearchComponent } from './search-mot/search.component';
 
 
 const routes: Routes = [
@@ -72,7 +73,8 @@ const routes: Routes = [
 
 //teste
 
-{path: 'search', component: SearchComponent },
+{path: 'searchmot', component: SearchComponent },
+{path: 'searchvei', component: SearchVeiComponent }
 
 
 

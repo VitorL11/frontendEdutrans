@@ -1,0 +1,13 @@
+<div class="container">
+  <table>
+    <tr>
+      <td>
+        <ul>
+          <li *ngFor="let veiculo of veiculos | async |search:filtro_valor">
+            {{veiculo.tipo}}
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</div>
