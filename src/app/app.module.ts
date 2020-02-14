@@ -43,12 +43,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { SearchComponent } from './search-mot/search.component';
-import { SearchPipe } from './pipes/search.pipe';
+import { ListVeiComponent } from './list-vei/list-vei.component';
 import { SearchVeiComponent } from './search-vei/search-vei.component';
 import { SearchveiPipe } from './pipes/searchvei.pipe';
-import { ListVeiComponent } from './list-vei/list-vei.component';
-import { ListMotComponent } from './list-mot/list-mot.component';
+
 
 
 
@@ -85,14 +83,9 @@ import { ListMotComponent } from './list-mot/list-mot.component';
     ListVeiculoComponent,
     UpdateVeiculoComponent,
     DetailsVeiculoComponent,
-
-
-    SearchComponent,
-    SearchPipe,
+    ListVeiComponent,
     SearchVeiComponent,
     SearchveiPipe,
-    ListVeiComponent,
-    ListMotComponent,
 
   ],
 

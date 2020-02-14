@@ -1,6 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormControl } from "@angular/forms";
 import { debounceTime } from 'rxjs/operators';
+import { FormControl } from '@angular/forms';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-search-vei',
@@ -12,15 +13,15 @@ export class SearchVeiComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.search.valueChanges
-    .pipe(
+    this.searchvei.valueChanges
+    .pipe (
       debounceTime (300)
     )
-    .subscribe(value => this.searchEmitter.emit(value));
+    .subscribe(value => this.searchveiEmitter.emit(value))
   }
 
-  search = new FormControl("");
+  searchvei = new FormControl('')
 
-  @Output("search") searchEmitter = new EventEmitter<string>();
+  @Output('searchvei') searchveiEmitter = new EventEmitter<string>();
 
 }

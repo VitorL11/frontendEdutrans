@@ -1,8 +1,7 @@
 import { VeiculoService } from './../veiculos/veiculo.service';
-import { Component, OnInit } from '@angular/core';
-import { Veiculo } from "./../veiculos/veiculo";
 import { Observable } from 'rxjs';
-
+import { Component, OnInit } from '@angular/core';
+import { Veiculo } from '../veiculos/veiculo';
 
 @Component({
   selector: 'app-list-vei',
@@ -13,14 +12,14 @@ export class ListVeiComponent implements OnInit {
   veiculo: Veiculo;
   veiculos: Observable<Veiculo[]>;
 
-  handleSearch(value: string) {
+  handleSearch(value: string){
+    //console.log(value);
     this.filtro_valor = value;
   }
 
-  filtro_valor = "";
+  filtro_valor = ''
 
-  constructor(private veiculoservice: VeiculoService) {
-   }
+  constructor(private veiculoservice: VeiculoService ) { }
 
   ngOnInit() {
     this.veiculos = this.veiculoservice.getVeiculoList();

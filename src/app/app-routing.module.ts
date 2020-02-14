@@ -1,5 +1,3 @@
-
-
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -33,10 +31,11 @@ import { ListVeiculoComponent } from './veiculos/list-veiculo/list-veiculo.compo
 import { UpdateVeiculoComponent } from './veiculos/update-veiculo/update-veiculo.component';
 import { DetailsVeiculoComponent } from './veiculos/details-veiculo/details-veiculo.component';
 
-//Testes
+
+// teste
 
 import { SearchVeiComponent } from './search-vei/search-vei.component';
-import { SearchComponent } from './search-mot/search.component';
+import { ListVeiComponent } from './list-vei/list-vei.component';
 
 
 const routes: Routes = [
@@ -71,12 +70,8 @@ const routes: Routes = [
   {path: 'updateVeiculo/:id', component: UpdateVeiculoComponent},
   {path: 'detailsVeiculo/:id', component: DetailsVeiculoComponent},
 
-//teste
-
-{path: 'searchmot', component: SearchComponent },
-{path: 'searchvei', component: SearchVeiComponent }
-
-
+  {path: 'listvei', component: ListVeiComponent},
+  {path: 'searchvei', component: SearchVeiComponent}
 
 ];
 
