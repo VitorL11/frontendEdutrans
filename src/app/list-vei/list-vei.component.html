@@ -7,5 +7,5 @@
 </table> -->
 
 <ul>
-  <li *ngFor="let veiculo of placa | async | searchvei: filtro_valor"> {{veiculo.placa}}</li>
+  <li *ngFor="let veiculo of veiculos | async | searchvei: filtro_valor"> {{veiculo.tipo}}</li>
 </ul>
