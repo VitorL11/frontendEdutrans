@@ -1,7 +1,13 @@
 import { ActivatedRoute, Route, Router } from "@angular/router";
+import { Observable } from "rxjs";
 import { AlunoService } from "./../aluno.service";
+import { EscolaService } from './../../escolas/escola.service';
+import { LinhaService } from './../../linhas/linha.service';
 import { Aluno } from "./../aluno";
+import { Linha } from 'src/app/linhas/linha';
+import { Escola } from 'src/app/escolas/escola';
 import { Component, OnInit } from "@angular/core";
+
 
 @Component({
   selector: "app-update-aluno",
@@ -9,6 +15,8 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./update-aluno.component.css"]
 })
 export class UpdateAlunoComponent implements OnInit {
+  linhas: Observable<Linha[]>;
+  escolas: Observable<Escola[]>;
   id: number;
   aluno: Aluno;
   submitted = false;
@@ -16,7 +24,9 @@ export class UpdateAlunoComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private AlunoService: AlunoService
+    private AlunoService: AlunoService,
+    private linhaservice: LinhaService,
+    private escolaservice: EscolaService,
   ) {}
 
   ngOnInit() {
@@ -30,6 +40,9 @@ export class UpdateAlunoComponent implements OnInit {
       },
       error => console.log(error)
     );
+
+    this.escolas = this.escolaservice.getEscolaList();
+    this.linhas = this.linhaservice.getLinhaList();
   }
 
   updateAluno() {

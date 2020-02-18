@@ -54,6 +54,10 @@ import { SearchmotPipe } from './pipes/searchmot.pipe';
 import { SearchveiPipe } from './pipe/searchvei.pipe';
 
 
+// Smart Table
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -108,7 +112,8 @@ import { SearchveiPipe } from './pipe/searchvei.pipe';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    Ng2SmartTableModule,
 
   ],
 

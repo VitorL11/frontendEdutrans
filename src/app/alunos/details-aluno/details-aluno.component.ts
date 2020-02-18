@@ -30,8 +30,6 @@ export class DetailsAlunoComponent implements OnInit {
       },
       error => console.log(error)
     );
-      console.log(this.aluno.nome)
-    this.aluno.nome = 'yteste';
   }
 
   list() {

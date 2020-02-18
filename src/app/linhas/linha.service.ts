@@ -18,7 +18,7 @@ export class LinhaService {
   }
 
   createLinha(linha: Linha): Observable<any> {
-    console.log(linha.nome);
+    console.log(linha.nome_linha);
     return this.http.post(`${this.baseUrl}/linhas/cad-linhas`, linha);
   }
 

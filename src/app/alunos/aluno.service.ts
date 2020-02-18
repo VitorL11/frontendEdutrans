@@ -17,7 +17,7 @@ export class AlunoService {
   }
 
   createAluno(aluno: Aluno): Observable<any> {
-    console.log(aluno.nome);
+    //console.log(aluno.nome);
     return this.http.post(`${this.baseUrl}/alunos/cad-alunos`, aluno);
   }
 

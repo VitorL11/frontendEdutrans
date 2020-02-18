@@ -30,8 +30,6 @@ export class DetailsLinhaComponent implements OnInit {
       },
       error => console.log(error)
     );
-      console.log(this.linha.nome)
-    this.linha.nome = 'yteste';
   }
 
   list() {

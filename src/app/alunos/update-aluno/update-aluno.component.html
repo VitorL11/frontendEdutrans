@@ -9,17 +9,12 @@
         class="form-control"
         id="idLinha"
         required
-        [(ngModel)]="aluno.nome"
+        [(ngModel)]="aluno.nome_linha"
       >
-        <!--
-        <option *ngFor="let linha of linhas" [value]="linha.value">
-          {{linha.nome}}
-        </option> -->
-
-        <option value="">Selecione</option>
-        <option [ngValue]="linha" *ngFor="let linha of linhas"
-          >{{ linha.nome }}</option
-        >
+      <option value="">Selecione...</option>
+      <option [ngValue]="linha" *ngFor="let linha of linhas | async"
+        >{{ aluno.nome_linha }}</option
+      >
       </select>
     </div>
 
@@ -92,13 +87,10 @@
         required
         [(ngModel)]="aluno.escola"
       >
-      <!--
-        <option *ngFor="let linha of linhas" [value]="linha.value">
-          {{linha.nome}}
-        </option> -->
+
       <option value="">Selecione</option>
-      <option [ngValue]="escola" *ngFor="let escola of escolas"
-        >{{ escola.nome }}</option
+      <option [ngValue]="escola" *ngFor="let escola of escolas | async"
+        >{{ aluno.escola.nome }}</option
       >
       </select>
     </div>

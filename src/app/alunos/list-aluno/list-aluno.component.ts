@@ -1,8 +1,9 @@
-import { Observable } from "rxjs";
 import { Router, ActivatedRoute } from "@angular/router";
 import { AlunoService } from "../aluno.service";
 import { Aluno } from "./../aluno";
 import { Component, OnInit } from "@angular/core";
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: "app-list-aluno",

@@ -9,7 +9,7 @@ export class SearchveiPipe implements PipeTransform {
     console.log(lista);
      if(!texto) return lista
      //console.log(lista.filter(user => user.name.toUpperCase().includes(texto.toUpperCase)))
-     return lista.filter(user => user.tipo.toUpperCase().includes(texto.toUpperCase()))
+     return lista.filter(user => user.placa.toUpperCase().includes(texto.toUpperCase()))
 
    }
 

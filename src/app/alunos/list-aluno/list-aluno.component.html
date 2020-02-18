@@ -18,6 +18,7 @@
           <th>Id</th>
           <th>Nome</th>
           <th>Escola</th>
+          <th>Linha</th>
           <th>Período</th>
           <th>Opções</th>
         </tr>
@@ -26,7 +27,8 @@
         <tr *ngFor="let aluno of alunos | async">
           <td>{{aluno.id}}</td>
           <td>{{aluno.nome}}</td>
-          <td>{{aluno.escola}}</td>
+          <td>{{aluno.escola.nome}}</td>
+          <td>{{aluno.linha.nome_linha}}</td>
           <td>{{aluno.periodo}}</td>
           <td>
             <button
