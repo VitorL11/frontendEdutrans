@@ -1,3 +1,5 @@
+<app-search-vei (searchvei)="handleSearch($event)"> </app-search-vei>
+
 <a href="veiculos" class="btn btn-success float-right">
   <i class="fas fa-plus"></i>
   Adicionar
@@ -15,17 +17,17 @@
           <th>Capacidade</th>
           <th>Tipo</th>
           <th>Ano</th>
-          <th>Modelo</th>
+          <th>Placa</th>
           <th>Opções</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let veiculo of veiculos | async">
+        <tr *ngFor="let veiculo of veiculos | async | searchvei: filtro_valor">
           <td>{{veiculo.id}}</td>
           <td>{{veiculo.capacidade}}</td>
           <td>{{veiculo.tipo}}</td>
           <td>{{veiculo.ano}}</td>
-          <td>{{veiculo.modelo}}</td>
+          <td>{{veiculo.placa}}</td>
           <td>
             <button
             (click)="detalheVeiculo(veiculo.id)"

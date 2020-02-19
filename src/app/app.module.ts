@@ -39,23 +39,28 @@ import { DetailsVeiculoComponent } from './veiculos/details-veiculo/details-veic
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
-// Angular Materials
+// Angular Materials -> Campo de Busca //
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 
-import { ListVeiComponent } from './list-vei/list-vei.component';
+import { SearchAluComponent } from './search-alu/search-alu.component';
+import { SearchLinComponent } from './search-lin/search-lin.component';
 import { SearchVeiComponent } from './search-vei/search-vei.component';
-
 import { SearchMotComponent } from './search-mot/search-mot.component';
-import { ListMotComponent } from './list-mot/list-mot.component';
 
-import { SearchmotPipe } from './pipes/searchmot.pipe';
-import { SearchveiPipe } from './pipe/searchvei.pipe';
+import { SearchaluPipe } from './pipealu/searchalu.pipe';
+import { SearchlinPipe } from './pipelin/searchlin.pipe';
+import { SearchmotPipe } from './pipemot/searchmot.pipe';
+import { SearchveiPipe } from './pipevei/searchvei.pipe';
 
 
 // Smart Table
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+
+
+
+
 
 
 @NgModule({
@@ -92,14 +97,16 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     UpdateVeiculoComponent,
     DetailsVeiculoComponent,
 
-    ListVeiComponent,
-    SearchVeiComponent,
-
+    SearchLinComponent,
     SearchMotComponent,
-    ListMotComponent,
+    SearchVeiComponent,
+    SearchAluComponent,
 
+    SearchlinPipe,
     SearchmotPipe,
-    SearchveiPipe
+    SearchveiPipe,
+    SearchaluPipe
+
 
   ],
 

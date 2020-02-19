@@ -1,3 +1,5 @@
+<app-search-lin (searchlin)="handleSearch($event)"> </app-search-lin>
+
 <a [routerLink]="['/linhas']"
   routerLinkActive="router-link-active"
   class="btn btn-success float-right">
@@ -19,7 +21,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let linha of linhas | async">
+        <tr *ngFor="let linha of linhas | async | searchlin: filtro_valor">
           <td>{{linha.id}}</td>
           <td>{{linha.nome_linha}}</td>
           <td>

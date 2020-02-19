@@ -24,7 +24,7 @@ export class UpdateAlunoComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private AlunoService: AlunoService,
+    private alunoservice: AlunoService,
     private linhaservice: LinhaService,
     private escolaservice: EscolaService,
   ) {}
@@ -34,7 +34,7 @@ export class UpdateAlunoComponent implements OnInit {
 
     this.id = this.route.snapshot.params["id"];
 
-    this.AlunoService.getAluno(this.id).subscribe(
+    this.alunoservice.getAluno(this.id).subscribe(
       data => {
         console.log(data), (this.aluno = data);
       },
@@ -46,7 +46,7 @@ export class UpdateAlunoComponent implements OnInit {
   }
 
   updateAluno() {
-    this.AlunoService.updateAluno(this.id, this.aluno).subscribe(
+    this.alunoservice.updateAluno(this.id, this.aluno).subscribe(
       data => console.log(data),
       error => console.log(error)
     );

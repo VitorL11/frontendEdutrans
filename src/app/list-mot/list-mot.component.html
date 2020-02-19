@@ -1,7 +1,0 @@
-<app-search-mot (searchmot)="handleSearch($event)"> </app-search-mot>
-
-<ul>
-  <li *ngFor="let motorista of motoristas | async | searchmot: filtro_valor">
-    {{motorista.nome}}
-  </li>
-</ul>

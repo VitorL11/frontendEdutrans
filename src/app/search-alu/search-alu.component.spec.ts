@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListVeiComponent } from './list-vei.component';
+import { SearchAluComponent } from './search-alu.component';
 
-describe('ListVeiComponent', () => {
-  let component: ListVeiComponent;
-  let fixture: ComponentFixture<ListVeiComponent>;
+describe('SearchAluComponent', () => {
+  let component: SearchAluComponent;
+  let fixture: ComponentFixture<SearchAluComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListVeiComponent ]
+      declarations: [ SearchAluComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListVeiComponent);
+    fixture = TestBed.createComponent(SearchAluComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

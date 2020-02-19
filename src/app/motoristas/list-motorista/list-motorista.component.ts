@@ -13,6 +13,13 @@ export class ListMotoristaComponent implements OnInit {
   motorista: Motorista;
   motoristas: Observable<Motorista[]>;
 
+  handleSearch(value: string){
+    //console.log(value);
+    this.filtro_valor = value;
+  }
+
+  filtro_valor = ''
+
   constructor(
     private Route: ActivatedRoute,
     private router: Router,

@@ -9,11 +9,11 @@
         class="form-control"
         id="idLinha"
         required
-        [(ngModel)]="aluno.nome_linha"
+        [(ngModel)]="aluno.linha"
       >
       <option value="">Selecione...</option>
       <option [ngValue]="linha" *ngFor="let linha of linhas | async"
-        >{{ aluno.nome_linha }}</option
+        >{{ aluno.linha.nome_linha }}</option
       >
       </select>
     </div>

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListMotComponent } from './list-mot.component';
+import { SearchLinComponent } from './search-lin.component';
 
-describe('ListMotComponent', () => {
-  let component: ListMotComponent;
-  let fixture: ComponentFixture<ListMotComponent>;
+describe('SearchLinComponent', () => {
+  let component: SearchLinComponent;
+  let fixture: ComponentFixture<SearchLinComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListMotComponent ]
+      declarations: [ SearchLinComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListMotComponent);
+    fixture = TestBed.createComponent(SearchLinComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

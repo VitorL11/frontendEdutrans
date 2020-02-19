@@ -1,3 +1,5 @@
+<app-search-alu (searchalu)="handleSearch($event)"> </app-search-alu>
+
 <a
   [routerLink]="['/alunos']"
   routerLinkActive="router-link-active"
@@ -24,7 +26,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let aluno of alunos | async">
+        <tr *ngFor="let aluno of alunos | async | searchlin: filtro_valor">
           <td>{{aluno.id}}</td>
           <td>{{aluno.nome}}</td>
           <td>{{aluno.escola.nome}}</td>

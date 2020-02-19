@@ -13,6 +13,12 @@ import { Observable } from 'rxjs';
 export class ListAlunoComponent implements OnInit {
   aluno: Aluno;
   alunos: Observable<Aluno[]>;
+  handleSearch(value: string){
+    //console.log(value);
+    this.filtro_valor = value;
+  }
+
+  filtro_valor = ''
 
   constructor(
     private Route: ActivatedRoute,

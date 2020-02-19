@@ -14,6 +14,13 @@ export class ListVeiculoComponent implements OnInit {
   veiculo: Veiculo
   veiculos: Observable<Veiculo[]>;
 
+  handleSearch(value: string){
+    //console.log(value);
+    this.filtro_valor = value;
+  }
+
+  filtro_valor = ''
+
   constructor(private route: ActivatedRoute,
     private router: Router,
     private veiculoservice: VeiculoService) {

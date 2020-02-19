@@ -1,5 +1,6 @@
 export class Empresa {
   idEmpresa: number;
+  nome: String;
   cnpj: any;
   telefone: any;
   email: string;

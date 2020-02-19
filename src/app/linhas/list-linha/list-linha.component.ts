@@ -13,6 +13,12 @@ import { Component, OnInit } from "@angular/core";
 export class ListLinhaComponent implements OnInit {
   linha: Linha;
   linhas: Observable<Linha[]>;
+  handleSearch(value: string){
+    //console.log(value);
+    this.filtro_valor = value;
+  }
+
+  filtro_valor = ''
 
   constructor(private Route: ActivatedRoute,
     private router: Router,
