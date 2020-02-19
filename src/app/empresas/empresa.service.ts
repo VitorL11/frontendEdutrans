@@ -17,7 +17,7 @@ export class EmpresaService {
   }
 
   createEmpresa(empresa: Empresa): Observable<any> {
-    console.log(empresa.nome);
+    console.log(empresa.nome_dono);
     return this.http.post(`${this.baseUrl}/empresas/cad-empresas`, empresa);
   }
 

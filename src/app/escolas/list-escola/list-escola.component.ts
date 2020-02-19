@@ -10,8 +10,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-escola.component.css']
 })
 export class ListEscolaComponent implements OnInit {
+  public paginaAtual = 1;
   escola: Escola;
   escolas: Observable<Escola[]>;
+
+  handleSearch(value: string){
+    //console.log(value);
+    this.filtro_valor = value;
+  }
+
+  filtro_valor = ''
 
   constructor(private Route: ActivatedRoute,
     private router: Router,

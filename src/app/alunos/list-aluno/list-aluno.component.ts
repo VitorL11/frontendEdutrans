@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
   styleUrls: ["list-aluno.component.css"]
 })
 export class ListAlunoComponent implements OnInit {
+  public paginaAtual = 1;
   aluno: Aluno;
   alunos: Observable<Aluno[]>;
   handleSearch(value: string){

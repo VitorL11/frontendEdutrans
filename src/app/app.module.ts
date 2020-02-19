@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { CreateAlunoComponent } from './alunos/create-aluno/create-aluno.component';
 import { ListAlunoComponent } from './alunos/list-aluno/list-aluno.component';
@@ -45,11 +46,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 
 import { SearchAluComponent } from './search-alu/search-alu.component';
+import { SearchEmpComponent } from './search-emp/search-emp.component';
 import { SearchLinComponent } from './search-lin/search-lin.component';
 import { SearchVeiComponent } from './search-vei/search-vei.component';
 import { SearchMotComponent } from './search-mot/search-mot.component';
 
 import { SearchaluPipe } from './pipealu/searchalu.pipe';
+import { SearchempPipe } from './pipeemp/searchemp.pipe';
 import { SearchlinPipe } from './pipelin/searchlin.pipe';
 import { SearchmotPipe } from './pipemot/searchmot.pipe';
 import { SearchveiPipe } from './pipevei/searchvei.pipe';
@@ -57,8 +60,8 @@ import { SearchveiPipe } from './pipevei/searchvei.pipe';
 
 // Smart Table
 import { Ng2SmartTableModule } from 'ng2-smart-table';
-
-
+import { SearchEscComponent } from './search-esc/search-esc.component';
+import { SearchescPipe } from './pipeesc/searchesc.pipe';
 
 
 
@@ -97,15 +100,20 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     UpdateVeiculoComponent,
     DetailsVeiculoComponent,
 
+    SearchAluComponent,
+    SearchEmpComponent,
     SearchLinComponent,
     SearchMotComponent,
     SearchVeiComponent,
-    SearchAluComponent,
 
+    SearchaluPipe,
+    SearchempPipe,
     SearchlinPipe,
     SearchmotPipe,
     SearchveiPipe,
-    SearchaluPipe
+    SearchEscComponent,
+    SearchescPipe
+
 
 
   ],
@@ -121,6 +129,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     ReactiveFormsModule,
     FormsModule,
     Ng2SmartTableModule,
+    NgxPaginationModule
 
   ],
 

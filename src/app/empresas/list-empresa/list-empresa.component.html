@@ -1,52 +1,51 @@
-<a href="empresas" class="btn btn-success float-right">
-  <i class="fas fa-plus"></i>
-  Adicionar
-</a>
+<app-search-emp (searchemp)="handleSearch($event)"> </app-search-emp>
 
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h2>Lista de Empresas</h2>
-  </div>
-  <div class="panel-body">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Razão Social</th>
-          <th>Telefone</th>
-          <th>Endereço</th>
-          <th>Opções</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let empresa of empresas | async">
-          <td>{{empresa.id}}</td>
-          <td>{{empresa.razao_social}}</td>
-          <td>{{empresa.telefone}}</td>
-          <td>{{empresa.endereco}}</td>
-          <td>
-            <button
-              (click)="detalheEmpresa(empresa.id)"
-              class="btn btn-primary"
-              style="margin-right: 10px"
-            >
-              Visualizar
-            </button>
+<div class="panel-body">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col" width="5%">Id</th>
+        <th scope="col" width="20%">Razão Social</th>
+        <th scope="col" width="10%">Telefone</th>
+        <th scope="col" width="25%">Endereço</th>
+        <th scope="col" width="40%">Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let empresa of empresas | async | searchemp: filtro_valor | paginate: { itemsPerPage: 20, currentPage: paginaAtual }; let i = index"
+      >
+        <td>{{empresa.id}}</td>
+        <td>{{empresa.razao_social}}</td>
+        <td>{{empresa.telefone}}</td>
+        <td>{{empresa.endereco}}</td>
+        <td>
+          <button
+            (click)="detalheEmpresa(empresa.id)"
+            class="btn btn-primary"
+            style="margin-right: 10px"
+          >
+            Visualizar
+          </button>
 
-            <button
-              (click)="updateEmpresa(empresa.id)"
-              class="btn btn-warning"
-              style="margin-right: 10px"
-            >
-              Editar
-            </button>
+          <button
+            (click)="updateEmpresa(empresa.id)"
+            class="btn btn-warning"
+            style="margin-right: 10px"
+          >
+            Editar
+          </button>
 
-            <button (click)="deleteEmpresa(empresa.id)" class="btn btn-danger">
-              Deletar
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+          <button (click)="deleteEmpresa(empresa.id)" class="btn btn-danger">
+            Deletar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls
+    (pageChange)="paginaAtual = $event"
+    previousLabel="Anterior"
+    nextLabel="Próximo"
+  ></pagination-controls>
 </div>

@@ -1,35 +1,28 @@
 <app-search-vei (searchvei)="handleSearch($event)"> </app-search-vei>
 
-<a href="veiculos" class="btn btn-success float-right">
-  <i class="fas fa-plus"></i>
-  Adicionar
-</a>
-
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h2>Lista de Veiculos</h2>
-  </div>
-  <div class="panel-body">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Capacidade</th>
-          <th>Tipo</th>
-          <th>Ano</th>
-          <th>Placa</th>
-          <th>Opções</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let veiculo of veiculos | async | searchvei: filtro_valor">
-          <td>{{veiculo.id}}</td>
-          <td>{{veiculo.capacidade}}</td>
-          <td>{{veiculo.tipo}}</td>
-          <td>{{veiculo.ano}}</td>
-          <td>{{veiculo.placa}}</td>
-          <td>
-            <button
+<div class="panel-body">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col" width="5%">Id</th>
+        <th scope="col" width="15%">Capacidade</th>
+        <th scope="col" width="15%">Tipo</th>
+        <th scope="col" width="10%">Ano</th>
+        <th scope="col" width="10%">Placa</th>
+        <th scope="col" width="45%">Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let veiculo of veiculos | async | searchvei: filtro_valor| paginate: { itemsPerPage: 20, currentPage: paginaAtual }; let i = index"
+      >
+        <td>{{veiculo.id}}</td>
+        <td>{{veiculo.capacidade}}</td>
+        <td>{{veiculo.tipo}}</td>
+        <td>{{veiculo.ano}}</td>
+        <td>{{veiculo.placa}}</td>
+        <td>
+          <button
             (click)="detalheVeiculo(veiculo.id)"
             class="btn btn-primary"
             style="margin-right: 10px"
@@ -45,13 +38,16 @@
             Editar
           </button>
 
-          <button (click)="deleteVeiculo(veiculo.id)"
-          class="btn btn-danger">
+          <button (click)="deleteVeiculo(veiculo.id)" class="btn btn-danger">
             Deletar
           </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls
+    (pageChange)="paginaAtual = $event"
+    previousLabel="Anterior"
+    nextLabel="Próximo"
+  ></pagination-controls>
 </div>

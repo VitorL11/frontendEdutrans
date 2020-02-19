@@ -1,52 +1,51 @@
-<a href="escolas" class="btn btn-success float-right">
-  <i class="fas fa-plus"></i>
-  Adicionar
-</a>
+<app-search-esc (searchesc)="handleSearch($event)"> </app-search-esc>
 
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h2>Lista de Escolas</h2>
-  </div>
-  <div class="panel-body">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Nome</th>
-          <th>Telefone</th>
-          <th>Endereço</th>
-          <th>Opções</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let escola of escolas | async">
-          <td>{{escola.id}}</td>
-          <td>{{escola.nome}}</td>
-          <td>{{escola.telefone}}</td>
-          <td>{{escola.endereco}}</td>
-          <td>
-            <button
-              (click)="detalheEscola(escola.id)"
-              class="btn btn-primary"
-              style="margin-right: 10px"
-            >
-              Visualizar
-            </button>
+<div class="panel-body">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col" width="5%">Id</th>
+        <th scope="col" width="15%">Nome</th>
+        <th scope="col" width="15%">Telefone</th>
+        <th scope="col" width="25%">Endereço</th>
+        <th scope="col" width="40%">Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let escola of escolas | async | searchesc: filtro_valor | paginate: { itemsPerPage: 20, currentPage: paginaAtual }; let i = index"
+      >
+        <td>{{escola.id}}</td>
+        <td>{{escola.nome}}</td>
+        <td>{{escola.telefone}}</td>
+        <td>{{escola.endereco}}</td>
+        <td>
+          <button
+            (click)="detalheEscola(escola.id)"
+            class="btn btn-primary"
+            style="margin-right: 10px"
+          >
+            Visualizar
+          </button>
 
-            <button
-              (click)="updateEscola(escola.id)"
-              class="btn btn-warning"
-              style="margin-right: 10px"
-            >
-              Editar
-            </button>
+          <button
+            (click)="updateEscola(escola.id)"
+            class="btn btn-warning"
+            style="margin-right: 10px"
+          >
+            Editar
+          </button>
 
-            <button (click)="deleteEscola(escola.id)" class="btn btn-danger">
-              Deletar
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+          <button (click)="deleteEscola(escola.id)" class="btn btn-danger">
+            Deletar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls
+    (pageChange)="paginaAtual = $event"
+    previousLabel="Anterior"
+    nextLabel="Próximo"
+  ></pagination-controls>
 </div>

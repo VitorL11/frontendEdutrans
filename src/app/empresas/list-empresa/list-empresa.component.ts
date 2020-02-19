@@ -10,8 +10,16 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./list-empresa.component.css"]
 })
 export class ListEmpresaComponent implements OnInit {
+  public paginaAtual = 1;
   empresa: Empresa;
   empresas: Observable<Empresa[]>;
+
+  handleSearch(value: string){
+    //console.log(value);
+    this.filtro_valor = value;
+  }
+
+  filtro_valor = ''
 
   constructor(
     private route: ActivatedRoute,

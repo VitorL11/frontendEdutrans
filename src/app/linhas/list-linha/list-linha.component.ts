@@ -7,10 +7,11 @@ import { Component, OnInit } from "@angular/core";
 @Component({
   selector: "app-list-linha",
   templateUrl: "./list-linha.component.html",
-  styleUrls: ["./list-linha.component.css"]
+  styleUrls: ["./list-linha.component.css"],
 })
 
 export class ListLinhaComponent implements OnInit {
+  public paginaAtual = 1;
   linha: Linha;
   linhas: Observable<Linha[]>;
   handleSearch(value: string){
@@ -23,6 +24,7 @@ export class ListLinhaComponent implements OnInit {
   constructor(private Route: ActivatedRoute,
     private router: Router,
     private linhaservice: LinhaService) {}
+
 
   ngOnInit() {
     this.reloadData();

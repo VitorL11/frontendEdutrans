@@ -10,6 +10,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./list-motorista.component.css"]
 })
 export class ListMotoristaComponent implements OnInit {
+  public paginaAtual = 1;
   motorista: Motorista;
   motoristas: Observable<Motorista[]>;
 

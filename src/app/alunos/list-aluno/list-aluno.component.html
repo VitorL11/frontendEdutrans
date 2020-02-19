@@ -1,37 +1,25 @@
 <app-search-alu (searchalu)="handleSearch($event)"> </app-search-alu>
 
-<a
-  [routerLink]="['/alunos']"
-  routerLinkActive="router-link-active"
-  class="btn btn-success float-right"
->
-  <i class="fas fa-plus"></i>
-  Adicionar
-</a>
-
 <div class="panel panel-primary">
-  <div class="panel-heading">
-    <h2>Lista de Alunos</h2>
-  </div>
   <div class="panel-body">
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>Id</th>
-          <th>Nome</th>
-          <th>Escola</th>
-          <th>Linha</th>
-          <th>Período</th>
-          <th>Opções</th>
+          <th scope="col" width="5%">Id</th>
+          <th scope="col" width="25%">Nome</th>
+          <th scope="col" width="20%">Escola</th>
+          <th scope="col" width="10%">Linha</th>
+          <th scope="col" width="40%">Opções</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let aluno of alunos | async | searchlin: filtro_valor">
+        <tr
+          *ngFor="let aluno of alunos | async | searchalu: filtro_valor | paginate: { itemsPerPage: 20, currentPage: paginaAtual }; let i = index"
+        >
           <td>{{aluno.id}}</td>
           <td>{{aluno.nome}}</td>
           <td>{{aluno.escola.nome}}</td>
           <td>{{aluno.linha.nome_linha}}</td>
-          <td>{{aluno.periodo}}</td>
           <td>
             <button
               (click)="detalheAluno(aluno.id)"
@@ -56,5 +44,10 @@
         </tr>
       </tbody>
     </table>
+    <pagination-controls
+      (pageChange)="paginaAtual = $event"
+      previousLabel="Anterior"
+      nextLabel="Próximo"
+    ></pagination-controls>
   </div>
 </div>

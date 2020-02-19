@@ -16,11 +16,11 @@ export class SearchMotComponent implements OnInit {
     .pipe (
       debounceTime (300)
     )
-    .subscribe(value => this.searchveiEmitter.emit(value))
+    .subscribe(value => this.searchmotEmitter.emit(value))
   }
 
   searchmot = new FormControl('')
 
-  @Output('searchmot') searchveiEmitter = new EventEmitter<string>();
+  @Output('searchmot') searchmotEmitter = new EventEmitter<string>();
 
 }

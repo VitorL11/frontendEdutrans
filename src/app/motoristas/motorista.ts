@@ -8,8 +8,8 @@ export class Motorista {
   email: String;
   nome: String;
   categ_cnh: String;
-  UF_cnh: any;
-  dataNasc: String;
+  UF_cnh: String;
+  data_nasc: any;
   val_cnh: String;
   val_renach: String;
 

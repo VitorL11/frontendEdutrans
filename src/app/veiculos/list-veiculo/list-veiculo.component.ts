@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ListVeiculoComponent implements OnInit {
+  public paginaAtual = 1;
   veiculo: Veiculo
   veiculos: Observable<Veiculo[]>;
 
