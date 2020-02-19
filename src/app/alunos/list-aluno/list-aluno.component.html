@@ -6,15 +6,15 @@
       <thead>
         <tr>
           <th scope="col" width="5%">Id</th>
-          <th scope="col" width="25%">Nome</th>
+          <th scope="col" width="15%">Nome</th>
           <th scope="col" width="20%">Escola</th>
           <th scope="col" width="10%">Linha</th>
-          <th scope="col" width="40%">Opções</th>
+          <th scope="col" width="50%">Opções</th>
         </tr>
       </thead>
       <tbody>
         <tr
-          *ngFor="let aluno of alunos | async | searchalu: filtro_valor | paginate: { itemsPerPage: 20, currentPage: paginaAtual }; let i = index"
+          *ngFor="let aluno of alunos | async | searchalu: filtro_valor | paginate: { itemsPerPage: 10, currentPage: paginaAtual }; let i = index"
         >
           <td>{{aluno.id}}</td>
           <td>{{aluno.nome}}</td>

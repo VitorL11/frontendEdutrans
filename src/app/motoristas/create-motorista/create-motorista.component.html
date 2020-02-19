@@ -3,6 +3,38 @@
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
+      <label for="Linha">Linha:</label>
+      <select
+        name="campoLinha"
+        class="form-control"
+        id="idLinha"
+        required
+        [(ngModel)]="motorista.linha"
+      >
+        <option value="">Selecione...</option>
+        <option [ngValue]="linha" *ngFor="let linha of linhas | async"
+          >{{ linha.nome_linha }}</option
+        >
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="Linha">Veículo:</label>
+      <select
+        name="campoVeiculo"
+        class="form-control"
+        id="idVeiculo"
+        required
+        [(ngModel)]="motorista.veiculo"
+      >
+        <option value="">Selecione...</option>
+        <option [ngValue]="veiculo" *ngFor="let veiculo of veiculos | async"
+          >{{ veiculo.placa }}</option
+        >
+      </select>
+    </div>
+
+    <div class="form-group">
       <label for="nome">Nome:</label>
       <input
         type="text"
@@ -105,7 +137,7 @@
         class="form-control"
         id="ufCnh"
         required
-        [(ngModel)]="motorista.UF_cnh"
+        [(ngModel)]="motorista.uf_cnh"
         name="txtUf"
       />
     </div>
@@ -125,7 +157,7 @@
     <div class="form-group">
       <label for="renach">Renach:</label>
       <input
-        type="number"
+        type="text"
         class="form-control"
         id="renach"
         required

@@ -13,7 +13,7 @@
       >
       <option value="">Selecione...</option>
       <option [ngValue]="linha" *ngFor="let linha of linhas | async"
-        >{{ aluno.linha.nome_linha }}</option
+        >{{ linha.nome_linha }}</option
       >
       </select>
     </div>
@@ -90,7 +90,7 @@
 
       <option value="">Selecione</option>
       <option [ngValue]="escola" *ngFor="let escola of escolas | async"
-        >{{ aluno.escola.nome }}</option
+        >{{ escola.nome }}</option
       >
       </select>
     </div>

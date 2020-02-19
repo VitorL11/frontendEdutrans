@@ -1,6 +1,6 @@
 <app-search-lin (searchlin)="handleSearch($event)"> </app-search-lin>
 
-  <div class="panel-body">
+<div class="panel-body">
   <table class="table table-hover">
     <thead>
       <tr>
@@ -11,7 +11,7 @@
     </thead>
     <tbody>
       <tr
-        *ngFor="let linha of linhas | async | searchlin: filtro_valor | paginate: { itemsPerPage: 20, currentPage: paginaAtual }; let i = index"
+        *ngFor="let linha of linhas | async | searchlin: filtro_valor | paginate: { itemsPerPage: 10, currentPage: paginaAtual }; let i = index"
       >
         <td>{{linha.id}}</td>
         <td>{{linha.nome_linha}}</td>

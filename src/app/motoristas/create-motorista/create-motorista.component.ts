@@ -1,7 +1,12 @@
+import { VeiculoService } from './../../veiculos/veiculo.service';
 import { MotoristaService } from '../motorista.service';
 import { Motorista } from './../motorista';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { LinhaService } from 'src/app/linhas/linha.service';
+import { Linha } from 'src/app/linhas/linha';
+import { Veiculo } from 'src/app/veiculos/veiculo';
 
 @Component({
   selector: 'app-create-motorista',
@@ -9,14 +14,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./create-motorista.component.css']
 })
 export class CreateMotoristaComponent implements OnInit {
-
+  linhas: Observable<Linha>;
+  veiculos: Observable<Veiculo>;
   motorista: Motorista = new Motorista();
   submitted = false;
 
   constructor(private motoristaservice: MotoristaService,
+    private linhaservice: LinhaService,
+    private veiculoservice: VeiculoService,
     private router: Router) { }
 
   ngOnInit() {
+    this.linhas = this.linhaservice.getLinhaList();
+    this.veiculos = this.veiculoservice.getVeiculoList();
   }
 
   newEscola(): void {
