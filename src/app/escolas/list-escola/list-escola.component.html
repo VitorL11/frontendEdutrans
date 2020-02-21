@@ -4,8 +4,8 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col" width="5%">Id</th>
-        <th scope="col" width="15%">Nome</th>
+        <!--<th scope="col" width="5%">Id</th>-->
+        <th scope="col" width="20%">Nome</th>
         <th scope="col" width="15%">Telefone</th>
         <th scope="col" width="25%">Endereço</th>
         <th scope="col" width="40%">Opções</th>
@@ -15,7 +15,7 @@
       <tr
         *ngFor="let escola of escolas | async | searchesc: filtro_valor | paginate: { itemsPerPage: 20, currentPage: paginaAtual }; let i = index"
       >
-        <td>{{escola.id}}</td>
+        <!--<td>{{escola.id}}</td>-->
         <td>{{escola.nome}}</td>
         <td>{{escola.telefone}}</td>
         <td>{{escola.endereco}}</td>
@@ -23,7 +23,7 @@
           <button
             (click)="detalheEscola(escola.id)"
             class="btn btn-primary"
-            style="margin-right: 10px"
+            style="margin-right: 5px"
           >
             Visualizar
           </button>
@@ -31,7 +31,7 @@
           <button
             (click)="updateEscola(escola.id)"
             class="btn btn-warning"
-            style="margin-right: 10px"
+            style="margin-right: 5px"
           >
             Editar
           </button>

@@ -1,58 +1,38 @@
 <h4>Atualizar Cadastro de Motoristas</h4>
 <form action="#" class="col-md-9">
   <div class="form-group">
-    <label for="idNome">Nome:</label>
+    <label for="idCategCnh">Categoria CNH:</label>
     <input
       type="text"
-      name="txtNome"
+      name="txtCategCnh"
       class="form-control"
-      id="idNome"
+      id="idCategCnh"
       required
-      [(ngModel)]="motorista.nome"
+      [(ngModel)]="motorista.categ_cnh"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="idCnh">CNH:</label>
+    <input
+      type="text"
+      name="txtCnh"
+      class="form-control"
+      id="idCnh"
+      required
+      [(ngModel)]="motorista.reg_cnh"
     />
   </div>
 
   <div class="form-group">
     <label for="idCpf">CPF:</label>
-    <input type="text"
-    name="txtCpf"
-    class="form-control"
-    id="idCpf"
-    required
-    [(ngModel)]="motorista.cpf"/>
-  </div>
-
-  <div class="form-group">
-    <label for="idRg">RG:</label>
-    <input type="text"
-    name="txtRg"
-    class="form-control"
-    id="idRg"
-    required
-    [(ngModel)]="motorista.rg"/>
-  </div>
-
-  <div class="form-group">
-    <label for="idEmail">E-mail:</label>
     <input
       type="text"
-      name="txtEmail"
+      name="txtCpf"
       class="form-control"
-      id="idEmail"
+      id="idCpf"
       required
-      [(ngModel)]="motorista.email"
-    />
-  </div>
-
-  <div class="form-group">
-    <label for="idTelefone">Telefone:</label>
-    <input
-      type="tel"
-      name="txtTelefone"
-      class="form-control"
-      id="idTelefone"
-      required
-      [(ngModel)]="motorista.telefone"
+      [(ngModel)]="motorista.cpf"
     />
   </div>
 
@@ -69,48 +49,42 @@
   </div>
 
   <div class="form-group">
-    <label for="idCnh">CNH:</label>
-    <input type="text"
-    name="txtCnh"
-    class="form-control"
-    id="idCnh"
-    required
-    [(ngModel)]="motorista.reg_cnh" />
-  </div>
-
-  <div class="form-group">
-    <label for="idCategCnh">Categoria CNH:</label>
+    <label for="idEmail">E-mail:</label>
     <input
       type="text"
-      name="txtCategCnh"
+      name="txtEmail"
       class="form-control"
-      id="idCategCnh"
+      id="idEmail"
       required
-      [(ngModel)]="motorista.categ_cnh"
+      [(ngModel)]="motorista.email"
     />
   </div>
 
   <div class="form-group">
-    <label for="idValCnh">Validade CNH:</label>
-    <input
-      type="date"
-      name="txtUfCnh"
+    <label for="Linha">Linha:</label>
+    <select
+      name="campoLinha"
       class="form-control"
-      id="idUfCnh"
+      id="idLinha"
       required
-      [(ngModel)]="motorista.val_cnh"
-    />
+      [(ngModel)]="motorista.linha"
+    >
+      <option value="">Selecione...</option>
+      <option [ngValue]="linha" *ngFor="let linha of linhas | async"
+        >{{ linha.nome_linha }}</option
+      >
+    </select>
   </div>
 
   <div class="form-group">
-    <label for="idValCnh">Validade CNH:</label>
+    <label for="idNome">Nome:</label>
     <input
-      type="date"
-      name="txtValCnh"
+      type="text"
+      name="txtNome"
       class="form-control"
-      id="idValCnh"
+      id="idNome"
       required
-      [(ngModel)]="motorista.val_cnh"
+      [(ngModel)]="motorista.nome"
     />
   </div>
 
@@ -127,6 +101,54 @@
   </div>
 
   <div class="form-group">
+    <label for="idRg">RG:</label>
+    <input
+      type="text"
+      name="txtRg"
+      class="form-control"
+      id="idRg"
+      required
+      [(ngModel)]="motorista.rg"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="idTelefone">Telefone:</label>
+    <input
+      type="tel"
+      name="txtTelefone"
+      class="form-control"
+      id="idTelefone"
+      required
+      [(ngModel)]="motorista.telefone"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="ufCnh">UF CNH:</label>
+    <input
+      type="text"
+      class="form-control"
+      id="ufCnh"
+      required
+      [(ngModel)]="motorista.uf_cnh"
+      name="txtUf"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="idValCnh">Validade CNH:</label>
+    <input
+      type="date"
+      name="txtUfCnh"
+      class="form-control"
+      id="idUfCnh"
+      required
+      [(ngModel)]="motorista.val_cnh"
+    />
+  </div>
+
+  <div class="form-group">
     <label for="idValRenach">Validade Renach:</label>
     <input
       type="date"
@@ -136,6 +158,22 @@
       required
       [(ngModel)]="motorista.val_renach"
     />
+  </div>
+
+  <div class="form-group">
+    <label for="Linha">Veículo:</label>
+    <select
+      name="campoVeiculo"
+      class="form-control"
+      id="idVeiculo"
+      required
+      [(ngModel)]="motorista.veiculo"
+    >
+      <option value="">Selecione...</option>
+      <option [ngValue]="veiculo" *ngFor="let veiculo of veiculos | async"
+        >{{ veiculo.placa }}</option
+      >
+    </select>
   </div>
 
   <button type="submit" class="btn btn-success">

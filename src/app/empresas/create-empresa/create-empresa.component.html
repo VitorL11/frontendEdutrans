@@ -3,18 +3,6 @@
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="RazaoSocial">Razão Social:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="idRazaoSocial"
-        required
-        [(ngModel)]="empresa.razao_social"
-        name="txtRazaoSocial"
-      />
-    </div>
-
-    <div class="form-group">
       <label for="cnpj">CNPJ:</label>
       <input
         type="number"
@@ -23,6 +11,17 @@
         required
         [(ngModel)]="empresa.cnpj"
         name="txtcnpj"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-mail:</label>
+      <input
+        type="email"
+        class="form-control"
+        id="idEmail"
+        [(ngModel)]="empresa.email"
+        name="txtEmail"
       />
     </div>
 
@@ -50,17 +49,6 @@
     </div>
 
     <div class="form-group">
-      <label for="telefone">Telefone:</label>
-      <input
-        type="number"
-        class="form-control"
-        id="idTelefone"
-        [(ngModel)]="empresa.telefone"
-        name="txtTelefone"
-      />
-    </div>
-
-    <div class="form-group">
       <label for="nomedono">Proprietário(a):</label>
       <input
         type="text"
@@ -72,20 +60,28 @@
     </div>
 
     <div class="form-group">
-      <label for="email">E-mail:</label>
+      <label for="RazaoSocial">Razão Social:</label>
       <input
-        type="email"
+        type="text"
         class="form-control"
-        id="idEmail"
-        [(ngModel)]="empresa.email"
-        name="txtEmail"
+        id="idRazaoSocial"
+        required
+        [(ngModel)]="empresa.razao_social"
+        name="txtRazaoSocial"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="telefone">Telefone:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="idTelefone"
+        [(ngModel)]="empresa.telefone"
+        name="txtTelefone"
       />
     </div>
 
     <button type="submit" class="btn btn-success">Salvar</button>
   </form>
-</div>
-
-<div [hidden]="!submitted" class="alert alert-success" role="alert">
-  Dados salvos com sucesso!
 </div>

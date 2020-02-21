@@ -1,92 +1,90 @@
-      <h4>Atualizar Cadastro de Veículos</h4>
-      <form action="#" class="col-md-9">
-        <div class="form-group">
-          <label for="idPlaca">Placa:</label>
-          <input
-            type="text"
-            name="txtPlaca"
-            class="form-control"
-            id="idPlaca"
-            required
-            [(ngModel)]="veiculo.placa"
-          />
-        </div>
+<h4>Atualizar Cadastro de Veículos</h4>
+<form action="#" class="col-md-9">
+  <div class="form-group">
+    <label for="idAno">Ano:</label>
+    <input
+      type="text"
+      name="txtAno"
+      class="form-control"
+      id="idAno"
+      required
+      [(ngModel)]="veiculo.ano"
+    />
+  </div>
 
-        <div class="form-group">
-          <label for="idExercicio">Exercicio:</label>
-          <input
-            type="text"
-            name="txtExercicio"
-            class="form-control"
-            id="idExercicio"
-            required
-            [(ngModel)]="veiculo.exercicio"
-          />
-        </div>
+  <div class="form-group">
+    <label for="idCapacidade">Capacidade:</label>
+    <input
+      type="text"
+      name="txtCapacidade"
+      class="form-control"
+      id="idCapacidade"
+      required
+      [(ngModel)]="veiculo.capacidade"
+    />
+  </div>
 
-        <div class="form-group">
-          <label for="idProprietario">Proprietário:</label>
-          <input
-            type="text"
-            name="txtProprietario"
-            class="form-control"
-            id="idProprietario"
-            required
-            [(ngModel)]="veiculo.proprietario"
-          />
-        </div>
+  <div class="form-group">
+    <label for="idExercicio">Exercicio:</label>
+    <input
+      type="text"
+      name="txtExercicio"
+      class="form-control"
+      id="idExercicio"
+      required
+      [(ngModel)]="veiculo.exercicio"
+    />
+  </div>
 
-        <div class="form-group">
-          <label for="idTipoVeiculo">Tipo do Veículo:</label>
-          <input
-            type="text"
-            name="txtTipoVeiculo"
-            class="form-control"
-            id="idTipoVeiculo"
-            required
-            [(ngModel)]="veiculo.tipo"
-          />
-        </div>
+  <div class="form-group">
+    <label for="idModelo">Modelo:</label>
+    <input
+      type="text"
+      name="txtModelo"
+      class="form-control"
+      id="idModelo"
+      required
+      [(ngModel)]="veiculo.modelo"
+    />
+  </div>
 
-        <div class="form-group">
-          <label for="idModelo">Modelo do Veículo:</label>
-          <input
-            type="text"
-            name="txtModelo"
-            class="form-control"
-            id="idModelo"
-            required
-            [(ngModel)]="veiculo.modelo"
-          />
-        </div>
+  <div class="form-group">
+    <label for="idPlaca">Placa:</label>
+    <input
+      type="text"
+      name="txtPlaca"
+      class="form-control"
+      id="idPlaca"
+      required
+      [(ngModel)]="veiculo.placa"
+    />
+  </div>
 
-        <div class="form-group">
-          <label for="idAno">Ano do Veículo:</label>
-          <input
-            type="text"
-            name="txtAno"
-            class="form-control"
-            id="idAno"
-            required
-            [(ngModel)]="veiculo.ano"
-          />
-        </div>
+  <div class="form-group">
+    <label for="idProprietario">Proprietário:</label>
+    <input
+      type="text"
+      name="txtProprietario"
+      class="form-control"
+      id="idProprietario"
+      required
+      [(ngModel)]="veiculo.proprietario"
+    />
+  </div>
 
-        <div class="form-group">
-          <label for="idCapacidade">Capacidade:</label>
-          <input
-            type="text"
-            name="txtCapacidade"
-            class="form-control"
-            id="idCapacidade"
-            required
-            [(ngModel)]="veiculo.capacidade"
-          />
-        </div>
+  <div class="form-group">
+    <label for="idTipoVeiculo">Tipo:</label>
+    <input
+      type="text"
+      name="txtTipoVeiculo"
+      class="form-control"
+      id="idTipoVeiculo"
+      required
+      [(ngModel)]="veiculo.tipo"
+    />
+  </div>
 
-        <button type="submit" class="btn btn-success">
-          Salvar
-        </button>
-      </form>
-
-
+  <button type="submit" class="btn btn-success">
+    Salvar
+  </button>
+</form>

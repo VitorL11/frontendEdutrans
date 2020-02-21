@@ -2,6 +2,11 @@ import { ActivatedRoute, Route, Router } from "@angular/router";
 import { MotoristaService } from "./../motorista.service";
 import { Motorista } from "./../motorista";
 import { Component, OnInit } from "@angular/core";
+import { Observable } from 'rxjs';
+import { Veiculo } from 'src/app/veiculos/veiculo';
+import { Linha } from 'src/app/linhas/linha';
+import { LinhaService } from 'src/app/linhas/linha.service';
+import { VeiculoService } from 'src/app/veiculos/veiculo.service';
 
 @Component({
   selector: "app-update-motorista",
@@ -9,13 +14,17 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./update-motorista.component.css"]
 })
 export class UpdateMotoristaComponent implements OnInit {
+  linhas: Observable<Linha>;
+  veiculos: Observable<Veiculo>;
   id: number;
   motorista: Motorista;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private MotoristaService: MotoristaService
+    private MotoristaService: MotoristaService,
+    private linhaservice: LinhaService,
+    private veiculoservice: VeiculoService
   ) {}
 
   ngOnInit() {
@@ -30,6 +39,8 @@ export class UpdateMotoristaComponent implements OnInit {
       },
       error => console.log(error)
     );
+    this.linhas = this.linhaservice.getLinhaList();
+    this.veiculos = this.veiculoservice.getVeiculoList();
   }
 
   updateMotorista() {

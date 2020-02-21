@@ -4,26 +4,26 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col" width="5%">Id</th>
-        <th scope="col" width="15%">Nome</th>
-        <th scope="col" width="10%">CPF</th>
-        <th scope="col" width="15%">Telefone</th>
-        <th scope="col" width="55%">Opções</th>
+        <!--<th scope="col" width="5%">Id</th>-->
+        <th scope="col" width="20%">Nome</th>
+        <th scope="col" width="10%">Linha</th>
+        <th scope="col" width="20%">Placa do Veículo</th>
+        <th scope="col" width="50%">Opções</th>
       </tr>
     </thead>
     <tbody>
       <tr
         *ngFor="let motorista of motoristas | async | searchmot: filtro_valor | paginate: { itemsPerPage: 20, currentPage: paginaAtual }; let i = index"
       >
-        <td>{{motorista.id}}</td>
+        <!--<td>{{motorista.id}}</td>-->
         <td>{{motorista.nome}}</td>
-        <td>{{motorista.cpf}}</td>
-        <td>{{motorista.telefone}}</td>
+        <td>{{motorista.linha.nome_linha}}</td>
+        <td>{{motorista.veiculo.placa}}</td>
         <td>
           <button
             (click)="detalheMotorista(motorista.id)"
             class="btn btn-primary"
-            style="margin-right: 10px"
+            style="margin-right: 5px"
           >
             Visualizar
           </button>
@@ -31,7 +31,7 @@
           <button
             (click)="updateMotorista(motorista.id)"
             class="btn btn-warning"
-            style="margin-right: 10px"
+            style="margin-right: 5px"
           >
             Editar
           </button>

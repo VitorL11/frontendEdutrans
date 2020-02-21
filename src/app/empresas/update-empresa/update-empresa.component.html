@@ -2,25 +2,27 @@
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="RazaoSocial">Razão Social:</label>
+      <label for="cnpj">CNPJ:</label>
       <input
         type="text"
         class="form-control"
-        id="idRazaoSocial"
-        name="txtRazaoSocial"
+        id="idcnpj"
+        name="txtcnpj"
         required
-        [(ngModel)]="empresa.razao_social"
+        [(ngModel)]="empresa.cnpj"
       />
     </div>
 
     <div class="form-group">
-      <label for="cnpj">CNPJ:</label>
-      <input type="text"
-      class="form-control"
-      id="idcnpj"
-      name="txtcnpj"
-      required
-        [(ngModel)]="empresa.cnpj"/>
+      <label for="email">E-mail:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="idDataNasc"
+        name="txtEmail"
+        required
+        [(ngModel)]="empresa.email"
+      />
     </div>
 
     <div class="form-group">
@@ -38,23 +40,13 @@
 
     <div class="form-group">
       <label for="Rg">Gerente:</label>
-      <input type="text"
-       class="form-control"
-       id="idGerente"
-       name="txtGerente"
-       required
-        [(ngModel)]="empresa.nome_gerente"/>
-    </div>
-
-    <div class="form-group">
-      <label for="Telefone">Telefone:</label>
       <input
         type="text"
         class="form-control"
-        id="idTelefone"
-        name="txtTelefone"
+        id="idGerente"
+        name="txtGerente"
         required
-        [(ngModel)]="empresa.telefone"
+        [(ngModel)]="empresa.nome_gerente"
       />
     </div>
 
@@ -71,21 +63,29 @@
     </div>
 
     <div class="form-group">
-      <label for="email">E-mail:</label>
+      <label for="RazaoSocial">Razão Social:</label>
       <input
         type="text"
         class="form-control"
-        id="idDataNasc"
-        name="txtEmail"
+        id="idRazaoSocial"
+        name="txtRazaoSocial"
         required
-        [(ngModel)]="empresa.email"
+        [(ngModel)]="empresa.razao_social"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Telefone">Telefone:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="idTelefone"
+        name="txtTelefone"
+        required
+        [(ngModel)]="empresa.telefone"
       />
     </div>
 
     <button type="submit" class="btn btn-success">Atualizar Dados</button>
   </form>
-</div>
-
-<div [hidden]="!submitted">
-  <h4>Dados Registrados Corretamente!</h4>
 </div>

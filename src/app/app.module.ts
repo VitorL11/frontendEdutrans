@@ -62,6 +62,7 @@ import { SearchveiPipe } from './pipevei/searchvei.pipe';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { SearchEscComponent } from './search-esc/search-esc.component';
 import { SearchescPipe } from './pipeesc/searchesc.pipe';
+import { MdComponent } from './md/md.component';
 
 
 
@@ -112,7 +113,8 @@ import { SearchescPipe } from './pipeesc/searchesc.pipe';
     SearchmotPipe,
     SearchveiPipe,
     SearchEscComponent,
-    SearchescPipe
+    SearchescPipe,
+    MdComponent
 
 
 

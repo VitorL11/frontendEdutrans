@@ -4,22 +4,22 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col" width="5%">Id</th>
+        <!--<th scope="col" width="5%">Id</th>-->
         <th scope="col" width="25%">Nome</th>
-        <th scope="col" width="70%">Opções</th>
+        <th scope="col" width="75%">Opções</th>
       </tr>
     </thead>
     <tbody>
       <tr
         *ngFor="let linha of linhas | async | searchlin: filtro_valor | paginate: { itemsPerPage: 10, currentPage: paginaAtual }; let i = index"
       >
-        <td>{{linha.id}}</td>
+        <!--<td>{{linha.id}}</td>-->
         <td>{{linha.nome_linha}}</td>
         <td>
           <button
             (click)="detalheLinha(linha.id)"
             class="btn btn-primary"
-            style="margin-right: 10px"
+            style="margin-right: 5px"
           >
             Visualizar
           </button>
@@ -27,7 +27,7 @@
           <button
             (click)="updateLinha(linha.id)"
             class="btn btn-warning"
-            style="margin-right: 10px"
+            style="margin-right: 5px"
           >
             Editar
           </button>

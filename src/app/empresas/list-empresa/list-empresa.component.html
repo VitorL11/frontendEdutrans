@@ -4,10 +4,10 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col" width="5%">Id</th>
+        <!--<th scope="col" width="5%">Id</th>-->
         <th scope="col" width="20%">Razão Social</th>
         <th scope="col" width="10%">Telefone</th>
-        <th scope="col" width="25%">Endereço</th>
+        <th scope="col" width="30%">Endereço</th>
         <th scope="col" width="40%">Opções</th>
       </tr>
     </thead>
@@ -15,7 +15,7 @@
       <tr
         *ngFor="let empresa of empresas | async | searchemp: filtro_valor | paginate: { itemsPerPage: 20, currentPage: paginaAtual }; let i = index"
       >
-        <td>{{empresa.id}}</td>
+        <!--<td>{{empresa.id}}</td>-->
         <td>{{empresa.razao_social}}</td>
         <td>{{empresa.telefone}}</td>
         <td>{{empresa.endereco}}</td>
@@ -23,7 +23,7 @@
           <button
             (click)="detalheEmpresa(empresa.id)"
             class="btn btn-primary"
-            style="margin-right: 10px"
+            style="margin-right: 5px"
           >
             Visualizar
           </button>
@@ -31,7 +31,7 @@
           <button
             (click)="updateEmpresa(empresa.id)"
             class="btn btn-warning"
-            style="margin-right: 10px"
+            style="margin-right: 5px"
           >
             Editar
           </button>

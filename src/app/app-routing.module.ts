@@ -31,12 +31,9 @@ import { ListVeiculoComponent } from './veiculos/list-veiculo/list-veiculo.compo
 import { UpdateVeiculoComponent } from './veiculos/update-veiculo/update-veiculo.component';
 import { DetailsVeiculoComponent } from './veiculos/details-veiculo/details-veiculo.component';
 
+// Relatório
 
-// teste
-
-import { SearchVeiComponent } from './search-vei/search-vei.component';
-import { SearchMotComponent } from './search-mot/search-mot.component';
-
+import { MdComponent } from './md/md.component';
 
 const routes: Routes = [
   //{path: '', redirectTo: 'aluno', pathMatch: 'full' },
@@ -71,8 +68,8 @@ const routes: Routes = [
   {path: 'detailsVeiculo/:id', component: DetailsVeiculoComponent},
 
 
-  {path: 'searchmot', component: SearchMotComponent},
-  {path: 'searchvei', component: SearchVeiComponent},
+  {path: 'md', component: MdComponent},
+
 
 
 ];

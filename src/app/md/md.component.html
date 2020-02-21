@@ -1,0 +1,25 @@
+<a href="" class="btn btn-success float-right">
+  <i class="fas fa-print"></i>
+  Imprimir
+</a>
+
+<div [hidden]="submitted" style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <select
+        name="campoLinha"
+        class="form-control"
+        id="idLinha"
+        required
+        [(ngModel)]="md.linha"
+      >
+        <option value="">Selecione...</option>
+        <option [ngValue]="linha" *ngFor="let linha of linhas | async"
+          >{{ linha.nome_linha }}</option
+        >
+      </select>
+
+
+    </div>
+  </form>
+</div>

@@ -15,8 +15,8 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./update-aluno.component.css"]
 })
 export class UpdateAlunoComponent implements OnInit {
-  linhas: Observable<Linha[]>;
   escolas: Observable<Escola[]>;
+  linhas: Observable<Linha[]>;
   id: number;
   aluno: Aluno;
   submitted = false;
@@ -25,8 +25,8 @@ export class UpdateAlunoComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private alunoservice: AlunoService,
-    private linhaservice: LinhaService,
     private escolaservice: EscolaService,
+    private linhaservice: LinhaService,
   ) {}
 
   ngOnInit() {
