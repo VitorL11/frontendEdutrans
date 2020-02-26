@@ -91,6 +91,22 @@
     </div>
 
     <div class="form-group">
+      <label for="Linha">Placa do Veículo:</label>
+      <select
+        name="campoVeiculo"
+        class="form-control"
+        id="idVeiculo"
+        required
+        [(ngModel)]="motorista.veiculo"
+      >
+        <option value="">Selecione...</option>
+        <option [ngValue]="veiculo" *ngFor="let veiculo of veiculos | async"
+          >{{ veiculo.placa }}</option
+        >
+      </select>
+    </div>
+
+    <div class="form-group">
       <label for="renach">Renach:</label>
       <input
         type="text"
@@ -162,23 +178,6 @@
       />
     </div>
 
-    <div class="form-group">
-      <label for="Linha">Veículo:</label>
-      <select
-        name="campoVeiculo"
-        class="form-control"
-        id="idVeiculo"
-        required
-        [(ngModel)]="motorista.veiculo"
-      >
-        <option value="">Selecione...</option>
-        <option [ngValue]="veiculo" *ngFor="let veiculo of veiculos | async"
-          >{{ veiculo.placa }}</option
-        >
-      </select>
-    </div>
-
     <button type="submit" class="btn btn-success">Salvar</button>
   </form>
 </div>
-
