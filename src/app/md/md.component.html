@@ -11,7 +11,7 @@
         class="form-control"
         id="idLinha"
         required
-        [(ngModel)]="md.linha"
+        [(ngModel)]="linha.nome_linha"
       >
         <option value="">Selecione...</option>
         <option [ngValue]="linha" *ngFor="let linha of linhas | async"
