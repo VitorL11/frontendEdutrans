@@ -29,8 +29,8 @@ export class MdComponent implements OnInit {
   }
 
   reloadData() {
-    this.alunos = this.alunoservice.queryAluno(1);
-    //this.alunos = this.alunoservice.getAlunoList();
+    //this.alunos = this.alunoservice.queryAluno(1);
+    this.alunos = this.alunoservice.getAlunoList();
   }
 
   onSubmit() {
