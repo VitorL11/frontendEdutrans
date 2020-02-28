@@ -7,18 +7,30 @@
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
       <select
+        id="listLinha"
+        (change)="buscaAluno()"
         name="campoLinha"
         class="form-control"
-        id="listLinha"
         required
         [(ngModel)]="linha.nome_linha"
       >
         <option value="">Selecione...</option>
-        <option [ngValue]="linha.id" *ngFor="let linha of linhas; let i = index" [value]="linhas[i].id | async"
-          >{{ linha[i].nome_linha }}</option
+        <option [ngValue]="linha.id" *ngFor="let linha of linhas | async"
+          >{{ linha.nome_linha }}</option
         >
       </select>
-
+<!--
+      <select formControlName="profile" (change)="buscaAluno()">
+        <option [ngValue]="null" disabled>Selecione uma linha</option>
+        <option
+          *ngFor="let linha of linhas"
+          [ngValue]="linha.nome_linha"
+          [selected]="linha.id==='dir'"
+        >
+          {{ linha.nome_linha }}
+        </option>
+      </select>
+    -->
       <div class="panel panel-primary">
         <div class="panel-body">
           <table class="table table-hover">

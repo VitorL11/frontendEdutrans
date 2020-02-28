@@ -32,7 +32,7 @@ export class MdComponent implements OnInit {
   }
 
   buscaAluno() {
-    this.alunos = this.alunoservice.getAlunoList();
+    this.alunos = this.alunoservice.queryAluno(this.linha.id);
   }
 
   ngOnInit() {
