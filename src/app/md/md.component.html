@@ -4,22 +4,28 @@
 </a>
 
 <div [hidden]="submitted" style="width: 300px;">
-  <form (ngSubmit)="onSubmit()">
+  <form (ngSubmit)="buscaAluno()">
     <div class="form-group">
       <select
         id="listLinha"
-        (change)="buscaAluno()"
         name="campoLinha"
         class="form-control"
         required
         [(ngModel)]="linha.nome_linha"
+        (change)="buscaAluno($event)"
       >
         <option value="">Selecione...</option>
         <option [ngValue]="linha.id" *ngFor="let linha of linhas | async"
-          >{{ linha.nome_linha }}</option
+          >{{ linha.nome_linha}}</option
         >
       </select>
+
+
+
 <!--
+
+
+
       <select formControlName="profile" (change)="buscaAluno()">
         <option [ngValue]="null" disabled>Selecione uma linha</option>
         <option

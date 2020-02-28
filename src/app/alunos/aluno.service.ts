@@ -1,16 +1,15 @@
-import { Aluno } from './aluno';
-import { Observable } from 'rxjs';
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Aluno } from "./aluno";
+import { Observable } from "rxjs";
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
-	providedIn: 'root'
+  providedIn: "root"
 })
 export class AlunoService {
-
   private baseUrl = "http://localhost:8080";
 
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getAluno(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/alunos/details-aluno/${id}`);
@@ -35,8 +34,7 @@ export class AlunoService {
     return this.http.put(`${this.baseUrl}/alunos/upd-alunos/${id}`, value);
   }
 
-  queryAluno(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/alunos/details-aluno-linha/${id}`);
+  queryAluno(id: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/alunos/lista-alunos-linha/${id}`);
   }
 }
-
