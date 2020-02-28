@@ -6,7 +6,7 @@
 <div [hidden]="submitted" style="width: 300px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <select (onChange)=""
+      <select
         name="campoLinha"
         class="form-control"
         id="listLinha"
@@ -14,8 +14,8 @@
         [(ngModel)]="linha.nome_linha"
       >
         <option value="">Selecione...</option>
-        <option [ngValue]="linha.id" *ngFor="let linha of linhas | async"
-          >{{ linha.nome_linha }}</option
+        <option [ngValue]="linha.id" *ngFor="let linha of linhas; let i = index" [value]="linhas[i].id | async"
+          >{{ linha[i].nome_linha }}</option
         >
       </select>
 

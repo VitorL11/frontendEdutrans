@@ -4,6 +4,7 @@ import { LinhaService } from "../linhas/linha.service";
 import { Observable } from "rxjs";
 import { Linha } from "../linhas/linha";
 import { Aluno } from "../alunos/aluno";
+import { FormBuilder, FormGroup, FormArray, FormControl, ValidatorFn } from '@angular/forms';
 
 @Component({
   selector: "app-md",
@@ -16,11 +17,23 @@ export class MdComponent implements OnInit {
   aluno: Aluno = new Aluno();
   linha: Linha = new Linha();
   submitted = false;
+  form: FormGroup;
 
   constructor(
     private linhaservice: LinhaService,
-    private alunoservice: AlunoService
-  ) {}
+    private alunoservice: AlunoService,
+    private formBuilder: FormBuilder
+  ) {
+    this.form = this.formBuilder.group({
+      alunos: ['']
+    });
+
+
+  }
+
+  buscaAluno() {
+    this.alunos = this.alunoservice.getAlunoList();
+  }
 
   ngOnInit() {
     this.linhas = this.linhaservice.getLinhaList();
@@ -30,12 +43,13 @@ export class MdComponent implements OnInit {
 
   reloadData() {
     //this.alunos = this.alunoservice.queryAluno(1);
-    this.alunos = this.alunoservice.getAlunoList();
+
   }
 
   onSubmit() {
     this.submitted = true;
     console.log(this.linha.id);
+    console.log(this.form.value)
   }
 
 }
