@@ -34,5 +34,9 @@ export class AlunoService {
   updateAluno(id: number, value: any): Observable<any> {
     return this.http.put(`${this.baseUrl}/alunos/upd-alunos/${id}`, value);
   }
+
+  queryAluno(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/alunos/details-aluno-linha/${id}`);
+  }
 }
 

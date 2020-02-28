@@ -40,9 +40,10 @@
     <div class="form-group">
       <label for="telefone">Telefone:</label>
       <input
-        type="number"
+        type="text"
         class="form-control"
         id="telefone"
+        [brmasker]="{phone: true}"
         required
         [(ngModel)]="escola.telefone"
         name="txtTelefone"

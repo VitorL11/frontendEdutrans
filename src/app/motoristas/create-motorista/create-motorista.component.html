@@ -29,9 +29,10 @@
     <div class="form-group">
       <label for="cpf">CPF:</label>
       <input
-        type="number"
+        type="text"
         class="form-control"
         id="cpf"
+        [brmasker]="{person: true}"
         required
         [(ngModel)]="motorista.cpf"
         name="txtCpf"
@@ -133,9 +134,10 @@
     <div class="form-group">
       <label for="telefone">Telefone:</label>
       <input
-        type="number"
+        type="text"
         class="form-control"
         id="telefone"
+        [brmasker]="{phone: true}"
         required
         [(ngModel)]="motorista.telefone"
         name="txtTelefone"

@@ -64,7 +64,9 @@ import { SearchEscComponent } from './search-esc/search-esc.component';
 import { SearchescPipe } from './pipeesc/searchesc.pipe';
 import { MdComponent } from './md/md.component';
 
+// Máscara
 
+import { BrMaskerModule } from 'brmasker-ionic-3';
 
 
 @NgModule({
@@ -131,7 +133,8 @@ import { MdComponent } from './md/md.component';
     ReactiveFormsModule,
     FormsModule,
     Ng2SmartTableModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrMaskerModule
 
   ],
 

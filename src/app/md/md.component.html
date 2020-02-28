@@ -6,21 +6,48 @@
 <div [hidden]="submitted" style="width: 300px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <select
+      <select (reloadData)="reloadData()"
         name="campoLinha"
         class="form-control"
-        id="idLinha"
+        id="listLinha"
         required
         [(ngModel)]="linha.nome_linha"
       >
         <option value="">Selecione...</option>
-        <option [ngValue]="linha" *ngFor="let linha of linhas | async"
+        <option [ngValue]="linha.id" *ngFor="let linha of linhas | async"
           >{{ linha.nome_linha }}</option
         >
       </select>
 
-
+      <div class="panel panel-primary">
+        <div class="panel-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col" width="40%">Nome</th>
+                <th scope="col" width="45%">Escola</th>
+                <th scope="col" width="15%">Série</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="let aluno of alunos | async | paginate: { itemsPerPage: 10, currentPage: paginaAtual }; let i = index"
+              >
+                <!--<td>{{aluno.id}}</td>-->
+                <td>{{aluno.nome}}</td>
+                <td>{{aluno.escola.nome}}</td>
+                <td>{{aluno.serie}}</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <pagination-controls
+            (pageChange)="paginaAtual = $event"
+            previousLabel="Anterior"
+            nextLabel="Próximo"
+          ></pagination-controls>
+        </div>
+      </div>
     </div>
   </form>
 </div>
-

@@ -8,6 +8,7 @@
         class="form-control"
         id="idcnpj"
         name="txtcnpj"
+        [brmasker]="{person: true}"
         required
         [(ngModel)]="empresa.cnpj"
       />
@@ -81,6 +82,7 @@
         class="form-control"
         id="idTelefone"
         name="txtTelefone"
+        [brmasker]="{phone: true}"
         required
         [(ngModel)]="empresa.telefone"
       />

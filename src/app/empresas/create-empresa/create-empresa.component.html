@@ -5,9 +5,10 @@
     <div class="form-group">
       <label for="cnpj">CNPJ:</label>
       <input
-        type="number"
+        type="text"
         class="form-control"
         id="idCnpj"
+        [brmasker]="{person: true}"
         required
         [(ngModel)]="empresa.cnpj"
         name="txtcnpj"
@@ -74,9 +75,11 @@
     <div class="form-group">
       <label for="telefone">Telefone:</label>
       <input
-        type="number"
+        type="text"
         class="form-control"
         id="idTelefone"
+        [brmasker]="{phone: true}"
+        required
         [(ngModel)]="empresa.telefone"
         name="txtTelefone"
       />
