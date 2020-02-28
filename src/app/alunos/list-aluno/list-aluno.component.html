@@ -15,7 +15,6 @@
         <tr
         *ngFor="let aluno of alunos | async | searchalu: filtro_valor | paginate: { itemsPerPage: 10, currentPage: paginaAtual }; let i = index"
       >
-        <!--<td>{{escola.id}}</td>-->
         <td>{{aluno.nome}}</td>
         <td>{{aluno.escola.nome}}</td>
         <td>{{aluno.linha.nome_linha}}</td>
