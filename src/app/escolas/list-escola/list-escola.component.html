@@ -1,28 +1,27 @@
 <app-search-esc (searchesc)="handleSearch($event)"> </app-search-esc>
 
+<div class="container">
 <div class="panel-body">
   <table class="table table-hover">
     <thead>
       <tr>
-        <!--<th scope="col" width="5%">Id</th>-->
-        <th scope="col" width="20%">Nome</th>
-        <th scope="col" width="15%">Telefone</th>
-        <th scope="col" width="25%">Endereço</th>
-        <th scope="col" width="40%">Opções</th>
+        <th scope="col" width="25%">Nome</th>
+        <th scope="col" width="30%">Endereço</th>
+        <th scope="col" width="10%">Telefone</th>
+        <th scope="col" width="35%">Opções</th>
       </tr>
     </thead>
     <tbody>
       <tr
-        *ngFor="let escola of escolas | async | searchesc: filtro_valor | paginate: { itemsPerPage: 20, currentPage: paginaAtual }; let i = index"
+       *ngFor="let escola of escolas | async | searchesc: filtro_valor | paginate: { itemsPerPage: 10, currentPage: paginaAtual }; let i = index"
       >
-        <!--<td>{{escola.id}}</td>-->
         <td>{{escola.nome}}</td>
-        <td>{{escola.telefone}}</td>
         <td>{{escola.endereco}}</td>
+        <td>{{escola.telefone}}</td>
         <td>
           <button
             (click)="detalheEscola(escola.id)"
-            class="btn btn-primary"
+            class="btn btn-info"
             style="margin-right: 5px"
           >
             Visualizar
@@ -48,4 +47,5 @@
     previousLabel="Anterior"
     nextLabel="Próximo"
   ></pagination-controls>
+</div>
 </div>

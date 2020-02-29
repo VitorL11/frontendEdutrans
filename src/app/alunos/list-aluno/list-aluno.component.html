@@ -1,14 +1,15 @@
 <app-search-alu (searchalu)="handleSearch($event)"> </app-search-alu>
 
-<div class="panel panel-primary">
+<div class="container">
   <div class="panel-body">
     <table class="table table-hover">
       <thead>
         <tr>
           <th scope="col" width="20%">Nome</th>
+          <th scope="col" width="20%">Telefone</th>
           <th scope="col" width="20%">Escola</th>
           <th scope="col" width="10%">Linha</th>
-          <th scope="col" width="50%">Opções</th>
+          <th scope="col" width="30%">Opções</th>
         </tr>
       </thead>
       <tbody>
@@ -16,18 +17,21 @@
         *ngFor="let aluno of alunos | async | searchalu: filtro_valor | paginate: { itemsPerPage: 10, currentPage: paginaAtual }; let i = index"
       >
         <td>{{aluno.nome}}</td>
+        <td>{{aluno.telefone}}</td>
         <td>{{aluno.escola.nome}}</td>
         <td>{{aluno.linha.nome_linha}}</td>
         <td>
             <button
+              
               (click)="detalheAluno(aluno.id)"
-              class="btn btn-primary"
+              class="btn btn-info"
               style="margin-right: 5px"
             >
               Visualizar
             </button>
 
-            <button
+         
+            <button 
               (click)="updateAluno(aluno.id)"
               class="btn btn-warning"
               style="margin-right: 5px"

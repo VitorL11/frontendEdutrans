@@ -1,20 +1,20 @@
 <app-search-emp (searchemp)="handleSearch($event)"> </app-search-emp>
 
-<div class="panel-body">
+<div class="container"> 
+<div class="panel-body" >
   <table class="table table-hover">
     <thead>
       <tr>
-        <!--<th scope="col" width="5%">Id</th>-->
-        <th scope="col" width="20%">Razão Social</th>
-        <th scope="col" width="10%">Telefone</th>
-        <th scope="col" width="20%">Endereço</th>
+        <th scope="col" width="26%">Razão Social</th>
+        <th scope="col" width="8%">Telefone</th>
+        <th scope="col" width="26%">Endereço</th>
         <th scope="col" width="10%">E-mail</th>
-        <th scope="col" width="40%">Opções</th>
+        <th scope="col" width="30%">Opções</th>
       </tr>
     </thead>
     <tbody>
       <tr
-        *ngFor="let empresa of empresas | async | searchemp: filtro_valor | paginate: { itemsPerPage: 20, currentPage: paginaAtual }; let i = index"
+        *ngFor="let empresa of empresas | async | searchemp: filtro_valor | paginate: { itemsPerPage: 10, currentPage: paginaAtual }; let i = index"
       >
         <!--<td>{{empresa.id}}</td>-->
         <td>{{empresa.razao_social}}</td>
@@ -24,7 +24,7 @@
         <td>
           <button
             (click)="detalheEmpresa(empresa.id)"
-            class="btn btn-primary"
+            class="btn btn-info"
             style="margin-right: 5px"
           >
             Visualizar
@@ -50,4 +50,5 @@
     previousLabel="Anterior"
     nextLabel="Próximo"
   ></pagination-controls>
+</div>
 </div>

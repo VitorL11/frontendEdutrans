@@ -32,7 +32,6 @@
         type="text"
         class="form-control"
         id="cpf"
-        [brmasker]="{person: true}"
         required
         [(ngModel)]="motorista.cpf"
         name="txtCpf"
@@ -137,7 +136,6 @@
         type="text"
         class="form-control"
         id="telefone"
-        [brmasker]="{phone: true}"
         required
         [(ngModel)]="motorista.telefone"
         name="txtTelefone"
@@ -146,14 +144,18 @@
 
     <div class="form-group">
       <label for="ufCnh">UF CNH:</label>
-      <input
-        type="text"
+      <select
+        name="campoCnh"
         class="form-control"
-        id="ufCnh"
+        id="idCnh"
         required
         [(ngModel)]="motorista.uf_cnh"
-        name="txtUf"
-      />
+      >
+        <option value="">Selecione...</option>
+        <option [ngValue]="estados" *ngFor="let estados of estados | async"
+          >{{ estados.nome }}</option
+        >
+      </select>
     </div>
 
     <div class="form-group">

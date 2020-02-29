@@ -26,12 +26,10 @@ export class DetailsEmpresaComponent implements OnInit {
     this.empresaService.getEmpresa(this.id).subscribe(
       data => {
         console.log(data)
-        this.empresaService = data;
+        this.empresa = data;
       },
       error => console.log(error)
     );
-      console.log(this.empresa.nome_dono)
-    this.empresa.nome_dono = 'yteste';
   }
 
   list() {

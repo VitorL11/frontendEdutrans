@@ -20,23 +20,20 @@ export class DetailsMotoristaComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.motorista = new Motorista();
+   this.motorista = new Motorista();
 
     this.id = this.route.snapshot.params['id'];
     //console.log(this.id);
     this.motoristaService.getMotorista(this.id).subscribe(
       data => {
         console.log(data)
-        this.motoristaService = data;
+        this.motorista = data;
       },
       error => console.log(error)
     );
-      console.log(this.motorista.nome)
-    this.motorista.nome = 'yteste';
   }
 
   list() {
     this.router.navigate(["listMotorista"]);
   }
 }
-

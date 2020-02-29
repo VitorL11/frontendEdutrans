@@ -1,8 +1,8 @@
-<h4>Escolas</h4>
+<h4>Escolas:</h4>
 
 <hr />
 
-<div *ngIf="escolas">
+<div *ngIf="escola">
   <div>
     <label><b>Nome: </b></label> {{escola.nome}}
   </div>
@@ -21,7 +21,7 @@
 <br />
 
 <button
-  [routerLink]="['/listEmpresa']"
+  [routerLink]="['/listEscola']"
   routerLinkActive="router-link-active"
   class="btn btn-primary"
 >

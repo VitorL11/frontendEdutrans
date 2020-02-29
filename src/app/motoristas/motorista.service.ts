@@ -35,4 +35,8 @@ export class MotoristaService {
   updateMotorista(id: number, value: any): Observable<any> {
     return this.http.put(`${this.baseUrl}/motoristas/upd-motoristas/${id}`, value);
   }
+
+  queryMotorista(id: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/motoristas/lista-motoristas-linha/${id}`);
+  }
 }

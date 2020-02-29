@@ -26,16 +26,13 @@ export class DetailsEscolaComponent implements OnInit {
     this.escolaService.getEscola(this.id).subscribe(
       data => {
         console.log(data)
-        this.escolaService = data;
+        this.escola = data;
       },
       error => console.log(error)
     );
-      console.log(this.escola.nome)
-    this.escola.nome = 'yteste';
   }
 
   list() {
     this.router.navigate(["listEscola"]);
   }
 }
-

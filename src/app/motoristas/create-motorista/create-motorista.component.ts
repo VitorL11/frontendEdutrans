@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { LinhaService } from 'src/app/linhas/linha.service';
 import { Linha } from 'src/app/linhas/linha';
 import { Veiculo } from 'src/app/veiculos/veiculo';
+import { estados, estadosPorId, estadoPorSigla } from 'estados-br'
 
 @Component({
   selector: 'app-create-motorista',
@@ -27,6 +28,7 @@ export class CreateMotoristaComponent implements OnInit {
   ngOnInit() {
     this.linhas = this.linhaservice.getLinhaList();
     this.veiculos = this.veiculoservice.getVeiculoList();
+    console.log(estados);
   }
 
   newEscola(): void {

@@ -3,7 +3,7 @@
 
 }
 
-.topo h2  {
+.topo h1  {
 color: #fff;
 padding: 15px 0;
 }
@@ -36,6 +36,14 @@ width: 250px;
   margin-right: 4%;
 }
 
+#listLinha { 
+  width: 200px;
+}
+
+/*#btimp { 
+  margin-left: -430px;
+  position: relative;
+}*/
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -44,4 +52,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   width: 250px;
   margin-right: 25px;
 }
+
+"styles": [
+    "styles.css",
+    "../node_modules/font-awesome/css/font-awesome.css"
+],
 

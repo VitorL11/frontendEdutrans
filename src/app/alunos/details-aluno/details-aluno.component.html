@@ -1,35 +1,45 @@
-<h4>Alunos</h4>
+<h4>Aluno:</h4>
 
 <hr />
 
-<div *ngIf="alunos">
-  <div>
-    <label><b>Nome: </b></label> {{aluno.nome}}
-  </div>
+<div *ngIf="aluno">
   <div>
     <label><b>CPF: </b></label> {{aluno.cpf}}
   </div>
+  
   <div>
-    <label><b>RG: </b></label> {{aluno.rg}}
+    <label><b>Data de Nascimento: </b></label> {{aluno.data_nasc}}
   </div>
+
   <div>
-    <label><b>Telefone: </b></label> {{aluno.telefone}}
+    <label><b>Escola: </b></label> {{aluno.escola.nome}}
   </div>
+
   <div>
-    <label><b>Data de Nascimento: </b></label> {{aluno.dataNasc}}
+    <label><b>Linha: </b></label> {{aluno.linha.nome_linha}}
   </div>
+
   <div>
-    <label><b>Escola: </b></label> {{aluno.escola}}
+    <label><b>Nome: </b></label> {{aluno.nome}}
   </div>
-  <div>
-    <label><b>Série: </b></label> {{aluno.serie}}
-  </div>
+
   <div>
     <label><b>Período: </b></label> {{aluno.periodo}}
   </div>
+  
+  <div>
+    <label><b>RG: </b></label> {{aluno.rg}}
+  </div>
+
+  <div>
+    <label><b>Série: </b></label> {{aluno.serie}}
+  </div>
+
+  <div>
+    <label><b>Telefone: </b></label> {{aluno.telefone}}
+  </div>
 </div>
 
-<br />
 <br />
 
 <button

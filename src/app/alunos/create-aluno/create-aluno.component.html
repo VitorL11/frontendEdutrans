@@ -33,7 +33,7 @@
         class="form-control"
         id="idEscola"
         required
-        [(ngModel)]="aluno.idEscola"
+        [(ngModel)]="aluno.escola"
       >
         <option value="">Selecione</option>
         <option [ngValue]="escola" *ngFor="let escola of escolas | async"
@@ -57,7 +57,7 @@
         >
       </select>
     </div>
-
+    
     <div class="form-group">
       <label for="Nome">Nome:</label>
       <input

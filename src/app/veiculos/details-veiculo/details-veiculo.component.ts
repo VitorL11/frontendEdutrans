@@ -26,12 +26,10 @@ export class DetailsVeiculoComponent implements OnInit {
     this.veiculoService.getVeiculo(this.id).subscribe(
       data => {
         console.log(data)
-        this.veiculoService = data;
+        this.veiculo = data;
       },
       error => console.log(error)
     );
-      console.log(this.veiculo.placa)
-    this.veiculo.placa = 'teste';
   }
 
   list() {
