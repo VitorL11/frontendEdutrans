@@ -1,79 +1,67 @@
-<div class="container" id="btimp"> 
-<a href="" class="btn btn-success float-right">
-  Imprimir
-</a>
+<div class="container" id="btimp">
+    <a href="" class="btn btn-success float-right">
+    Imprimir
+  </a>
 </div>
 
 <div class="container">
-<div [hidden]="submitted">
-  <form (ngSubmit)="buscaAluno()">
-    <div class="form-group">
-      <select
-        id="listLinha"
-        name="campoLinha"
-        class="form-control"
-        required
-        [(ngModel)]="linha.nome_linha"
-        (change)="buscaAluno($event)"
-      >
-        <option  value="">Selecione...</option>
-        <option [ngValue]="linha.id" *ngFor="let linha of linhas | async"
-          >{{ linha.nome_linha}}</option
-        >
-      </select>
+    <div [hidden]="submitted">
+        <form (ngSubmit)="buscaAluno()">
+            <div class="form-group">
+                <select id="listLinha" name="campoLinha" class="form-control" required [(ngModel)]="linha.nome_linha" (change)="buscaAluno($event)">
+          <option value="">Selecione...</option>
+          <option
+            [ngValue]="linha.id"
+            *ngFor="let linha of linhas | async | paginate: { itemsPerPage: 10, currentPage: paginaAtual }; let i = index"
+            >{{ linha.nome_linha}}</option
+          >
+        </select>
 
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <table class="table table-borderless">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col" width="25%">Motorista</th>
+                                    <th scope="col" width="25%">Telefone</th>
+                                    <th scope="col" width="25%">Empresa</th>
+                                    <th scope="col" width="25%">Placa</th>
+                                </tr>
+                            </thead>
 
-      <div class="panel panel-primary">
-        <div class="panel-body">
-          <table class="table table-borderless">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col" width="25%">Motorista</th>
-                <th scope="col" width="25%">Telefone</th>
-                <th scope="col" width="25%">CPF</th>
-                <th scope="col" width="25%">Placa</th>
-              </tr>
-              
-              <tbody>
-                <tr
-                  *ngFor="let motorista of motoristas | async | paginate: { itemsPerPage: 10, currentPage: paginaAtual }; let i = index"
-                >
-                  <td>{{motorista.nome}}</td>
-                  <td>{{motorista.telefone}}</td>
-                  <td>{{motorista.cpf}}</td>
-                  <td>{{motorista.veiculo.placa}}</td>
-                  <td></td>
-                </tr>
-              </tbody>
-              
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col" width="25%">Alunos</th>
-                <th scope="col" width="25%">Escola</th>
-                <th scope="col" width="25%">Série</th>
-                <th scope="col" width="25%">Período</th>
-              </tr>
-            
-            <tbody>
-              <tr
-                *ngFor="let aluno of alunos | async | paginate: { itemsPerPage: 10, currentPage: paginaAtual }; let i = index"
-              >
-                <td>{{aluno.nome}}</td>
-                <td>{{aluno.escola.nome}}</td>
-                <td>{{aluno.serie}}</td>
-                <td>{{aluno.periodo}}</td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-          <pagination-controls
-            (pageChange)="paginaAtual = $event"
-            previousLabel="Anterior"
-            nextLabel="Próximo"
-          ></pagination-controls>
-        </div>
-      </div>
+                            <tbody>
+                                <tr *ngFor="let motorista of motoristas | async | paginate: { itemsPerPage: 5, currentPage: paginaAtual }; let i = index">
+                                    <td>{{motorista.nome}}</td>
+                                    <td>{{motorista.telefone}}</td>
+                                    <td>{{motorista.empresa}}</td>
+                                    <td>{{motorista.veiculo.placa}}</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col" width="25%">Alunos</th>
+                                    <th scope="col" width="25%">Escola</th>
+                                    <th scope="col" width="25%">Série</th>
+                                    <th scope="col" width="25%">Período</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr *ngFor="let aluno of alunos | async | paginate: { itemsPerPage: 5, currentPage: paginaAtual }; let i = index">
+                                    <td>{{aluno.nome}}</td>
+                                    <td>{{aluno.escola.nome}}</td>
+                                    <td>{{aluno.serie}}</td>
+                                    <td>{{aluno.periodo}}</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
-  </form>
-</div>
 </div>

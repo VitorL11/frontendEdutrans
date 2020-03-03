@@ -1,187 +1,102 @@
 <h4>Cadastro de Motoristas</h4>
 
 <div [hidden]="submitted" style="width: 400px;">
-  <form (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="categoria">Categoria CNH:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="categoria"
-        required
-        [(ngModel)]="motorista.categ_cnh"
-        name="txtCategoria"
-      />
-    </div>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="categoria">Categoria CNH:</label>
+            <input type="text" class="form-control" id="categoria" required [(ngModel)]="motorista.categ_cnh" name="txtCategoria" />
+        </div>
 
-    <div class="form-group">
-      <label for="cnh">CNH:</label>
-      <input
-        type="number"
-        class="form-control"
-        id="cnh"
-        required
-        [(ngModel)]="motorista.reg_cnh"
-        name="txtCnh"
-      />
-    </div>
+        <div class="form-group">
+            <label for="cnh">CNH:</label>
+            <input type="number" class="form-control" id="cnh" required [(ngModel)]="motorista.reg_cnh" name="txtCnh" />
+        </div>
 
-    <div class="form-group">
-      <label for="cpf">CPF:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="cpf"
-        required
-        [(ngModel)]="motorista.cpf"
-        name="txtCpf"
-      />
-    </div>
+        <div class="form-group">
+            <label for="cpf">CPF:</label>
+            <input type="text" class="form-control" id="cpf" required [(ngModel)]="motorista.cpf" name="txtCpf" />
+        </div>
 
-    <div class="form-group">
-      <label for="dataNasc">Data de Nascimento:</label>
-      <input
-        type="date"
-        class="form-control"
-        id="dataNasc"
-        required
-        [(ngModel)]="motorista.data_nasc"
-        name="txtDataNasc"
-      />
-    </div>
+        <div class="form-group">
+            <label for="dataNasc">Data de Nascimento:</label>
+            <input type="date" class="form-control" id="dataNasc" required [(ngModel)]="motorista.data_nasc" name="txtDataNasc" />
+        </div>
 
-    <div class="form-group">
-      <label for="email">E-mail:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="email"
-        required
-        [(ngModel)]="motorista.email"
-        name="txtEmail"
-      />
-    </div>
+        <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="text" class="form-control" id="email" required [(ngModel)]="motorista.email" name="txtEmail" />
+        </div>
 
-    <div class="form-group">
-      <label for="Linha">Linha:</label>
-      <select
-        name="campoLinha"
-        class="form-control"
-        id="idLinha"
-        required
-        [(ngModel)]="motorista.linha"
-      >
+        <div class="form-group">
+            <label for="empresa">Empresa:</label>
+            <select name="campoEmpresa" class="form-control" id="idEmpresa" required [(ngModel)]="motorista.razao_social">
+        <option value="">Selecione...</option>
+        <option [ngValue]="empresa" *ngFor="let empresa of empresas | async"
+          >{{ empresa.razao_social }}</option
+        >
+      </select>
+        </div>
+
+        <div class="form-group">
+            <label for="Linha">Linha:</label>
+            <select name="campoLinha" class="form-control" id="idLinha" required [(ngModel)]="motorista.linha">
         <option value="">Selecione...</option>
         <option [ngValue]="linha" *ngFor="let linha of linhas | async"
           >{{ linha.nome_linha }}</option
         >
       </select>
-    </div>
+        </div>
 
-    <div class="form-group">
-      <label for="nome">Nome:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="nome"
-        required
-        [(ngModel)]="motorista.nome"
-        name="txtnome"
-      />
-    </div>
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" id="nome" required [(ngModel)]="motorista.nome" name="txtnome" />
+        </div>
 
-    <div class="form-group">
-      <label for="Linha">Placa do Veículo:</label>
-      <select
-        name="campoVeiculo"
-        class="form-control"
-        id="idVeiculo"
-        required
-        [(ngModel)]="motorista.veiculo"
-      >
+        <div class="form-group">
+            <label for="placa">Placa do Veículo:</label>
+            <select name="campoVeiculo" class="form-control" id="idVeiculo" required [(ngModel)]="motorista.veiculo">
         <option value="">Selecione...</option>
         <option [ngValue]="veiculo" *ngFor="let veiculo of veiculos | async"
           >{{ veiculo.placa }}</option
         >
       </select>
-    </div>
+        </div>
 
-    <div class="form-group">
-      <label for="renach">Renach:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="renach"
-        required
-        [(ngModel)]="motorista.renach"
-        name="txtRenach"
-      />
-    </div>
+        <div class="form-group">
+            <label for="renach">Renach:</label>
+            <input type="text" class="form-control" id="renach" required [(ngModel)]="motorista.renach" name="txtRenach" />
+        </div>
 
-    <div class="form-group">
-      <label for="rg">RG:</label>
-      <input
-        type="number"
-        class="form-control"
-        id="rg"
-        required
-        [(ngModel)]="motorista.rg"
-        name="txtRg"
-      />
-    </div>
+        <div class="form-group">
+            <label for="rg">RG:</label>
+            <input type="number" class="form-control" id="rg" required [(ngModel)]="motorista.rg" name="txtRg" />
+        </div>
 
-    <div class="form-group">
-      <label for="telefone">Telefone:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="telefone"
-        required
-        [(ngModel)]="motorista.telefone"
-        name="txtTelefone"
-      />
-    </div>
+        <div class="form-group">
+            <label for="telefone">Telefone:</label>
+            <input type="text" class="form-control" id="telefone" required [(ngModel)]="motorista.telefone" name="txtTelefone" />
+        </div>
 
-    <div class="form-group">
-      <label for="ufCnh">UF CNH:</label>
-      <select
-        name="campoCnh"
-        class="form-control"
-        id="idCnh"
-        required
-        [(ngModel)]="motorista.uf_cnh"
-      >
+        <div class="form-group">
+            <label for="ufCnh">UF CNH:</label>
+            <select name="campoCnh" class="form-control" id="idCnh" required [(ngModel)]="motorista.uf_cnh">
         <option value="">Selecione...</option>
-        <option [ngValue]="estados" *ngFor="let estados of estados | async"
+        <option [ngValue]="estados" *ngFor="let estados of estado | async"
           >{{ estados.nome }}</option
         >
       </select>
-    </div>
+        </div>
 
-    <div class="form-group">
-      <label for="validade">Validade CNH:</label>
-      <input
-        type="date"
-        class="form-control"
-        id="valCnh"
-        required
-        [(ngModel)]="motorista.val_cnh"
-        name="txtValCnh"
-      />
-    </div>
+        <div class="form-group">
+            <label for="validade">Validade CNH:</label>
+            <input type="date" class="form-control" id="valCnh" required [(ngModel)]="motorista.val_cnh" name="txtValCnh" />
+        </div>
 
-    <div class="form-group">
-      <label for="valRenach">Validade Renach:</label>
-      <input
-        type="date"
-        class="form-control"
-        id="valRenach"
-        required
-        [(ngModel)]="motorista.val_renach"
-        name="txtValCnh"
-      />
-    </div>
+        <div class="form-group">
+            <label for="valRenach">Validade Renach:</label>
+            <input type="date" class="form-control" id="valRenach" required [(ngModel)]="motorista.val_renach" name="txtValCnh" />
+        </div>
 
-    <button type="submit" class="btn btn-success">Salvar</button>
-  </form>
+        <button type="submit" class="btn btn-success">Salvar</button>
+    </form>
 </div>

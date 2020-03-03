@@ -41,7 +41,7 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { from } from "rxjs";
 
-// Plugins 
+// Plugins
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatSelectModule } from "@angular/material/select";
 import { MatFormFieldModule } from "@angular/material/form-field";
@@ -49,7 +49,7 @@ import { MatInputModule } from "@angular/material/input";
 import { BrMaskerModule } from 'brmasker-ionic-3';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
-// Campo de Busca 
+// Campo de Busca
 import { SearchAluComponent } from "./search-alu/search-alu.component";
 import { SearchEmpComponent } from "./search-emp/search-emp.component";
 import { SearchEscComponent } from "./search-esc/search-esc.component";

@@ -1,90 +1,42 @@
 <h4>Cadastro de Empresas</h4>
 
 <div [hidden]="submitted" style="width: 400px;">
-  <form (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="cnpj">CNPJ:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="idCnpj"
-        [brmasker]="{person: true}"
-        required
-        [(ngModel)]="empresa.cnpj"
-        name="txtcnpj"
-      />
-    </div>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="cnpj">CNPJ:</label>
+            <input type="text" class="form-control" id="idcnpj" name="txtcnpj" required [(ngModel)]="empresa.cnpj" />
+        </div>
 
-    <div class="form-group">
-      <label for="email">E-mail:</label>
-      <input
-        type="email"
-        class="form-control"
-        id="idEmail"
-        [(ngModel)]="empresa.email"
-        name="txtEmail"
-      />
-    </div>
+        <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" class="form-control" id="idEmail" [(ngModel)]="empresa.email" name="txtEmail" />
+        </div>
 
-    <div class="form-group">
-      <label for="endereco">Endereço:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="idEndreco"
-        required
-        [(ngModel)]="empresa.endereco"
-        name="txtendereco"
-      />
-    </div>
+        <div class="form-group">
+            <label for="endereco">Endereço:</label>
+            <input type="text" class="form-control" id="idEndreco" required [(ngModel)]="empresa.endereco" name="txtendereco" />
+        </div>
 
-    <div class="form-group">
-      <label for="nomegerente">Gerente:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="idGerente"
-        [(ngModel)]="empresa.nome_gerente"
-        name="txtRg"
-      />
-    </div>
+        <div class="form-group">
+            <label for="nomegerente">Gerente:</label>
+            <input type="text" class="form-control" id="idGerente" [(ngModel)]="empresa.nome_gerente" name="txtRg" />
+        </div>
 
-    <div class="form-group">
-      <label for="nomedono">Proprietário(a):</label>
-      <input
-        type="text"
-        class="form-control"
-        id="idDono"
-        [(ngModel)]="empresa.nome_dono"
-        name="txtDono"
-      />
-    </div>
+        <div class="form-group">
+            <label for="nomedono">Proprietário(a):</label>
+            <input type="text" class="form-control" id="idDono" [(ngModel)]="empresa.nome_dono" name="txtDono" />
+        </div>
 
-    <div class="form-group">
-      <label for="RazaoSocial">Razão Social:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="idRazaoSocial"
-        required
-        [(ngModel)]="empresa.razao_social"
-        name="txtRazaoSocial"
-      />
-    </div>
+        <div class="form-group">
+            <label for="RazaoSocial">Razão Social:</label>
+            <input type="text" class="form-control" id="idRazaoSocial" required [(ngModel)]="empresa.razao_social" name="txtRazaoSocial" />
+        </div>
 
-    <div class="form-group">
-      <label for="telefone">Telefone:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="idTelefone"
-        [brmasker]="{phone: true}"
-        required
-        [(ngModel)]="empresa.telefone"
-        name="txtTelefone"
-      />
-    </div>
+        <div class="form-group">
+            <label for="Telefone">Telefone:</label>
+            <input type="text" class="form-control" id="idTelefone" name="txtTelefone" required [(ngModel)]="empresa.telefone" />
+        </div>
 
-    <button type="submit" class="btn btn-success">Salvar</button>
-  </form>
+        <button type="submit" class="btn btn-success">Salvar</button>
+    </form>
 </div>
